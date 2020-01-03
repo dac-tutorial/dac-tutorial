@@ -14,8 +14,10 @@
   - [2 Sphinx 多人协作开发（GitHub）](#2-sphinx-多人协作开发github)
   - [3 Sphinx 主题模板定制（Jinjia）](#3-sphinx-主题模板定制jinjia)
 - [（三）拓展内容](#三拓展内容)
-  - [1 Sphinx 与 Markdown](#1-sphinx-与-markdown)
-  - [2 GitHub Pages 与 Jekyll](#2-github-pages-与-jekyll)
+  - [Markdown、GitHub Pages 与 Jekyll](#markdowngithub-pages-与-jekyll)
+
+
+---
 
 
 # 引言：文档代码化
@@ -160,7 +162,7 @@
 	+ **注意：** 请在“选择其他任务”中将所有复选框勾选上
 ![image-20200101080216776](images/image-20200101080216776.png)
 
-+ 完成安装后打开 VS Code，在 “Extentions” 中安装 “Python” 和 “reStructuredText” 拓展
++ 完成安装后打开 VS Code，在  ***Extentions*** 中安装 ***Python*** 和 ***reStructuredText*** 拓展
 
 ![VSCode-Extentions](images/VSCode-Extentions.gif)
 
@@ -168,9 +170,7 @@
 
 由于我们之前在安装 Anaconda 的时候直接将 Anaconda 的目录添加到了系统环境变量的 path 中，我们可以直接在 VS Code 的终端使用 `sphinx-quickstart`命令创建一个 Sphinx 项目：
 
-+ 在计算机任意位置新建一个文件夹，命名为`learn-sphinx`，右击文件夹单击“通过 Code 打开”
-
-  
++ 在计算机任意位置新建一个文件夹，命名为 “learn-sphinx”，右击文件夹单击 “通过 Code 打开”
 
   ![image-20200101115256734](images/image-20200101115256734.png)
 
@@ -220,9 +220,6 @@
 
 # （三）拓展内容
 
-## 1 Sphinx 与 Markdown
+## Markdown、GitHub Pages 与 Jekyll
 
-
-
-## 2 GitHub Pages 与 Jekyll
 
