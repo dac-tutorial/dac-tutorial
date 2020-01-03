@@ -71,9 +71,11 @@
 
 #### Anaconda 安装与配置
 
-+ 打开 [Anaconda 官网](https://www.anaconda.com/distribution/)，下载适合的安装包：
++ 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
 
 ![image-20200101055935681](images/image-20200101055935681.png)
+
+> **提示：**如果官网下载速度较慢，可到清华大学开源软件镜像站下载 [Anaconda 安装包](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)。
 
 + 下载完成后，运行可执行文件进行安装：
 
@@ -102,11 +104,39 @@
 
 + 安装完成后，我们可以检查一下 Sphinx 是否正确，并更新一下 Anaconda 包含的各种包：
 
-> **提示：**Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。
+> **提示 1：**Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。
+>
+> **提示 2：**Anaconda 的默认镜像源位于国外，可通过修改 Anaconda 软件源（推荐使用清华大学开源软件镜像站的 Anaconda 镜像）的方式解决 conda 在国内网络访问不稳定，下载速率慢的问题。步骤如下：
+>
+> + 打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Prompt”，输入 `conda config --set show_channel_urls yes` 回车，该命令会在用户文件夹下创建 `.condarc` 文件；
+>
+> ![image-20200103172133457](images/image-20200103172133457.png)
+>
+> + 进入用户文件夹，使用记事本打开`.condarc` 文件，将其中内容替换为如下内容：
+>
+> ```
+> ssl_verify: true
+> channels:
+>   - defaults
+> show_channel_urls: true
+> default_channels:
+>   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+>   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+>   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+> custom_channels:
+>   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+>   msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+>   bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+>   menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+>   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+>   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+> ```
+>
+> + 保存并退出`.condarc` 文件。
 
-​	打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Powershell Prompt”，输入`conda list`后回车：
+打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Powershell Prompt”，输入 `conda list` 回车：
 
-​	此指令会列出当前 Anaconda 内已安装的所有包，我们很容易可以看到 Sphinx 的存在：
+此指令会列出当前 Anaconda 内已安装的所有包，我们很容易可以看到 Sphinx 的存在：
 
 ![image-20200101072919818](images/image-20200101072919818.png)
 
@@ -118,7 +148,9 @@
 
 ![Anaconda-Update](images/Anaconda-Update.gif)
 
-**注意：**中途需要手动输入一次`y`以进行确认，整个更新过程需要较长的一段时间，当命令行最后一行显示`done`时，更新完毕，现可关闭命令行窗口。
+**注意：**中途需要手动输入一次`y`以确认更新操作，整个过程需要一段时间，当命令行最后一行显示`done`时，更新完毕，现可关闭命令行窗口。
+
+---
 
 #### Visual Studio Code 安装与配置
 
