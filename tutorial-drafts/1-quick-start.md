@@ -1,4 +1,4 @@
-- [引言：文档代码化](#引言文档代码化)
+- 引言：文档代码化](#引言文档代码化)
 - [（一）快速入门](#一快速入门)
   - [1 Sphinx 开发环境配置](#1-sphinx-开发环境配置)
     - [1.1 Windows 环境配置](#11-windows-环境配置)
@@ -43,7 +43,7 @@
 - Sphinx 采用 [reStructuredText](https://docutils.sourceforge.io/rst.html) 作为默认标记语言，并使用 [Docutils](http://docutils.sf.net/) 对标记文本进行解析和转换。
 
 
-![image-20200101072459848](images/image-20200101072459848.png)
+![sphinx-doc.org](images/sphinx-doc.org.png)
 
 ## 1 Sphinx 开发环境配置
 
@@ -67,32 +67,34 @@
 
 + 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
 
-![image-20200101055935681](images/image-20200101055935681.png)
+![anaconda-download](images/anaconda-download.png)
 
 > **提示：**如果官网下载速度较慢，可到清华大学开源软件镜像站下载 [Anaconda 安装包](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)。
 
 + 下载完成后，运行可执行文件进行安装：
 
-![Anaconda-Install](images/Anaconda-Install.gif)
+![anaconda-setup](images/anaconda-setup.gif)
 
 > **注意事项：**
 >
 > 1. Anaconda 需要占用较大的存储空间，可考虑安装在非系统盘。
 > 2. 请在 “Advanced Options” 中将勾选两个可选选项：
 >
-> ![image-20200101061056834](images/image-20200101061056834.png)
+> ![anaconda-setup-options](images/anaconda-setup-options.png)
 >
 > + **第一个选项** 会将 Anaconda 的安装目录添加至系统环境变量的 path 中，此举有利于我们之后在 VS Code 中快速激活 conda 环境，以及直接使用 base 环境中的库，简化操作流程。
 >
 >   + 如上图红字所示，Anaconda 官方不建议勾选此选项，而建议使用 Anaconda Navigator 或 Anaconda Prompt 使用 Anaconda。这是因为勾选此选项会将 Anaconda 的若干目录添加至 path 目录中的最前面；如果用户之前已经安装了其他 Python 解释器，勾选此选项会导致用户直接调用 Python 时优先调用 Anaconda 内置的 Python，而不是用户单独安装的 Python。
 >
->     ![image-20200102154758513](images/image-20200102154758513.png)
+>     ![two-python-interpreter](images/two-python-interpreter.png)
 >
 >   + 假如同学们希望系统默认调用先前安装过 Python 环境，一个较好的解决方法是在勾选此选项并完成安装 Anaconda 后，手动将原 path 中 Python 路径移动到 Anaconda 系列目录的前面。
 >
->     ![path-config](images/path-config.gif)
+>     ![windows-path-config](images/windows-path-config.gif)
 >
->   + 此时，在命令行调用 Python 时会优先调用单独安装的 Python解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别。）![Terminal_9A3TJJo8Ga](images/Terminal_9A3TJJo8Ga.png)
+>   + 此时，在命令行调用 Python 时会优先调用单独安装的 Python解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别。）
+>
+>     ![python-vs-conda-python](images/python-vs-conda-python.png)
 >
 > + **第二个选项** 可使其他 Python 开发工具（如 VS Code）自动探测到 Anaconda。
 
@@ -104,7 +106,7 @@
 >
 > + 打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Prompt”，输入 `conda config --set show_channel_urls yes` 回车，该命令会在用户文件夹下创建 `.condarc` 文件；
 >
-> ![image-20200103172133457](images/image-20200103172133457.png)
+> ![conda-config-channel](images/conda-config-channel.png)
 >
 > + 进入用户文件夹，使用记事本打开`.condarc` 文件，将其中内容替换为如下内容：
 >
@@ -132,13 +134,13 @@
 
 此指令会列出当前 Anaconda 内已安装的所有包，我们很容易可以看到 Sphinx 的存在：
 
-![image-20200101072919818](images/image-20200101072919818.png)
+![conda-list](images/conda-list.png)
 
-![image-20200101072306506](images/image-20200101072306506.png)
+![conda-list-sphinx](images/conda-list-sphinx.png)
 
 如图所示，目前 Anaconda 里的 Sphinx 的版本是 2.2.0，低于官网的最新版本。我们可以在命令行中输入`conda update sphinx`单独对 Sphinx 进行更新，但考虑到我们是第一次使用 Anaconda，更加推荐的方式是使用`conda update --all`命令对 Anaconda 内所有的包都进行一次更新：
 
-![Anaconda-Update](images/Anaconda-Update.gif)
+![anaconda-update](images/anaconda-update.gif)
 
 **注意：**中途需要手动输入一次`y`以确认更新操作，整个过程需要一段时间，当命令行最后一行显示`done`时，更新完毕，现可关闭命令行窗口。
 
@@ -148,33 +150,37 @@
 
 + 打开 [Visual Studio Code 官网](https://code.visualstudio.com/)，下载适合的安装包：
 
-![image-20200101075807695](images/image-20200101075807695.png)
+![vscode-download](images/vscode-download.png)
 
 + 下载完成后，运行可执行文件进行安装，其安装过程与 Anaconda 安装过程相似：
 	+ **注意：** 请在“选择其他任务”中将所有复选框勾选上
-![image-20200101080216776](images/image-20200101080216776.png)
+![vscode-setup-options](images/vscode-setup-options.png)
 
 + 完成安装后打开 VS Code，在  ***Extentions*** 中安装 ***Python*** 和 ***reStructuredText*** 拓展
 
-![VSCode-Extentions](images/VSCode-Extentions.gif)
+![vscode-extentions](images/vscode-extentions.gif)
+
+----
 
 #### VS Code 调用 Sphinx (Anaconda)
 
-由于我们之前在安装 Anaconda 的时候直接将 Anaconda 的目录添加到了系统环境变量的 path 中，我们可以直接在 VS Code 的终端使用 `sphinx-quickstart`命令创建一个 Sphinx 项目：
+在完成以上步骤后，我们已经基本完成了一个基于 Anaconda 和 VS Code 的 Sphinx 一体化工作台，下面让我们检测一下我们的 Sphinx 开发环境， 为下一节 “第一个 Sphinx项目” 做好准备！ 
 
 + 在计算机任意位置新建一个文件夹，命名为 “learn-sphinx”，右击文件夹单击 “通过 Code 打开”
 
-  ![image-20200101115256734](images/image-20200101115256734.png)
+  ![open-with-vscode](images/open-with-vscode.png)
 
-+ 在打开的 VS Code 窗口下的 Terminal 终端（可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出）中输入 `sphinx-quickstart`，回车：
++ 打开 VS Code 窗口的集成 Terminal（即命令行终端，可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出）
 
-  ![image-20200101120010090](images/image-20200101120010090.png)
+  输入 `sphinx-build --version `，回车：
   
-  当 VS Code 出现以上内容时，说明 Sphinx 开发环境已正确部署至你的计算机中，下一小节将会介绍如何创建你的第一个 Sphinx 项目。
+  ![sphinx-version ](images/sphinx-version .gif)
   
+  如果一切正常，你将会看到已安装 Sphinx 版本号（这里显示的版本是 2.3.0），这说明 Sphinx 开发环境已正确部署至你的计算机中；下一小节将会介绍如何创建你的第一个 Sphinx 项目。
   
-
-# ------------ 【以下部分暂未完成】------------
+  ---
+  
+  # ------------ 【以下部分暂未完成】------------
 
 ---
 
