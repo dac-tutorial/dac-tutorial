@@ -69,7 +69,7 @@
 
 ![anaconda-download](images/anaconda-download.png)
 
-> **提示：**如果官网下载速度较慢，可到清华大学开源软件镜像站下载 [Anaconda 安装包](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)。
+> **提示：** 如果官网下载速度较慢，可到清华大学开源软件镜像站下载 [Anaconda 安装包](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)。
 
 + 下载完成后，运行可执行文件进行安装：
 
@@ -100,9 +100,9 @@
 
 + 安装完成后，我们可以检查一下 Sphinx 是否正确，并更新一下 Anaconda 包含的各种包：
 
-> **提示 1：**Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。
+> **提示 1：** Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。
 >
-> **提示 2：**Anaconda 的默认镜像源位于国外，可通过修改 Anaconda 软件源（推荐使用清华大学开源软件镜像站的 Anaconda 镜像）的方式解决 conda 在国内网络访问不稳定，下载速率慢的问题。步骤如下：
+> **提示 2：** Anaconda 的默认镜像源位于国外，可通过修改 Anaconda 软件源（推荐使用清华大学开源软件镜像站的 Anaconda 镜像）的方式解决 conda 在国内网络访问不稳定，下载速率慢的问题。步骤如下：
 >
 > + 打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Prompt”，输入 `conda config --set show_channel_urls yes` 回车，该命令会在用户文件夹下创建 `.condarc` 文件；
 >
@@ -142,7 +142,7 @@
 
 ![anaconda-update](images/anaconda-update.gif)
 
-**注意：**中途需要手动输入一次`y`以确认更新操作，整个过程需要一段时间，当命令行最后一行显示`done`时，更新完毕，现可关闭命令行窗口。
+**注意：** 中途需要手动输入一次`y`以确认更新操作，整个过程需要一段时间，当命令行最后一行显示`done`时，更新完毕，现可关闭命令行窗口。
 
 ---
 
@@ -174,7 +174,7 @@
 
   输入 `sphinx-build --version `，回车：
   
-  ![sphinx-version ](images/sphinx-version .gif)
+  ![sphinx-version](images/sphinx-version.gif)
   
   如果一切正常，你将会看到已安装 Sphinx 版本号（这里显示的版本是 2.3.0），这说明 Sphinx 开发环境已正确部署至你的计算机中；下一小节将会介绍如何创建你的第一个 Sphinx 项目。
   
