@@ -35,7 +35,7 @@
 本教程主要借助 Sphinx 这一轻量级文档开发工具向同学们介绍了文档代码化开发的完整流程，主要包括两大部分：
 
 + **快速入门：** Sphinx 开发环境配置、Sphinx 基本操作以及 reStructuredText 语法指南；
-+ **专题学习：**在前者的基础上引入了更多进阶操作，以专题的形式呈现，主要包括文档的本地发布、云端托管、文档主题定制、多人协作开发等。
++ **专题学习：** 在前者的基础上引入了更多进阶操作，以专题的形式呈现，主要包括文档的本地发布、云端托管、文档主题定制、多人协作开发等。
 
 ---
 
@@ -59,7 +59,7 @@
 
 > + **Anaconda** 是一个开源的 Python 发行版，支持 Windows、macOS、Linux，Anaconda 是一个打包的集合，里面预装好了conda、Python 解释器、众多第三方库（比如 Sphinx）、科学计算工具等等，其核心功能是由 conda 提供的包管理与环境管理功能。
 >
-> + **Visual Studio Code (VS Code)** 是由 Microsoft 公司开发的新一代代码编辑器，支持 Windows、macOS、Linux，将代码编辑器、调试器、命令行/终端等工具巧妙整合与一体，具有语法高亮、代码补全、括号匹配等功能，支持版本管理和远程开发，还拥有丰富的拓展生态。
+> + **Visual Studio Code (VS Code)** 是由 Microsoft 公司开发的新一代代码编辑器，支持 Windows、macOS、Linux，将代码编辑器、调试器、终端等工具整合于一体，具有语法高亮、代码补全、括号匹配等功能，支持版本管理和远程开发，并拥有丰富的拓展生态。
 
 ---
 
@@ -142,9 +142,7 @@
 
 ![image-20200101072306506](images/image-20200101072306506.png)
 
-如图所示，目前 Anaconda 里的 Sphinx 的版本是 2.2.0，低于官网的最新版本。
-
-我们可以在命令行中输入`conda update sphinx`单独对 Sphinx 进行更新，但考虑到我们是第一次使用 Anaconda，更加推荐的方式是使用`conda update --all`命令对 Anaconda 内所有的包都进行一次更新：
+如图所示，目前 Anaconda 里的 Sphinx 的版本是 2.2.0，低于官网的最新版本。我们可以在命令行中输入`conda update sphinx`单独对 Sphinx 进行更新，但考虑到我们是第一次使用 Anaconda，更加推荐的方式是使用`conda update --all`命令对 Anaconda 内所有的包都进行一次更新：
 
 ![Anaconda-Update](images/Anaconda-Update.gif)
 
@@ -185,8 +183,6 @@
   
 
 # ------------ 【以下部分暂未完成】------------
-
-
 
 ---
 
