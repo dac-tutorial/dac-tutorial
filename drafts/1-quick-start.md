@@ -6,15 +6,8 @@
       - [Visual Studio Code 安装与配置](#visual-studio-code-安装与配置)
       - [VS Code 调用 Sphinx (Anaconda)](#vs-code-调用-sphinx-anaconda)
 - [------------ 【以下部分暂未完成】------------](#-------------以下部分暂未完成------------)
-    - [1.2 macOS 环境配置 （暂缺 | 王晴）](#12-macos-环境配置-暂缺--王晴)
+    - [1.2 macOS 环境配置](#12-macos-环境配置)
   - [2 第一个 Sphinx 项目](#2-第一个-sphinx-项目)
-  - [3 reStructuredText 语法指南](#3-restructuredtext-语法指南)
-- [（二）专题学习](#二专题学习)
-  - [1 Sphinx 本地与云端发布（Read the Docs）](#1-sphinx-本地与云端发布read-the-docs)
-  - [2 Sphinx 多人协作开发（GitHub）](#2-sphinx-多人协作开发github)
-  - [3 Sphinx 主题模板定制（Jinjia）](#3-sphinx-主题模板定制jinjia)
-- [（三）拓展内容](#三拓展内容)
-  - [Markdown、GitHub Pages 与 Jekyll](#markdowngithub-pages-与-jekyll)
 
 ---
 
@@ -185,7 +178,7 @@
 
 ---
 
-### 1.2 macOS 环境配置  **（暂缺 | 王晴）**
+### 1.2 macOS 环境配置
 
 
 
@@ -197,28 +190,5 @@
 
 
 
-## 3 reStructuredText 语法指南
-
-
-
-# （二）专题学习
-
--------
-
-## 1 Sphinx 本地与云端发布（Read the Docs）
-
-
-
-## 2 Sphinx 多人协作开发（GitHub）
-
-
-
-## 3 Sphinx 主题模板定制（Jinjia）
-
-
-
-# （三）拓展内容
-
-## Markdown、GitHub Pages 与 Jekyll
 
 
