@@ -11,7 +11,6 @@
 
 ---
 
-
 # 引言：文档代码化
 
 **文档代码化** **([*Docs as Code*](http://www.writethedocs.org/guide/docs-as-code/))**，是一种新兴的的技术文档开发模式，特指使用代码开发的方式和工具进行文档开发。
