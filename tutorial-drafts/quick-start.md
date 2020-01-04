@@ -1,43 +1,7 @@
-- [引言：文档代码化](#引言文档代码化)
-- [（一）快速入门](#一快速入门)
-  - [1 Sphinx 开发环境配置](#1-sphinx-开发环境配置)
-    - [1.1 Windows 环境配置](#11-windows-环境配置)
-      - [Anaconda 安装与配置](#anaconda-安装与配置)
-      - [Visual Studio Code 安装与配置](#visual-studio-code-安装与配置)
-      - [VS Code 调用 Sphinx (Anaconda)](#vs-code-调用-sphinx-anaconda)
-- [------------ 【以下部分暂未完成】------------](#-------------以下部分暂未完成------------)
-    - [1.2 macOS 环境配置](#12-macos-环境配置)
-  - [2 第一个 Sphinx 项目](#2-第一个-sphinx-项目)
-
----
-
-# 引言：文档代码化
-
-**文档代码化** **([*Docs as Code*](http://www.writethedocs.org/guide/docs-as-code/))**，是一种新兴的的技术文档开发模式，特指使用代码开发的方式和工具进行文档开发。
-
-文档代码化意味文档开发人员需遵从与产品开发团队相同的工作流程，使用代码开发的方式和工具开发文档，可有效节省工具成本，提升文档开发效率，并增强产品研发和文档写作的协同管理。
-
-目前，微软、亚马逊和阿里等高科技公司已逐渐将文档代码化应用于生产实践，其文档开发流程大致包括五大步骤：
-
-1. 使用 Markdown、reStructuredText 等标记语言写作；
-2. 通过 Git 进行版本管理和协同写作；
-3. 使用代码开发集成环境作为写作工具；
-4. 通过文档发布工具将 Markdown、reStructuredText 文件发布为网页或PDF等格式；
-5. 收集文档的用户使用数据，不断迭代改进文档质量。
-
-本教程主要借助 Sphinx 这一轻量级文档开发工具向同学们介绍了文档代码化开发的完整流程，主要包括两大部分：
-
-+ **快速入门：** Sphinx 开发环境配置、Sphinx 基本操作以及 reStructuredText 语法指南；
-+ **专题学习：** 在前者的基础上引入了更多进阶操作，以专题的形式呈现，主要包括文档的本地发布、云端托管、文档主题定制、多人协作开发等。
-
----
-
-
-
 # （一）快速入门
 
 - [Sphinx](http://www.sphinx-doc.org/) 是一种基于 Python 的文档工具，它可以令人轻松的撰写出清晰且优美的文档，由 Georg Brandl 在 BSD 许可证下开发。
-- Sphinx 最初是为创作[新版的 Python 文档](http://docs.python.org/)而开发的，如今它已成为Python 项目首选的文档工具，并对其它开发语言也有很好的支持。
+- Sphinx 最初是为创作[新版 Python 文档](http://docs.python.org/)而开发的，如今它已成为 Python 项目首选的文档工具，并对其它开发语言也有很好的支持。
 
 - Sphinx 采用 [reStructuredText](https://docutils.sourceforge.io/rst.html) 作为默认标记语言，并使用 [Docutils](http://docutils.sf.net/) 对标记文本进行解析和转换。
 
@@ -64,50 +28,69 @@
 
 #### Anaconda 安装与配置
 
-+ 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
+1. 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
 
 ![anaconda-download](images/anaconda-download.png)
 
 > **提示：** 如果官网下载速度较慢，可到清华大学开源软件镜像站下载 [Anaconda 安装包](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)。
 
-+ 下载完成后，运行可执行文件进行安装：
+2. 下载完成后，运行可执行文件进行安装：
 
 ![anaconda-setup](images/anaconda-setup.gif)
 
-> **注意事项：**
+> **注意：**
 >
 > 1. Anaconda 需要占用较大的存储空间，可考虑安装在非系统盘。
+>
 > 2. 请在 “Advanced Options” 中将勾选两个可选选项：
 >
 > ![anaconda-setup-options](images/anaconda-setup-options.png)
 >
-> + **第一个选项** 会将 Anaconda 的安装目录添加至系统环境变量的 path 中，此举有利于我们之后在 VS Code 中快速激活 conda 环境，以及直接使用 base 环境中的库，简化操作流程。
+> - **第一个选项** 会将 Anaconda 的安装目录添加至系统环境变量的 path 中，有利于我们之后在 VS Code 中快速激活 conda 环境，以及直接使用 base 环境中已安装的库和脚本，简化操作流程。
 >
->   + 如上图红字所示，Anaconda 官方不建议勾选此选项，而建议使用 Anaconda Navigator 或 Anaconda Prompt 使用 Anaconda。这是因为勾选此选项会将 Anaconda 的若干目录添加至 path 目录中的最前面；如果用户之前已经安装了其他 Python 解释器，勾选此选项会导致用户直接调用 Python 时优先调用 Anaconda 内置的 Python，而不是用户单独安装的 Python。
+>   - 如上图红字所示，Anaconda 官方不建议勾选此选项，而建议使用 Anaconda Prompt (或 Anaconda Powershell Prompt，以下将两者统称为 Anaconda Prompt) 。这是因为勾选此选项会将 Anaconda 的若干目录添加至 path 目录中的最前面；如果用户之前已经安装了其他 Python 解释器，勾选此选项会导致用户直接调用 Python 时优先调用 Anaconda 内置的 Python 解释器，而不是用户单独安装的 Python 解释器，如下图所示：
 >
 >     ![two-python-interpreter](images/two-python-interpreter.png)
 >
->   + 假如同学们希望系统默认调用先前安装过 Python 环境，一个较好的解决方法是在勾选此选项并完成安装 Anaconda 后，手动将原 path 中 Python 路径移动到 Anaconda 系列目录的前面。
+>   - 假如同学们希望系统默认调用先前单独安装的 Python 解释器，一个较好的解决方法是在勾选此选项并完成安装 Anaconda 后，手动将原 path 中 Python 路径移动到 Anaconda 系列目录的前面，操作方法如下：
 >
 >     ![windows-path-config](images/windows-path-config.gif)
 >
->   + 此时，在命令行调用 Python 时会优先调用单独安装的 Python解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别。）
+>   - 此时，在命令行调用 Python 时会优先调用单独安装的 Python 解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别。）
 >
 >     ![python-vs-conda-python](images/python-vs-conda-python.png)
 >
-> + **第二个选项** 可使其他 Python 开发工具（如 VS Code）自动探测到 Anaconda。
+> - **第二个选项** 可使其他 Python 开发工具（如 VS Code）自动探测到 Anaconda。
 
-+ 安装完成后，我们可以检查一下 Sphinx 是否正确，并更新一下 Anaconda 包含的各种包：
 
-> **提示 1：** Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。
+3. 安装完成后，检查 Sphinx 是否已安装，并更新 Anaconda 包含的各种包：
+
+> **提示 ：** Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。
+
+点击 ”开始“ 菜单 - “Anaconda3” -  “Anaconda Powershell Prompt”，输入 `conda list` ，回车；
+
+此指令会列出当前 conda 环境 (base) 下所有已安装的包，正常情况下我们可看到若干以 Sphinx 开头的包：
+
+![conda-list](images/conda-list.png)
+
+![conda-list-sphinx](images/conda-list-sphinx.png)
+
+如图所示，目前 Anaconda 里的 Sphinx 的版本是 2.2.0，低于官网的最新版本。我们可在 Anaconda Prompt 中输入 `conda update sphinx` 单独对 Sphinx 进行更新，但考虑到我们是第一次使用 Anaconda，更加推荐使用 `conda update --all` 命令对该环境下所有包都进行一次更新：
+
+![anaconda-update](images/anaconda-update.gif)
+
+**注意：**`conda update --all` 命令执行中途需要手动输入一次 `y` 以确认更新操作，整个过程需要一段时间，当命令行最后一行显示 `done` 时，更新完毕，即可关闭命令行窗口。
+
+
+> **提示：** Anaconda 的默认软件镜像源位于国外，可通过修改 Anaconda 软件镜像源的方式解决在国内可能会遭遇的网络访问不稳定，下载速率慢等问题。（推荐使用清华大学开源软件镜像站的 Anaconda 镜像） 
 >
-> **提示 2：** Anaconda 的默认镜像源位于国外，可通过修改 Anaconda 软件源（推荐使用清华大学开源软件镜像站的 Anaconda 镜像）的方式解决 conda 在国内网络访问不稳定，下载速率慢的问题。步骤如下：
+> 具体操作步骤如下：
 >
-> + 打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Prompt”，输入 `conda config --set show_channel_urls yes` 回车，该命令会在用户文件夹下创建 `.condarc` 文件；
+> 1. 打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Prompt”，输入 `conda config --set show_channel_urls yes` 回车，该命令会在用户文件夹下创建 `.condarc` 文件；
 >
 > ![conda-config-channel](images/conda-config-channel.png)
 >
-> + 进入用户文件夹，使用记事本打开`.condarc` 文件，将其中内容替换为如下内容：
+> 2. 进入用户文件夹，使用记事本打开`.condarc` 文件，将其中内容替换为如下内容：
 >
 > ```
 > ssl_verify: true
@@ -127,35 +110,22 @@
 >   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 > ```
 >
-> + 保存并退出`.condarc` 文件。
-
-打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Powershell Prompt”，输入 `conda list` 回车：
-
-此指令会列出当前 Anaconda 内已安装的所有包，我们很容易可以看到 Sphinx 的存在：
-
-![conda-list](images/conda-list.png)
-
-![conda-list-sphinx](images/conda-list-sphinx.png)
-
-如图所示，目前 Anaconda 里的 Sphinx 的版本是 2.2.0，低于官网的最新版本。我们可以在命令行中输入`conda update sphinx`单独对 Sphinx 进行更新，但考虑到我们是第一次使用 Anaconda，更加推荐的方式是使用`conda update --all`命令对 Anaconda 内所有的包都进行一次更新：
-
-![anaconda-update](images/anaconda-update.gif)
-
-**注意：** 中途需要手动输入一次`y`以确认更新操作，整个过程需要一段时间，当命令行最后一行显示`done`时，更新完毕，现可关闭命令行窗口。
+> 3. 保存并退出`.condarc` 文件。
 
 ---
 
 #### Visual Studio Code 安装与配置
 
-+ 打开 [Visual Studio Code 官网](https://code.visualstudio.com/)，下载适合的安装包：
+1. 打开 [Visual Studio Code 官网](https://code.visualstudio.com/)，下载适合的安装包：
 
 ![vscode-download](images/vscode-download.png)
 
-+ 下载完成后，运行可执行文件进行安装，其安装过程与 Anaconda 安装过程相似：
-	+ **注意：** 请在“选择其他任务”中将所有复选框勾选上
-![vscode-setup-options](images/vscode-setup-options.png)
+2. 下载完成后，运行可执行文件进行安装，其安装过程与 Anaconda 安装过程相似：
 
-+ 完成安装后打开 VS Code，在  ***Extentions*** 中安装 ***Python*** 和 ***reStructuredText*** 拓展
+> **注意：** 请在安装程序的 “选择其他任务” 页中将所有复选框勾选上。
+> ![vscode-setup-options](images/vscode-setup-options.png)
+
+3. 完成安装后打开 VS Code，在  ***Extentions*** 中安装 ***Python*** 和 ***reStructuredText*** 拓展。
 
 ![vscode-extentions](images/vscode-extentions.gif)
 
@@ -163,20 +133,17 @@
 
 #### VS Code 调用 Sphinx (Anaconda)
 
-在完成以上步骤后，我们已经基本完成了一个基于 Anaconda 和 VS Code 的 Sphinx 一体化工作台，下面让我们检测一下我们的 Sphinx 开发环境， 为下一节 “第一个 Sphinx项目” 做好准备！ 
+在完成以上步骤后，我们已经基本搭建好了一个基于 Anaconda 和 VS Code 的一体化 Sphinx 工作台，下面让我们最后再检测一下我们的 Sphinx 开发环境， 为下一节 “第一个 Sphinx项目” 做好准备。
 
-+ 在计算机任意位置新建一个文件夹，命名为 “learn-sphinx”，右击文件夹单击 “通过 Code 打开”
+1. 在计算机任意位置新建一个文件夹，命名为 “learn-sphinx”，右击文件夹单击 “通过 Code 打开”
 
-  ![open-with-vscode](images/open-with-vscode.png)
+![open-with-vscode](images/open-with-vscode.png)
 
-+ 打开 VS Code 窗口的集成 Terminal（即命令行终端，可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出）
+2. 打开 VS Code 窗口的集成 Terminal（即命令行终端，可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出），输入 `sphinx-build --version ` 回车。如下所示：
 
-  输入 `sphinx-build --version `，回车：
-  
-  ![sphinx-version](images/sphinx-version.gif)
-  
-  如果一切正常，你将会看到已安装 Sphinx 版本号（这里显示的版本是 2.3.0），这说明 Sphinx 开发环境已正确部署至你的计算机中；下一小节将会介绍如何创建你的第一个 Sphinx 项目。
-  
+![sphinx-version](images/sphinx-version.gif)
+
+如果一切正常，你将会看到已安装 Sphinx 版本号（这里显示的版本是 2.3.0），这说明 Sphinx 开发环境已正确部署至你的计算机中，下一小节将会介绍如何创建你的第一个 Sphinx 项目。
 
 ---
 
