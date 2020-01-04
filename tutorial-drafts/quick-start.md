@@ -22,9 +22,9 @@
 
 ### 1.1 Windows 环境配置
 
-> **注意：**以下步骤不需要同学们预先安装 Python 解释器，而是直接使用 Anaconda 内集成的 Python 解释器，如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接在命令行中使用命令 `pip install sphinx` 安装 Sphinx 及运行 Sphinx 所需要的 [docutils](http://docutils.sourceforge.net/)、[jinja2](http://jinja.pocoo.org/) 等第三方库（前提是 Python 和 Pip 已添加在系统变量的 path 中）。
+> **注意：**以下步骤不需要同学们预先安装 Python 解释器（如果之前有安装也可以考虑将其卸载），而是直接使用 Anaconda 内集成的 Python 解释器，如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接在命令行中使用命令 `pip install sphinx` 安装 Sphinx 及运行 Sphinx 所需要的 [docutils](http://docutils.sourceforge.net/)、[jinja2](http://jinja.pocoo.org/) 等第三方库（前提是 Python 和 Pip 已添加在系统变量的 path 中）。
 >
-> 但更加推荐同学们使用 Anaconda 来完成 Sphinx 开发环境配置，因为 conda 将几乎所有的工具、第三方库都当做 package 对待，甚至包括 python 和 conda 自身，它可以帮助我们方便地管理自己的 Python 开发环境，不仅能够将不同开发项目所依赖的开发环境完全独立开来，还可轻易地复制整个 Python 环境到其他机器上。
+> 更加推荐同学们使用 Anaconda 来完成 Sphinx 开发环境配置，因为 conda 将几乎所有的工具、第三方库都当做 package 对待，甚至包括 python 和 conda 自身，它可以帮助我们方便地管理自己的 Python 开发环境，不仅能够将不同开发项目所依赖的开发环境完全独立开来，还可轻易地复制整个 Python 环境到其他机器上。
 
 #### Anaconda 安装与配置
 
@@ -52,11 +52,11 @@
 >
 >     ![two-python-interpreter](images/two-python-interpreter.png)
 >
->   - 假如同学们希望系统默认调用先前单独安装的 Python 解释器，一个较好的解决方法是在勾选此选项并完成安装 Anaconda 后，手动将原 path 中 Python 路径移动到 Anaconda 系列目录的前面，操作方法如下：
+>   - 假如同学们依然希望系统默认调用先前单独安装的 Python 解释器，解决方法是在完成安装 Anaconda 后，手动将原 path 中 Python 路径移动到 Anaconda 系列目录的前面，操作方法如下：
 >
 >     ![windows-path-config](images/windows-path-config.gif)
 >
->   - 此时，在命令行调用 Python 时会优先调用单独安装的 Python 解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别。）
+>   - 此时，在命令行调用 Python 时会优先调用单独安装的 Python 解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别）
 >
 >     ![python-vs-conda-python](images/python-vs-conda-python.png)
 >
@@ -139,11 +139,11 @@
 
 ![open-with-vscode](images/open-with-vscode.png)
 
-2. 打开 VS Code 窗口的集成 Terminal（即命令行终端，可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出），输入 `sphinx-build --version ` 回车。如下所示：
+2. 打开 VS Code 窗口的集成 Terminal（即命令行终端，可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出），输入 `sphinx-build --version` 回车。如下所示：
 
 ![sphinx-version](images/sphinx-version.gif)
 
-如果一切正常，你将会看到已安装 Sphinx 版本号（这里显示的版本是 2.3.0），这说明 Sphinx 开发环境已正确部署至你的计算机中，下一小节将会介绍如何创建你的第一个 Sphinx 项目。
+如果一切正常，你将会看到已安装 Sphinx 版本号（这里显示的版本是 2.3.0），这说明 Sphinx 开发环境已正确部署至你的计算机中，现在请你移步到下一小节学习如何创建你的第一个 Sphinx 项目。
 
 ---
 
@@ -155,7 +155,11 @@
 
 ## 2 第一个 Sphinx 项目
 
+在前一小节我们利用 Anaconda 和 VS Code 搭建了一个一体化 Sphinx 工作台，新建了一个文件夹 “learn-sphinx”， 并将其在 VS Code 打开，现在我们正式启动我们第一个Sphinx 项目了！
 
+### 2.1 创建源目录
+
+Sphinx 为我们提供了一个方便我们快速创建 Sphinx 项目的脚本`sphinx-quickstart`，这个脚本相当于一个设置向导，它会询问我们一系列问题，并根据我们的回答生成此项目的文档源目录及默认配置文件 “conf.py”
 
 
 
