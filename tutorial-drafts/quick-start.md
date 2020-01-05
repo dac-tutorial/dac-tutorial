@@ -1,4 +1,4 @@
-# （一）快速入门
+# Sphinx 快速入门
 
 - [Sphinx](http://www.sphinx-doc.org/) 是一种基于 Python 的文档工具，它可以令人轻松的撰写出清晰且优美的文档，由 Georg Brandl 在 BSD 许可证下开发。
 - Sphinx 最初是为创作[新版 Python 文档](http://docs.python.org/)而开发的，如今它已成为 Python 项目首选的文档工具，并对其它开发语言也有很好的支持。
@@ -10,7 +10,7 @@
 
 ## 1 Sphinx 开发环境配置
 
-参考 Sphinx 的官方文档，[配置 Sphinx 开发环境](http://www.sphinx-doc.org/en/master/usage/installation.html) 主要包括安装 Python 开发环境、使用 pip 工具安装 sphinx 、安装配置文本、代码编辑器等步骤，同时还涉及到使用命令行和修改系统环境变量等操作。这些步骤对于初学者来说略有些复杂繁琐，很容易就迷失在各种琐碎的配置细节中，打击同学们的学习热情。
+参考 Sphinx 的官方文档，[配置 Sphinx 开发环境](http://www.sphinx-doc.org/en/master/usage/installation.html)主要包括安装 Python 开发环境、使用 pip 工具安装 sphinx 、安装配置文本、代码编辑器等步骤，同时还涉及到使用命令行和修改系统环境变量等操作。这些步骤对于初学者来说略有些复杂繁琐，很容易就迷失在各种琐碎的配置细节中，打击同学们的学习热情。
 
 不过 Python 社区始终有一批能人志士在为简化和优化开发环境配置而作各种努力，Anaconda 就是其中相当出色一个，下面将会介绍如何通过 Anaconda 和 VS Code 在 Windows 和 macOS 两大操作系统上配置 Sphinx 开发环境，同学们可以根据自己使用的操作系统查看相应的部分。
 
@@ -157,6 +157,10 @@
 
 在前一小节我们利用 Anaconda 和 VS Code 搭建了一个一体化 Sphinx 工作台，新建了一个文件夹 learn-sphinx， 并将其在 VS Code 打开，现在我们正式启动我们第一个Sphinx 项目了！
 
+> **注意：** 以下内容将以 Windows 作为演示平台，macOS 上的操作基本一致。
+
+### 2.1 创建项目目录
+
 Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，这个脚本相当于一个设置向导，它会询问我们一系列问题，并根据我们的回答生成此项目的文档源目录及默认配置文件 conf.py，如图所示：
 
 ![sphinx-quickstart](images/sphinx-quickstart.png)
@@ -184,13 +188,24 @@ Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，
 
 好的，现在你已经成功创建了一个 Sphinx 项目文件，下面的步骤便是为你的项目添加内容与进行装饰了。
 
-但在那之前，让我们看看尝试一下我们现在能不能编译出什么东西！在终端中输入`.\make html`，回车：
+但在那之前，让我们看看尝试一下我们现在能不能编译出什么东西！在终端中输入`make html`，回车：
+
+> **注意：** Windows 下 VS code 默认使用 Powershell 作为默认终端，需要使用 `.\make html`，回车。 
 
 ![sphinx-make-html](images/sphinx-make-html.png)
-
-> **注意：** 在Windows 下 VS code 默认使用 Powershell 作为默认终端，不可省略 `make html` 之前的 `.\` ！
 
 使用浏览器打开 `../learn-sphinx/html/`目录下的 index.html 文件，我们可以看到一个由 Sphinx 生成的简单网页：
 
 ![sphinx-basic-html](images/sphinx-basic-html.png)
 
+页面左上角显示了我们的项目名称，并具有导航页和搜索框；页面主体上方
+
+### 2.2 添加文档内容
+
+
+
+### 2.3 定义文档结构
+
+
+
+### 2.4 发布网页文件
