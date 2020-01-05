@@ -214,7 +214,7 @@ Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 
 > + index.rst 是由`sphinx-quickstart`脚本创建的文档主入口，它可被转换成文档的欢迎页；
 > + 建议在 source 目录下新建一个 images 目录用于存放文档中需要插入的图片。
 
-我们将在下一章学习 reStructuredText 的语法基础，现在先请同学们从本教程的 [GitHub 仓库]() (TODO：添加文件地址) 获取 chapter1.rst、chapter2.rst 以及 basic_screenshot.png 等文件，并将他们合理的存放在我们的 “learn-sphinx” 目录下。
+我们将在下一章学习 reStructuredText 的语法基础，现在先请同学们从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source)获取 chapter1.rst、chapter2.rst 以及 images/basic_screenshot.png 等文件，并将他们合理地存放在我们的 “learn-sphinx” 目录下。
 
 完成后的目录结构如下所示：
 
