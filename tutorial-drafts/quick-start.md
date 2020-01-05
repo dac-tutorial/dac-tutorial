@@ -159,7 +159,19 @@
 
 ### 2.1 创建源目录
 
-Sphinx 为我们提供了一个方便我们快速创建 Sphinx 项目的脚本`sphinx-quickstart`，这个脚本相当于一个设置向导，它会询问我们一系列问题，并根据我们的回答生成此项目的文档源目录及默认配置文件 “conf.py”
+Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，这个脚本相当于一个设置向导，它会询问我们一系列问题，并根据我们的回答生成此项目的文档源目录及默认配置文件 “conf.py”，如图所示：
 
+![sphinx-quickstart](images/sphinx-quickstart.png)
 
+```
+.
+├─ make.bat   # Window下的编译脚本
+├─ Makefile   # Linux下的Makefile文件
+├─ build      # make编译后产生的导出文件目录
+└─ source     # 文档源码目录
+    ├─  conf.py     # 项目配置文件
+    ├─  index.rst   # 文档源文件入口
+    ├─ _static      # 用于存放编译产生的静态文件   
+    └─ _templates   # 用于存放项目的主题模板文件
+```
 
