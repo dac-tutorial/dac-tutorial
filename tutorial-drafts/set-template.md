@@ -4,7 +4,7 @@
 ##  使用既定主题
 
 
-下载 Sphinx 后，其安装包中便含有名为 "themes" 的文件夹，里面包含的则是Sphinx自带的模板，包括  "epub"、"agogo" 等，而我们只需要简单的步骤，便可以使用其自带的模板：
+下载 Sphinx 后，其安装包中即含有名为 "themes" 的文件夹，文件夹内含Sphinx自带的模板，包括  "epub"、"agogo" 等。只需简单几步，我们便可以使用其内置模板：
 
 ### 修改配置文件
 
@@ -48,7 +48,7 @@
 
 
 
-##  用户自定义主题
+##  用户自定义主题（无Python/HTML/CSS基础请跳过）
 Sphinx里面的模板是已经定义好了的，但是如果我们想修改样式、添加内容该怎么办呢？
 
 ### 增添内容
@@ -67,9 +67,9 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
      Successfully installed jinja2-2.10.3
 
 #### 创建 “layout.html”
-我们需要在文件夹里找到 "source"-"templates"文件夹，然后在 templates" 文件夹下创建 “layout.html”.
+我们需要在文件夹里找到 "source"-"templates" 文件夹，然后在 "templates" 文件夹下创建 “layout.html”.
 
-使用 ***jinja2*** 在 "layout.html" 中编写如下代码：（jinja语言讲解待定）此段代码在网页底端加入了 *My footer of awesomeness* 这句话。
+使用 ***jinja2*** 在 "layout.html" 中编写如下代码：
 
      {# Import the theme's layout. #}
      {% extends "!layout.html" %}
@@ -79,6 +79,20 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
      <h2>My footer of awesomeness.</h2>
      {{ super() }}
      {% endblock %}
+
+对以上代码块解释如下：
+
++ `{#...#}` 相当于注释，是为了方便理解代码。
+
++  `{% extends "!layout.html" %}` 表示扩展原来的网页模板。
+
++ `{% block footer %}` 表示对 *footer* 代码块进行改写。
+
++ `{{ super() }}` 表示继承原模板。
+
++ `{% endblock %}` 表示代码块结束。
+
+此段代码的作用是在网页底端加入 *My footer of awesomeness* 这句话。
 
 #### 修改配置文件
 
@@ -95,8 +109,188 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
 
 ### 修改样式
 
+如若想对主题增添内容，那我们需要使用 ***css*** 语言
+
+#### 创建样式文件
 
 
+我们需要在文件夹里找到 "source"-"static" 文件夹，然后在 "static" 文件夹下创建 “my-styles.css”.
+
+使用 ***css*** 语言 在 "my-styles.css" 中编写如下代码：
+
+     footer {
+     background-color: red;
+     }
+
+该行代码的作用是把网页脚注背景色设置为红色。
+
+
+#### 修改配置文件
+
+与此同时，我们需要在 "config.py" 中进行如下设置：
+
+     html_static_path = ["_static"]
+
++ 如果您的Sphinx版本<=1.5,请在 "config.py" 添加如下代码：
+
+      {# Import the theme's layout. #}
+      {% extends "!layout.html" %}
+
+      {# Custom CSS overrides #}
+      {% set css_files = css_files + ['_static/my-styles.css'] %}
+
++ 如果您的Sphinx版本>1.5,请在 "config.py" 添加如下代码：
+
+          def setup(app):
+          app.add_stylesheet("my-styles.css") # also can be a full URL
+          #app.add_stylesheet("ANOTHER.css")
+          #app.add_stylesheet("AND_ANOTHER.css")
+
+#### 生成网页
+
+点击保存后，重新在命令行中键入  `make html`，即可生成如下网页：
+
+![改变网页样式](images/change-footer-color.png)
+
+## 扩展内容（ ***jinja2、html、css*** 基础）
+
+### ***HTML***
+
+
+超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。
+
+您可以使用 ***HTML*** 来建立自己的 WEB 站点，***HTML*** 运行在浏览器上，由浏览器来解析。
+
+#### 示例
+
+     <!DOCTYPE html>
+     <html>
+     <head>
+     <meta charset="utf-8">
+     <title>菜鸟教程(runoob.com)</title>
+     </head>
+     <body>
+     <h1>我的第一个标题</h1>
+     <p>我的第一个段落。</p>
+     </body>
+     </html>
+
+#### 代码解释
+
++ `<!DOCTYPE html>` 声明为HTML5文档
+
++ `<html>` 是 ***HTML*** 页面的根元素
+
++ `<head>` 元素包含了文档的元数据，如 `<meta charset="utf-8">`表示网页编码格式为 ***utf-8***
+
++ `<title>` 描述了文档的标题
+
++ `<body>` 包含了可见的页面内容
+
++ `<h1>` 定义一级标题
+
++ `<p>` 定义一个段落
+
+#### 推荐学习
+
+网上有很多免费的 ***HTML*** 教程，推荐如下：
+
++ [HTML菜鸟教程](https://www.runoob.com/html/html-tutorial.html)
+
++ [SiKi学院JavaEE WEB前端第一季](https://www.bilibili.com/video/av35875257?from=search&seid=1420480764639162062)
+
+
+### ***CSS***
+
+ ***CSS*** 用于控制网页的样式和布局。
+
+
+#### 示例
+
+     body
+     {
+     background-color:red;
+     }
+     h1
+     {
+     color:orange;
+     text-align:center;
+     }
+     p
+     {
+     font-family:"Times New Roman";
+     font-size:20px;
+     }
+
+#### 代码解释
+
++         body
+          {
+          background-color:#d0e4fe;
+          } 
+     这段代码表示网页主题的背景色为红色
+
+
++         h1
+          {
+          color:orange;
+          text-align:center;
+          }
+     这段代码表示标题1字体颜色为橘色且居中显示
+
++         p
+          {
+          font-family:"Times New Roman";
+          font-size:20px;
+          }
+     这段代码表示段落文字的字体为 ***Times New Roman***，字体大小为 ***20px***
+
+
+#### 推荐学习
+
+网上有很多免费的 ***CSS*** 教程，推荐如下：
+
++ [CSS菜鸟教程](https://www.runoob.com/css/css-tutorial.html)
+
+
+### ***jinja2***
+
+***Jinja*** 模版是一个文本文件，通过它可以生成任何文本格式的文件，例如 ***.html***、***.xml***、***.csv*** 等等。一个 ***Jinja*** 模版并不需要有一个特定的扩展名，完全可以自定义或是不定义.
+
+***Jinja*** 模版包含了变量、表达式和标签，当模版被渲染时，变量和表达式会被替换为特定的值，标签用来控制模版的逻辑。模版的语法受到了 ***Django*** 和 ***python*** 的启发.
+
+#### 示例
+
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+     <title>My Webpage</title>
+     </head>
+     <body>
+     <ul id="navigation">
+     {% for item in navigation %}
+          <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+     {% endfor %}
+     </ul>
+
+     <h1>My Webpage</h1>
+     {{ a_variable }}
+
+     {# a comment #}
+     </body>
+     </html>
+
+#### 代码解释
+
++ `{% ... %}` 表示循环结构
+
++ `{{...}}` 里内含变量，需要对其进行赋值
+
++ `{#...#}` 用于注释，方便理解代码，并不会输出到结果文件中
+
++ `{% endfor %}` 表示循环体的结束
+
++ `{{ item.href }}` 表示访问 ***item*** 这个变量的 ***href*** 属性
 
 
 
