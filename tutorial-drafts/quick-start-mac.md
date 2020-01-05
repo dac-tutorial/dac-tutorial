@@ -1,7 +1,3 @@
----
-typora-root-url: ../Documents/GitHub/Docs-as-Code/tutorial-drafts/images
----
-
 ### 1.2 macOS 环境配置
 
 在mac上配置Sphinx，可以通过Anaconda，Homebrew，MacPorts等方式来完成，这里介绍使用Anaconda，pip，和Homebrew完成sphinx安装与配置。
@@ -16,7 +12,7 @@ typora-root-url: ../Documents/GitHub/Docs-as-Code/tutorial-drafts/images
 
 1. 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
 
-![anaconda-download-mac](/anaconda-download-mac.jpg)
+![anaconda-download-mac](images/anaconda-download-mac.jpg)
 
 > **提示：** 如果官网下载速度较慢，可到清华大学开源软件镜像站下载 [Anaconda 安装包](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)。
 
