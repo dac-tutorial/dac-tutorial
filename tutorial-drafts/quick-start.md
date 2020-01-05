@@ -155,13 +155,15 @@
 
 ## 2 第一个 Sphinx 项目
 
-在前一小节我们利用 Anaconda 和 VS Code 搭建了一个一体化 Sphinx 工作台，新建了一个文件夹 “learn-sphinx”， 并将其在 VS Code 打开，现在我们正式启动我们第一个Sphinx 项目了！
+在前一小节我们利用 Anaconda 和 VS Code 搭建了一个一体化 Sphinx 工作台，新建了一个文件夹 learn-sphinx， 并将其在 VS Code 打开，现在我们正式启动我们第一个Sphinx 项目了！
 
-### 2.1 创建源目录
-
-Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，这个脚本相当于一个设置向导，它会询问我们一系列问题，并根据我们的回答生成此项目的文档源目录及默认配置文件 “conf.py”，如图所示：
+Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，这个脚本相当于一个设置向导，它会询问我们一系列问题，并根据我们的回答生成此项目的文档源目录及默认配置文件 conf.py，如图所示：
 
 ![sphinx-quickstart](images/sphinx-quickstart.png)
+
+> **提示：** 项目语言设置主要关系到由 Sphinx 自动生成文本的本地化，Sphinx 目前支持的语言可在[这里](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)看到。
+
+完成上述步骤后，当前路径下会出现如下文件/文件夹：
 
 ```
 .
@@ -174,4 +176,21 @@ Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，
     ├─ _static      # 用于存放编译产生的静态文件   
     └─ _templates   # 用于存放项目的主题模板文件
 ```
+
+其中，我们需要重点关注 conf.py 和 index.rst 两个文件：
+
+- conf.py 是当前项目的配置文件；
+- index.rst 是文档的入口，用于组织所有的项目文本。
+
+好的，现在你已经成功创建了一个 Sphinx 项目文件，下面的步骤便是为你的项目添加内容与进行装饰了。
+
+但在那之前，让我们看看尝试一下我们现在能不能编译出什么东西！在终端中输入`.\make html`，回车：
+
+![sphinx-make-html](images/sphinx-make-html.png)
+
+> **注意：** 在Windows 下 VS code 默认使用 Powershell 作为默认终端，不可省略 `make html` 之前的 `.\` ！
+
+使用浏览器打开 `../learn-sphinx/html/`目录下的 index.html 文件，我们可以看到一个由 Sphinx 生成的简单网页：
+
+![sphinx-basic-html](images/sphinx-basic-html.png)
 
