@@ -4,11 +4,13 @@
 
 这三种相同点在于都是软件包管理工具，不同点在于homebrew是一个通用的软件包管理工具，终端安装的很多软件包都可以用它来安装；pip一般安装一些与python环境相关的软件包，conda功能与pip类似，目的是为了解决对python以外的依赖环境问题，pip在任何环境中安装python包; conda在conda环境中装任何包。
 
-> **注意：**以下步骤不需要同学们预先安装 Python 解释器，而是直接使用 Anaconda 内集成的 Python 解释器，如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接在命令行中使用命令 `pip install sphinx` 安装 Sphinx 及运行 Sphinx 所需要的 [docutils](http://docutils.sourceforge.net/)、[jinja2](http://jinja.pocoo.org/) 等第三方库（前提是 Python 和 Pip 已添加在系统变量的 path 中）。
->
-> 但更加推荐同学们使用 Anaconda 来完成 Sphinx 开发环境配置，因为 conda 将几乎所有的工具、第三方库都当做 package 对待，甚至包括 python 和 conda 自身，它可以帮助我们方便地管理自己的 Python 开发环境，不仅能够将不同开发项目所依赖的开发环境完全独立开来，还可轻易地复制整个 Python 环境到其他机器上。
-
 #### Anaconda 安装与配置
+
+> **注意：**
+>
+> + 以下步骤不需要同学们预先安装 Python 解释器，而是直接使用 Anaconda 内集成的 Python 解释器；
+> + 如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可查看下一小节 - 使用 pip 安装 Sphinx [TODO: 添加页内链接]；
+> + 更加推荐使用 Anaconda 来完成 Sphinx 开发环境配置，因为 conda 将几乎所有的工具、第三方库都当做 package 对待，甚至包括 python 和 conda 自身，它可以帮助我们方便地管理自己的 Python 开发环境，不仅能够将不同开发项目所依赖的开发环境完全独立开来，还可轻易地复制整个 Python 环境到其他机器上。
 
 1. 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
 
