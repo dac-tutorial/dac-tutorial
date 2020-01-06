@@ -1,4 +1,4 @@
-![tutorial-outline](images/tutorial-outline-1578290488589.png)
+![tutorial-outline](tutorial-outline.png)
 
 # 文本
 
