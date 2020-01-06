@@ -1,4 +1,7 @@
-Sphinx多人协作开发
+Sphinx多人协作开发（Github）
 =========
-github
--------
+Github基本原理
+--------------
+Github手册
+-----------
+Github协作开发
