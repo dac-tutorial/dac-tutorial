@@ -1,8 +1,8 @@
 ### 1.2 macOS 环境配置
 
-在mac上配置Sphinx，可以通过Anaconda，Homebrew，MacPorts等方式来完成，这里介绍使用Anaconda，pip，和Homebrew完成sphinx安装与配置。
+在mac上配置 Sphinx，可以通过 Anaconda，Homebrew，MacPorts 等方式来完成，这里介绍使用 Anaconda，pip，和Homebrew 完成 Sphinx 安装与配置。
 
-这三种相同点在于都是软件包管理工具，不同点在于homebrew是一个通用的软件包管理工具，终端安装的很多软件包都可以用它来安装；pip一般安装一些与python环境相关的软件包，conda功能与pip类似，目的是为了解决对python以外的依赖环境问题，pip在任何环境中安装python包; conda在conda环境中装任何包。
+这三种相同点在于都是软件包管理工具，不同点在于 Homebrew 是一个通用的软件包管理工具，终端安装的很多软件包都可以用它来安装；Pip 一般安装一些与 Python 环境相关的软件包，conda 功能与 Pip 类似，目的是为了解决对 Python 以外的依赖环境问题，Pip 在任何环境中安装 Python 包; conda 在 conda环境中装任何包。
 
 #### Anaconda 安装与配置
 
@@ -28,7 +28,7 @@
 >   - 此时，在命令行调用 Python 时会优先调用单独安装的 Python 解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别。）
 > - **第二个选项** 可使其他 Python 开发工具（如 VS Code）自动探测到 Anaconda。
 
-3. Anaconda预装了sphinx。完成1-2步Anaconda安装后，检查 Sphinx 是否已安装：
+3. Anaconda 预装了 Sphinx。完成1-2步 Anaconda 安装后，检查 Sphinx 是否已安装：
 
 点击启动台-其他-终端，输入`conda list`，回车：
 
@@ -38,29 +38,29 @@
 
 ![conda-list-sphinx-mac](images/conda-list-sphinx-mac.png)
 
-4. *（optional）*sphinx预装在Anaconda的默认环境下，同学们可以进一步通过Anaconda Navigator中检查sphinx包配置情况，安装更多的包。
+4. *（可选）*Sphinx 预装在 Anaconda 的默认环境下，同学们可以进一步通过 Anaconda Navigator 中检查 Sphinx 包配置情况，安装更多的包。
 
-> 提示 ：Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。这里可通过 Anaconda Prompt 输入命令行操作，也可以通过Anaconda Navigator进行可视化操作，相对上手更快。
+> 提示 ：Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。这里可通过 Anaconda Prompt 输入命令行操作，也可以通过 Anaconda Navigator 进行可视化操作，相对上手更快。
 
-点击启动台 - Anaconda Navigator，左侧菜单选择Environments，检索框输入sphinx，得到以下列表：
+点击启动台 - Anaconda Navigator，左侧菜单选择 Environments，检索框输入 Sphinx ，得到以下列表：
 
-进一步勾选，点击右下角Apply进行安装。
+进一步勾选，点击右下角 Apply 进行安装。
 
 ![conda-navigator-mac](images/conda-navigator-mac.jpg)
 
 
 
-#### Pip安装与配置
+#### Pip 安装与配置
 
-1. 使用pip配置sphinx也是方便快捷的方式。如果同学们先前安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接使用第4步中的命令行安装 Sphinx。
+1. 使用 Pip 配置 Sphinx 也是方便快捷的方式。如果同学们先前安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接使用第4步中的命令行安装 Sphinx。
 
-   > 提示：如果不确定自己是安装过，可以在终端输入`pip`进行检测。如果出现`-bash: /usr/local/bin/pip: No such file or directory` 提示说明，则尚未安装pip，需要进行第2-3步。
+   > 提示：如果不确定自己是安装过，可以在终端输入`pip`进行检测。如果出现`-bash: /usr/local/bin/pip: No such file or directory` 提示说明，则尚未安装 Pip，需要进行第2-3步。
 
-2. 终端输入`sudo easy_install pip`，输入mac密码，进入安装：
+2. 终端输入`sudo easy_install pip`，输入 mac 密码，进入安装：
 
 ![pip-install-mac](images/pip-install-mac.jpg)
 
-3. 最终显示`Finished processing dependencies for pip`，pip配置完成。可以通过`pip --version` 查看 pip版本。
+3. 最终显示`Finished processing dependencies for pip`，Pip 配置完成。可以通过`pip --version` 查看 Pip 版本。
 
 ![pip-complete-mac](images/pip-complete-mac.jpg)4. 终端运行`pip install sphinx`，完成安装。
 
@@ -76,15 +76,15 @@
 
 
 
-#### Homebrew安装与配置
+#### Homebrew 安装与配置
 
-Homebrew可以视为套件管理器。它是一款Mac OS平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能，不需要关注各种依赖和文件路径的情况。配置好homebrew后，安装包、补充缺失的包比较比较便捷。
+Homebrew 可以视为套件管理器。它是一款 Mac OS 平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能，不需要关注各种依赖和文件路径的情况。配置好 Homebrew 后，安装包、补充缺失的包比较比较便捷。
 
-1. Homebrew依赖于Xcode Command Line Tools，所以会自动先安装Xcode Command Line Tools；如果有报错，也可以用命令手动安装：`xcode-select --install`。
+1. Homebrew 依赖于 Xcode Command Line Tools，所以会自动先安装 Xcode Command Line Tools；如果有报错，也可以用命令手动安装：`xcode-select --install`。
 
 ![homebrew-xcode-mac](images/homebrew-xcode-mac.jpg)
 
-2. 前往[homebrew官网](https://brew.sh)，复制首页代码行到终端执行。
+2. 前往 [homebrew 官网](https://brew.sh)，复制首页代码行到终端执行。
 
 ![homebrew-website-mac](images/homebrew-website-mac.jpg)
 
@@ -94,20 +94,20 @@ Homebrew可以视为套件管理器。它是一款Mac OS平台下的软件包管
 
 ![homebrew-install-mac](images/homebrew-install-mac.jpg)
 
-中间需要输入一次mac密码：
+中间需要输入一次 mac 密码：
 
 ![homebrew-password-mac](images/homebrew-password-mac.jpg)
 
-3. 出现`Installation successful!`的提示即为Homebrew配置完成。
+3. 出现`Installation successful!`的提示即为 Homebrew 配置完成。
 
 ![homebrew-complete-mac](images/homebrew-complete-mac.jpg)
 
-4. 完成homebrew配置后，终端输入`brew install sphinx-doc`，安装sphinx。
+4. 完成 Homebrew 配置后，终端输入`brew install sphinx-doc`，安装 Sphinx 。
 
 ![homebrew-sphinx-mac](images/homebrew-sphinx-mac.jpg)
 
 5. 完成安装后，可以检查 Sphinx 配置情况：
 
-终端输入`brew list`，回车，正常情况下可以看到Sphinx 的包：
+终端输入`brew list`，回车，正常情况下可以看到 Sphinx 的包：
 
 ![homebrew-list-mac](images/homebrew-list-mac.jpg)
