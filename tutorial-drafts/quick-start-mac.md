@@ -34,9 +34,9 @@
 
 此指令会列出当前 conda 环境 (base) 下所有已安装的包，正常情况下可以看到若干以 Sphinx 开头的包：
 
-![conda-list-mac](/conda-list-mac.jpg)
+![conda-list-mac](images/conda-list-mac.jpg)
 
-![conda-list-sphinx-mac](/conda-list-sphinx-mac.png)
+![conda-list-sphinx-mac](images/conda-list-sphinx-mac.png)
 
 4. *（optional）*sphinx预装在Anaconda的默认环境下，同学们可以进一步通过Anaconda Navigator中检查sphinx包配置情况，安装更多的包。
 
@@ -46,7 +46,7 @@
 
 进一步勾选，点击右下角Apply进行安装。
 
-![conda-navigator-mac](/conda-navigator-mac.jpg)
+![conda-navigator-mac](images/conda-navigator-mac.jpg)
 
 
 
@@ -58,21 +58,21 @@
 
 2. 终端输入`sudo easy_install pip`，输入mac密码，进入安装：
 
-![pip-install-mac](/pip-install-mac.jpg)
+![pip-install-mac](images/pip-install-mac.jpg)
 
 3. 最终显示`Finished processing dependencies for pip`，pip配置完成。可以通过`pip --version` 查看 pip版本。
 
-![pip-complete-mac](/pip-complete-mac.jpg)4. 终端运行`pip install sphinx`，完成安装。
+![pip-complete-mac](images/pip-complete-mac.jpg)4. 终端运行`pip install sphinx`，完成安装。
 
-![](/pip-sphinx-mac.jpg)
+![](images/pip-sphinx-mac.jpg)
 
 5. 完成安装后，可以检查 Sphinx 配置情况：
 
 终端输入`pip list`，回车，正常情况下可以看到若干以 Sphinx 开头的包：
 
-![pip-list-mac](/pip-list-mac.jpg)
+![pip-list-mac](images/pip-list-mac.jpg)
 
-![pip-check-mac](/pip-check-mac.jpg)
+![pip-check-mac](images/pip-check-mac.jpg)
 
 
 
@@ -82,32 +82,32 @@ Homebrew可以视为套件管理器。它是一款Mac OS平台下的软件包管
 
 1. Homebrew依赖于Xcode Command Line Tools，所以会自动先安装Xcode Command Line Tools；如果有报错，也可以用命令手动安装：`xcode-select --install`。
 
-![homebrew-xcode-mac](/homebrew-xcode-mac.jpg)
+![homebrew-xcode-mac](images/homebrew-xcode-mac.jpg)
 
 2. 前往[homebrew官网](https://brew.sh)，复制首页代码行到终端执行。
 
-![homebrew-website-mac](/homebrew-website-mac.jpg)
+![homebrew-website-mac](images/homebrew-website-mac.jpg)
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-![homebrew-install-mac](/homebrew-install-mac.jpg)
+![homebrew-install-mac](images/homebrew-install-mac.jpg)
 
 中间需要输入一次mac密码：
 
-![homebrew-password-mac](/homebrew-password-mac.jpg)
+![homebrew-password-mac](images/homebrew-password-mac.jpg)
 
 3. 出现`Installation successful!`的提示即为Homebrew配置完成。
 
-![homebrew-complete-mac](/homebrew-complete-mac.jpg)
+![homebrew-complete-mac](images/homebrew-complete-mac.jpg)
 
 4. 完成homebrew配置后，终端输入`brew install sphinx-doc`，安装sphinx。
 
-![homebrew-sphinx-mac](/homebrew-sphinx-mac.jpg)
+![homebrew-sphinx-mac](images/homebrew-sphinx-mac.jpg)
 
 5. 完成安装后，可以检查 Sphinx 配置情况：
 
 终端输入`brew list`，回车，正常情况下可以看到Sphinx 的包：
 
-![homebrew-list-mac](/homebrew-list-mac.jpg)
+![homebrew-list-mac](images/homebrew-list-mac.jpg)
