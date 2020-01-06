@@ -133,7 +133,7 @@
 
 #### VS Code 调用 Sphinx (Anaconda)
 
-在完成以上步骤后，我们已经基本搭建好了一个基于 Anaconda 和 VS Code 的一体化 Sphinx 工作台，下面让我们最后再检测一下我们的 Sphinx 开发环境， 为下一节 “第一个 Sphinx项目” 做好准备。
+在完成以上步骤后，我们已经基本搭建好了一个基于 Anaconda 和 VS Code 的一体化 Sphinx 工作台，下面让我们最后再检测一下我们的 Sphinx 开发环境， 为下一节 “第一个 Sphinx 项目” 做好准备。
 
 1. 在计算机任意位置新建一个文件夹，命名为 “learn-sphinx”，右击文件夹单击 “通过 Code 打开”
 
@@ -155,17 +155,20 @@
 
 ## 2 第一个 Sphinx 项目
 
+> **注意：** 以下内容以 Windows 作为操作演示平台，macOS 上的操作基本一致。
+
 在前一小节我们利用 Anaconda 和 VS Code 搭建了一个一体化 Sphinx 工作台，新建了一个文件夹 learn-sphinx， 并将其在 VS Code 打开，现在我们正式启动我们第一个Sphinx 项目了！
 
-> **注意：** 以下内容将以 Windows 作为演示平台，macOS 上的操作基本一致。
-
-### 2.1 创建项目目录
+### 2.1 创建项目
 
 Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，这个脚本相当于一个设置向导，它会询问我们一系列问题，并根据我们的回答生成此项目的文档源目录及默认配置文件 conf.py，如图所示：
 
 ![sphinx-quickstart](images/sphinx-quickstart.png)
 
-> **提示：** 项目语言设置主要关系到由 Sphinx 自动生成文本的本地化，Sphinx 目前支持的语言可在[这里](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)看到。
+> **提示：** 
+>
+> + 项目语言设置主要关系到由 Sphinx 自动生成文本的本地化，Sphinx 目前支持的语言可在[这里](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)看到；
+> + `sphinx-quickstart` 完成的项目配置均可之后通过项目配置文件 *conf.py* 修改。
 
 完成上述步骤后，当前路径下会出现如下文件/文件夹：
 
@@ -177,35 +180,86 @@ Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，
 └─ source     # 文档源码目录
     ├─  conf.py     # 项目配置文件
     ├─  index.rst   # 文档源文件入口
-    ├─ _static      # 用于存放编译产生的静态文件   
+    ├─ _static      # 用于存放参与编译的静态文件   
     └─ _templates   # 用于存放项目的主题模板文件
 ```
 
-其中，我们需要重点关注 conf.py 和 index.rst 两个文件：
+现在我们已经成功创建了一个 Sphinx 项目文件，下面的步骤便是为你的项目添加内容与进行装饰了！
 
-- conf.py 是当前项目的配置文件；
-- index.rst 是文档的入口，用于组织所有的项目文本。
+但在那之前，让我们看看尝试一下现在能否使用 Sphinx 导出些什么！在终端中输入`make html`，回车；
 
-好的，现在你已经成功创建了一个 Sphinx 项目文件，下面的步骤便是为你的项目添加内容与进行装饰了。
-
-但在那之前，让我们看看尝试一下我们现在能不能编译出什么东西！在终端中输入`make html`，回车：
-
-> **注意：** Windows 下 VS code 默认使用 Powershell 作为默认终端，需要使用 `.\make html`，回车。 
+> **注意：** 
+>
+> + Powershell（Windows 下 VS Code 的默认终端）需要使用 `.\make html`，`.\` 不可省略 。 
+> + `make html` 会对 index.rst  及其关联文件进行编译，并在 `../build/html/`目录下生成 HTML 项目包。
 
 ![sphinx-make-html](images/sphinx-make-html.png)
 
-使用浏览器打开 `../learn-sphinx/html/`目录下的 index.html 文件，我们可以看到一个由 Sphinx 生成的简单网页：
+使用浏览器打开 `../learn-sphinx/build/html/`目录下的 index.html 文件，可以看到一个由 Sphinx 生成的简单网页：
 
 ![sphinx-basic-html](images/sphinx-basic-html.png)
 
-页面左上角显示了我们的项目名称，并具有导航页和搜索框；页面主体上方
+尽管我们还未向文档源文件目录中填充具体内容，但这个 “简陋的” 网页已经为我们展示了 Sphinx 生成网页的基本结构：
 
-### 2.2 添加文档内容
+页面左侧显示了我们的项目名称，并具有导航页和搜索框；页面主体上方有欢迎语，下方是项目创建时间、文档创建说明和页面源文件的链接。
+
+下面我们将学习如何组织我们的文档内容，包括撰写文本内容与定义文档结构。
+
+### 2.2 组织内容
+
+Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 source 目录下添加 chapter1.rst、chapter2.rst 等源文件，用于撰写文档的不同章节，并使用 index.rst 对其他 rst 文件进行组织管理。
+
+> **提示：** 
+>
+> + index.rst 是由`sphinx-quickstart`脚本创建的文档主入口，它可被转换成文档的欢迎页；
+> + 建议在 source 目录下新建一个 images 目录用于存放文档中需要插入的图片。
+
+我们将在下一章学习 reStructuredText 的语法基础，现在先请同学们从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source)获取 chapter1.rst、chapter2.rst 以及 images/basic_screenshot.png 等文件，并将他们合理地存放在我们的 “learn-sphinx” 目录下。
+
+完成后的目录结构如下所示：
+
+```
+.
+├─ make.bat   # Window下的编译脚本
+├─ Makefile   # Linux下的Makefile文件
+├─ build      # make编译后产生的导出文件目录
+└─ source     # 文档源码目录
+    ├─ _static         # 用于存放参与编译的静态文件   
+    ├─ _templates      # 用于存放项目的主题模板文件
+    │
+    ├─ images          # 用于存放文档中需插入的图片
+    │    basic_screenshot.png  # 图片文件    
+    │
+    ├─ chapter1.rst    # 第一章文档源文件
+    ├─ chapter2.rst    # 第二章文档源文件
+    │
+    ├─ conf.py         # 项目配置文件 
+    └─ index.rst       # 文档源文件入口
+```
+
+完成添加 chapter1.rst, chapter2.rst 等文件后，我们还需要在 index.rst 将这些文件包含进来，并定义我们的文档结构，现在使用 VS Code 对 index.rst 里的 toctree 做如下修改：
+
+```reStructuredText
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   :numbered:
+
+   chapter1
+   chapter2
+```
+
+其中，toctree 用来于产生目录表，numbered 表示章节编号，maxdepth 表示目录中只显示几层标题，之后空一行，在下面列出各子文档，可以不加文件后缀，需要注意代码对齐，更多有关`toctree` 的内容可以参见[这里](http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#toctree-directive)。
+
+修改完成后，我们再一次在终端中使用 `make html` 命令，并在浏览器中打开 `../learn-sphinx/build/html/`目录下的 index.html 文件，看看这次我们生成的网页有何不同！
+
+![sphinx-make-html](images/sphinx-make-html-1578253187588.png)
+
+### 2.3 修改配置
 
 
 
-### 2.3 定义文档结构
+### 2.4 发布文档
 
 
 
-### 2.4 发布网页文件
