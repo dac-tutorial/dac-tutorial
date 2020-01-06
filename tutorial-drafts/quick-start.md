@@ -133,7 +133,7 @@
 
 #### VS Code 调用 Sphinx (Anaconda)
 
-在完成以上步骤后，我们已经基本搭建好了一个基于 Anaconda 和 VS Code 的一体化 Sphinx 工作台，下面让我们最后再检测一下我们的 Sphinx 开发环境， 为下一节 “第一个 Sphinx项目” 做好准备。
+在完成以上步骤后，我们已经基本搭建好了一个基于 Anaconda 和 VS Code 的一体化 Sphinx 工作台，下面让我们最后再检测一下我们的 Sphinx 开发环境， 为下一节 “第一个 Sphinx 项目” 做好准备。
 
 1. 在计算机任意位置新建一个文件夹，命名为 “learn-sphinx”，右击文件夹单击 “通过 Code 打开”
 
