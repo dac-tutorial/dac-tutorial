@@ -655,12 +655,11 @@ _   下划线
 
 
 
-
 ## 公式
 
-当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，会根据需要加载 Mathjax 对数学公式进行渲染。如：
+当你需要在编辑器中插入数学公式时，可以使用两个美元符 ($$) 包裹 TeX/LaTeX 格式的数学公式来实现。Markdown 会根据需要加载 Mathjax 对数学公式进行渲染。例如：
 
-```
+```markdown
 $$
 \mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
 \mathbf{i} & \mathbf{j} & \mathbf{k} \\
@@ -670,7 +669,7 @@ $$
 $$ 
 ```
 
-输出结果为：
+渲染后的效果如下：
 
 > $$
 > \mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
