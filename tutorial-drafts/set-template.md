@@ -4,7 +4,7 @@
 ##  使用既定主题
 
 
-下载 Sphinx 后，其安装包中即含有名为 "themes" 的文件夹，文件夹内含Sphinx自带的模板，包括  "epub"、"agogo" 等。只需简单几步，我们便可以使用其内置模板：
+下载 Sphinx 后，其安装包中即含有名为 "themes" 的文件夹，文件夹内含Sphinx自带的模板，包括  "epub"、"agogo" 等。只需简单几步，同学们便可以使用其内置模板：
 
 ### 修改配置文件
 
@@ -33,7 +33,7 @@
 
 ### 修改配置文件：
 
-我们需要在 "conf.py" 中进行如下设置：
+在 "conf.py" 中进行如下设置：
 
     html_theme = 'sphinx_rtd_theme'
 
@@ -67,7 +67,11 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
      Successfully installed jinja2-2.10.3
 
 #### 创建 “layout.html”
-我们需要在文件夹里找到 "source"-"templates" 文件夹，然后在 "templates" 文件夹下创建 “layout.html”.
+要自定义文档的输出，可以通过将与原始文件名同名的文件添加到模板目录中来覆盖所有的模板。Sphinx将首先在 "config.py" 中的 “template_path” 中查找模板，如果找不到它正在寻找的模板，将回退到所选主题的模板。
+
+Sphinx安装目录下的 “themes”-“basic” 中包含 “basic” 主题，该主题中的 “layout.html” 为基本模板提供了几个块，这些块将首先填充数据，并由所有内置的Sphinx主题使用。而在 “templates_path” 中具有相同名称的模板会覆盖所选主题提供的模板。
+
+因此，我们需要在文件夹里找到 "source"-"templates" 文件夹，然后在 "templates" 文件夹下创建 “layout.html”。
 
 使用 ***jinja2*** 在 "layout.html" 中编写如下代码：
 
@@ -84,11 +88,11 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
 
 + `{#...#}` 相当于注释，是为了方便理解代码。
 
-+  `{% extends "!layout.html" %}` 表示扩展原来的网页模板。
++  `{% extends "!layout.html" %}` 在带有感叹号的被覆盖模板的名称前面加上前缀，Sphinx将从底层HTML主题加载布局模板。
 
 + `{% block footer %}` 表示对 *footer* 代码块进行改写。
 
-+ `{{ super() }}` 表示继承原模板。
++ `{{ super() }}` 表示继承原模板，即呈现块的原始内容。
 
 + `{% endblock %}` 表示代码块结束。
 
@@ -96,7 +100,7 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
 
 #### 修改配置文件
 
-与此同时，我们需要在 "config.py" 中进行如下设置：
+与此同时，在 "config.py" 中进行如下设置：
 
      templates_path = ['_templates']
 
@@ -114,7 +118,7 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
 #### 创建样式文件
 
 
-我们需要在文件夹里找到 "source"-"static" 文件夹，然后在 "static" 文件夹下创建 “my-styles.css”.
+在文件夹里找到 "source"-"static" 文件夹，然后在 "static" 文件夹下创建 “my-styles.css”.
 
 使用 ***css*** 语言 在 "my-styles.css" 中编写如下代码：
 
@@ -127,11 +131,11 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
 
 #### 修改配置文件
 
-与此同时，我们需要在 "config.py" 中进行如下设置：
+与此同时，在 "config.py" 中进行如下设置：
 
      html_static_path = ["_static"]
 
-+ 如果您的Sphinx版本<=1.5,请在 "config.py" 添加如下代码：
++ 如果同学们的Sphinx版本<=1.5, 请在 "config.py" 添加如下代码：
 
       {# Import the theme's layout. #}
       {% extends "!layout.html" %}
@@ -139,7 +143,7 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
       {# Custom CSS overrides #}
       {% set css_files = css_files + ['_static/my-styles.css'] %}
 
-+ 如果您的Sphinx版本>1.5,请在 "config.py" 添加如下代码：
++ 如果同学们的Sphinx版本>1.5, 请在 "config.py" 添加如下代码：
 
           def setup(app):
           app.add_stylesheet("my-styles.css") # also can be a full URL
@@ -159,7 +163,7 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
 
 超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。
 
-您可以使用 ***HTML*** 来建立自己的 WEB 站点，***HTML*** 运行在浏览器上，由浏览器来解析。
+同学们可以使用 ***HTML*** 来建立自己的 WEB 站点，***HTML*** 运行在浏览器上，由浏览器来解析。
 
 #### 示例
 
@@ -236,7 +240,7 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
           color:orange;
           text-align:center;
           }
-     这段代码表示标题1字体颜色为橘色且居中显示
+     这段代码表示标题1字体颜色为橘色，居中显示
 
 +         p
           {
@@ -259,6 +263,12 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
 
 ***Jinja*** 模版包含了变量、表达式和标签，当模版被渲染时，变量和表达式会被替换为特定的值，标签用来控制模版的逻辑。模版的语法受到了 ***Django*** 和 ***python*** 的启发.
 
+在本教程中，我们使用Flask框架来辅助jinja2的讲解。
+
+
+
+
+
 #### 示例
 
      <!DOCTYPE html>
@@ -279,6 +289,7 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
      {# a comment #}
      </body>
      </html>
+
 
 #### 代码解释
 
