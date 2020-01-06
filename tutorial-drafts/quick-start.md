@@ -1,3 +1,16 @@
+- [Sphinx 快速入门](#sphinx-快速入门)
+  - [1 Sphinx 开发环境配置](#1-sphinx-开发环境配置)
+    - [1.1 Windows 环境配置](#11-windows-环境配置)
+      - [Anaconda 安装与配置](#anaconda-安装与配置)
+      - [Visual Studio Code 安装与配置](#visual-studio-code-安装与配置)
+      - [VS Code 调用 Sphinx (Anaconda)](#vs-code-调用-sphinx-anaconda)
+    - [1.2 macOS 环境配置（暂缺）](#12-macos-环境配置暂缺)
+  - [2 第一个 Sphinx 项目](#2-第一个-sphinx-项目)
+    - [2.1 创建项目](#21-创建项目)
+    - [2.2 组织内容](#22-组织内容)
+    - [2.3 修改配置](#23-修改配置)
+    - [2.4 发布文档](#24-发布文档)
+
 # Sphinx 快速入门
 
 - [Sphinx](http://www.sphinx-doc.org/) 是一种基于 Python 的文档工具，它可以令人轻松的撰写出清晰且优美的文档，由 Georg Brandl 在 BSD 许可证下开发。
@@ -143,11 +156,13 @@
 
 ![sphinx-version](images/sphinx-version.gif)
 
-如果一切正常，你将会看到已安装 Sphinx 版本号（这里显示的版本是 2.3.0），这说明 Sphinx 开发环境已正确部署至你的计算机中，现在请你移步到下一小节学习如何创建你的第一个 Sphinx 项目。
+如果一切正常，你将会看到已安装 Sphinx 版本号（这里显示的版本是 2.3.0），这说明 Sphinx 开发环境已正确部署至你的计算机中，现在请你移步到下一小节学习如何创建[第一个 Sphinx 项目](#2-第一个-sphinx-项目)。
 
 ---
 
 ### 1.2 macOS 环境配置（暂缺）
+
+
 
 
 
@@ -214,7 +229,7 @@ Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 
 > + index.rst 是由`sphinx-quickstart`脚本创建的文档主入口，它可被转换成文档的欢迎页；
 > + 建议在 source 目录下新建一个 images 目录用于存放文档中需要插入的图片。
 
-我们将在下一章学习 reStructuredText 的语法基础，现在先请同学们从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source)获取 chapter1.rst、chapter2.rst 以及 images/basic_screenshot.png 等文件，并将他们合理地存放在我们的 “learn-sphinx” 目录下。
+我们将在下一章学习 reStructuredText 的语法，现在先请同学们从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source) 获取 chapter1.rst、chapter2.rst 以及 images/basic_screenshot.png 等文件，并将他们合理地存放在我们的 “learn-sphinx” 目录下。
 
 完成后的目录结构如下所示：
 
