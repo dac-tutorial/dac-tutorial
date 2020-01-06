@@ -40,7 +40,7 @@
 
 > **注意：**
 >
-> 1. Anaconda 需要占用较大的存储空间，可考虑安装在非系统盘。
+> 1. （可选）Anaconda 需要占用较大的存储空间，可考虑安装在非系统盘。
 >
 > 2. 请在 “Advanced Options” 中将勾选两个可选选项：
 >
@@ -52,18 +52,18 @@
 >
 >     ![two-python-interpreter](images/two-python-interpreter.png)
 >
->   - 假如同学们依然希望系统默认调用先前单独安装的 Python 解释器，解决方法是在完成安装 Anaconda 后，手动将原 path 中 Python 路径移动到 Anaconda 系列目录的前面，操作方法如下：
+>   - （可选）假如同学们依然希望系统默认调用先前单独安装的 Python 解释器，只需要在完成Anaconda 安装后，手动将 path 中单独安装的 Python 解释器的路径移动到 Anaconda 目录之前，操作方法如下：
 >
 >     ![windows-path-config](images/windows-path-config.gif)
 >
->   - 此时，在命令行调用 Python 时会优先调用单独安装的 Python 解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别）
+>     此时，在命令行调用 Python 时会优先调用单独安装的 Python 解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别）
 >
 >     ![python-vs-conda-python](images/python-vs-conda-python.png)
 >
 > - **第二个选项** 可使其他 Python 开发工具（如 VS Code）自动探测到 Anaconda。
 
 
-3. 安装完成后，检查 Sphinx 是否已安装，并更新 Anaconda 包含的各种包：
+3. 完成 Anaconda 的安装后，检查 Sphinx 是否已安装。
 
 > **提示 ：** Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。
 
@@ -75,7 +75,7 @@
 
 ![conda-list-sphinx](images/conda-list-sphinx.png)
 
-如图所示，目前 Anaconda 里的 Sphinx 的版本是 2.2.0，低于官网的最新版本。我们可在 Anaconda Prompt 中输入 `conda update sphinx` 单独对 Sphinx 进行更新，但考虑到我们是第一次使用 Anaconda，更加推荐使用 `conda update --all` 命令对该环境下所有包都进行一次更新：
+（可选）如图所示，目前 Anaconda 里的 Sphinx 的版本是 2.2.0，低于官网的最新版本。我们可在 Anaconda Prompt 中输入 `conda update sphinx` 单独对 Sphinx 进行更新，但考虑到我们是第一次使用 Anaconda，更加推荐使用 `conda update --all` 命令对该环境下所有包都进行一次更新：
 
 ![anaconda-update](images/anaconda-update.gif)
 
@@ -157,7 +157,7 @@
 
 > **注意：** 以下内容以 Windows 作为操作演示平台，macOS 上的操作基本一致。
 
-在前一小节我们利用 Anaconda 和 VS Code 搭建了一个一体化 Sphinx 工作台，新建了一个文件夹 learn-sphinx， 并将其在 VS Code 打开，现在我们正式启动我们第一个Sphinx 项目了！
+前一小节我们利用 Anaconda 和 VS Code 搭建了一体化的 Sphinx 工作台，现在可以启动我们第一个Sphinx 项目了！
 
 ### 2.1 创建项目
 
