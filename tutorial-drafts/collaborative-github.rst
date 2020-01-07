@@ -9,6 +9,7 @@ Github手册
 Github协作开发
 ---------------
 Github支持三种合作模式
+
 - fork
 - organization
 - collaborator
