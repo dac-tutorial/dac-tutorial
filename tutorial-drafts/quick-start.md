@@ -358,59 +358,14 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的�
 >
 > ![reorganize-contents](images/reorganize-contents.png)
 >
-> **特别注意：** 在 *index.rst* 引用 reStructuredText 文件时可省略`.rst` 扩展名，但在引用 Markdown 文件时不可省略 `.md` 扩展名；为确保引用格式正确，建议在一个文档内引用不同格式文本时不省略`.rst` 扩展名。
+> **特别注意：** 在 *index.rst* 种引用 reStructuredText 文件时可省略`.rst` 扩展名，但引用 Markdown 文件时不可省略 `.md` 扩展名。为确保引用格式正确，建议在一个文档内引用不同格式文本时不省略`.rst` 扩展名。
 
-+ **language:** 文档编写的语言代码，Sphinx自动生成的任何文本都将使用该语言。
-> 目前 Sphinx [支持的语言](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)及其代码包括：
-> - `ar` – Arabic
-> - `bn` – Bengali
-> - `ca` – Catalan
-> - `cak` – Kaqchikel
-> - `cs` – Czech
-> - `cy` – Welsh
-> - `da` – Danish
-> - `de` – German
-> - `el` – Greek
-> - `en` – English
-> - `eo` – Esperanto
-> - `es` – Spanish
-> - `et` – Estonian
-> - `eu` – Basque
-> - `fa` – Iranian
-> - `fi` – Finnish
-> - `fr` – French
-> - `he` – Hebrew
-> - `hi` – Hindi
-> - `hr` – Croatian
-> - `hu` – Hungarian
-> - `id` – Indonesian
-> - `it` – Italian
-> - `ja` – Japanese
-> - `ko` – Korean
-> - `lt` – Lithuanian
-> - `lv` – Latvian
-> - `mk` – Macedonian
-> - `nb_NO` – Norwegian Bokmal
-> - `ne` – Nepali
-> - `nl` – Dutch
-> - `pl` – Polish
-> - `pt` – Portuguese
-> - `pt_BR` – Brazilian Portuguese
-> - `pt_PT` – European Portuguese
-> - `ro` – Romanian
-> - `ru` – Russian
-> - `si` – Sinhala
-> - `sk` – Slovak
-> - `sl` – Slovenian
-> - `sr` – Serbian
-> - `sv` – Swedish
-> - `ta` – Tamil
-> - `tr` – Turkish
-> - `uk_UA` – Ukrainian
-> - `ur` – Urdu
-> - `vi` – Vietnamese
-> - `zh_CN` – Simplified Chinese
-> - `zh_TW` – Traditional Chinese
++ **language:** 文档编写的语言代码，Sphinx自动生成的任何文本都将使用该语言。目前 Sphinx 支持的语言及其代码可在 [Sphinx 官方文档](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)上查询到，我们平时比较常用的有英文和简体中文两种，其语言代码如下：
+
+  > - `en` – English 
+  > - `zh_CN` – Simplified Chinese
+
+
 
 #### HTML 输出选项 (Options for HTML output)
 
