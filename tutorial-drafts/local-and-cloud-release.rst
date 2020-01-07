@@ -1,10 +1,13 @@
 本地发布
 ========
+
 发布 HTML
 ------------
 发布HTML格式是Sphinx发布最基础的操作，只需在发布时使用 make html 语法即可。 
+
 发布 PDF
 ------------
+
 生成PDF的前提是安装了texlive，如果要生成中文PDF，还需要确认安装了东亚语言包和字体包(texlive-lang-cjk, texlive-fonts-recommands之类）。
 然后配置conf.py，在latex_elements中加入:
 latex_elements = {
