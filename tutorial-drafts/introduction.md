@@ -14,6 +14,6 @@
 
 本教程主要使用 Sphinx 文档开发工具向同学们介绍了文档代码化开发的完整流程，全教程包括三大部分的内容：
 
-+ **快速入门：**详述了在 Windows 和 macOS 两大操作系统上配置 Sphinx 开发环境的方法，并以实例的形式介绍了创建一个 Sphinx 项目的完整流程 ；
-+ **语法指南：**介绍了 Sphinx 的默认标记语言 reStructuredText 的基础语法，也介绍了如何添加 Sphinx 对 Markdown 标记语言的支持，以及 Markdown 的基础语法。
-+ **专题学习：**以专题的形式介绍了更多 Sphinx 进阶应用，包括本地与云端发布、主题定制、多人协作开发等，前三个专题能够帮助同学们掌握一整套 “reStructuredText + Sphinx + Read the Docs” 的文档开发工具链，第四个拓展专题介绍了另一套由 “Markdown + Jekll + GitHub Pages” 组成的文档开发工具链
++ **快速入门：** 详述了在 Windows 和 macOS 两大操作系统上配置 Sphinx 开发环境的方法，并以实例的形式介绍了创建一个 Sphinx 项目的完整流程 ；
++ **语法指南：** 介绍了 Sphinx 项目中常用的两大标记语言，reStructuredText 和 Markdown 的基础语法。
++ **专题学习：** 以专题的形式介绍了更多 Sphinx 进阶应用，包括本地与云端发布、主题定制、多人协作开发等，前三个专题能够帮助同学们掌握一整套 “reStructuredText + Sphinx + Read the Docs” 的文档开发工具链，第四个拓展专题介绍了另一套由 “Markdown + Jekll + GitHub Pages” 组成的文档开发工具链
