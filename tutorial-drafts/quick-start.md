@@ -11,6 +11,8 @@
     - [2.3 修改配置](#23-修改配置)
     - [2.4 发布文档](#24-发布文档)
 
+---
+
 # Sphinx 快速入门
 
 - [Sphinx](http://www.sphinx-doc.org/) 是一种基于 Python 的文档工具，它可以令人轻松的撰写出清晰且优美的文档，由 Georg Brandl 在 BSD 许可证下开发。
@@ -20,6 +22,8 @@
 
 
 ![sphinx-doc.org](images/sphinx-doc.org.png)
+
+---
 
 ## 1 Sphinx 开发环境配置
 
@@ -35,7 +39,7 @@
 
 ### 1.1 Windows 环境配置
 
-> **注意：**以下步骤不需要同学们预先安装 Python 解释器（如果之前有安装也可以考虑将其卸载），而是直接使用 Anaconda 内集成的 Python 解释器，如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接在命令行中使用命令 `pip install sphinx` 安装 Sphinx 及运行 Sphinx 所需要的 [docutils](http://docutils.sourceforge.net/)、[jinja2](http://jinja.pocoo.org/) 等第三方库（前提是 Python 和 Pip 已添加在系统变量的 path 中）。
+> **注意：** 以下步骤不需要同学们预先安装 Python 解释器（如果之前有安装也可以考虑将其卸载），而是直接使用 Anaconda 内集成的 Python 解释器，如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接在命令行中使用命令 `pip install sphinx` 安装 Sphinx 及运行 Sphinx 所需要的 [docutils](http://docutils.sourceforge.net/)、[jinja2](http://jinja.pocoo.org/) 等第三方库（前提是 Python 和 Pip 已添加在系统变量的 path 中）。
 >
 > 更加推荐同学们使用 Anaconda 来完成 Sphinx 开发环境配置，因为 conda 将几乎所有的工具、第三方库都当做 package 对待，甚至包括 python 和 conda 自身，它可以帮助我们方便地管理自己的 Python 开发环境，不仅能够将不同开发项目所依赖的开发环境完全独立开来，还可轻易地复制整个 Python 环境到其他机器上。
 
@@ -152,13 +156,13 @@
 
 ![open-with-vscode](images/open-with-vscode.png)
 
-2. 打开 VS Code 窗口的集成 Terminal（即命令行终端，可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出），输入 `sphinx-build --version` 回车。如下所示：
+2. 打开 VS Code 窗口的集成 Terminal（默认为 Windows Powershell，可自行修改；可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出/隐藏），输入 `sphinx-build --version` 回车。如下所示：
 
 ![sphinx-version](images/sphinx-version.gif)
 
 如果一切正常，你将会看到已安装 Sphinx 版本号（这里显示的版本是 2.3.0），这说明 Sphinx 开发环境已正确部署至你的计算机中，现在请你移步到下一小节学习如何创建[第一个 Sphinx 项目](#2-第一个-sphinx-项目)。
 
----
+
 
 ### 1.2 macOS 环境配置（暂缺）
 
@@ -180,10 +184,7 @@ Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，
 
 ![sphinx-quickstart](images/sphinx-quickstart.png)
 
-> **提示：** 
->
-> + 项目语言设置主要关系到由 Sphinx 自动生成文本的本地化，Sphinx 目前支持的语言可在[这里](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)看到；
-> + `sphinx-quickstart` 完成的项目配置均可之后通过项目配置文件 *conf.py* 修改。
+> **提示：** 所有的项目配置均可在之后通过项目配置文件 *conf.py* 修改。
 
 完成上述步骤后，当前路径下会出现如下文件/文件夹：
 
@@ -220,16 +221,22 @@ Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，
 
 下面我们将学习如何组织我们的文档内容，包括撰写文本内容与定义文档结构。
 
+
+
 ### 2.2 组织内容
 
 Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 source 目录下添加 chapter1.rst、chapter2.rst 等源文件，用于撰写文档的不同章节，并使用 index.rst 对其他 rst 文件进行组织管理。
 
 > **提示：** 
 >
-> + index.rst 是由`sphinx-quickstart`脚本创建的文档主入口，它可被转换成文档的欢迎页；
+> + index.rst 是由 Sphinx 的文档主入口，它可被转换成文档的欢迎页；
 > + 建议在 source 目录下新建一个 images 目录用于存放文档中需要插入的图片。
 
 我们将在下一章学习 reStructuredText 的语法，现在先请同学们从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source) 获取 chapter1.rst、chapter2.rst 以及 images/basic_screenshot.png 等文件，并将他们合理地存放在我们的 “learn-sphinx” 目录下。
+
+> **提示：** 若需要从 GitHub 仓库中获取单个文件，请在 GitHub 网页端打开该文件后，切换到 Raw 视图，然后右键另存即可。另外请注意 rst 文件会被默认识别为 txt 文件，需要手动在保存时进行修改；也可以在 *conf.py* 中将 txt 扩展名识别为 reStructuredText 文本（在下一小节会提到如何修改 *conf.py* ）。
+>
+> ![github-get-file](images/github-get-file.gif)
 
 完成后的目录结构如下所示：
 
@@ -264,17 +271,188 @@ Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 
    chapter2
 ```
 
-其中，toctree 用来于产生目录表，numbered 表示章节编号，maxdepth 表示目录中只显示几层标题，之后空一行，在下面列出各子文档，可以不加文件后缀，需要注意代码对齐，更多有关`toctree` 的内容可以参见[这里](http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#toctree-directive)。
+其中，toctree 用来于产生目录表，numbered 表示章节编号，maxdepth 表示目录中只显示几层标题，之后空一行，在下面列出各子文档，可以不加文件后缀，但需要注意代码对齐，更多有关`toctree` 的内容可以参见[ Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#toctree-directive)。
 
 修改完成后，我们再一次在终端中使用 `make html` 命令，并在浏览器中打开 `../learn-sphinx/build/html/`目录下的 index.html 文件，看看这次我们生成的网页有何不同！
 
-![sphinx-make-html](images/sphinx-make-html-1578253187588.png)
+![sphinx-build-html](images/sphinx-build-html.png)
+
+
 
 ### 2.3 修改配置
+
+前一小节我们尝试了使用 Sphinx 默认配置发布了我们的 HTML 网页，现在我们来学习如何修改文档的格式与风格！
+
+Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sphinx-quickstart` 脚本创建的，*conf.py* 将会被自动创建，存放在 *source* 目录下。
+
+![sphinx-conf-py](images/sphinx-conf-py.png)
+
+如图所示，使用`sphinx-quickstart` 脚本自动创建的 *conf.py* 文件已经包含了该项目的一些基本属性和配置。我们可以通过修改 *conf.py* 的内容以修改 Sphinx 项目配置。
+
+ *conf.py* 中的配置主要包括项目信息、一般配置项以及 HTML 输出选项三大类：
+
+#### 项目信息 (Project information)
+
+由`sphinx-quickstart`脚本创建的 *conf.py* 文件已经包含了项目名称 (project)、版权声明 (copyright)、作者姓名 (author) 以及项目版本 (release) 等项目信息 (Project information)。
+
+目前我们的项目属性（内容是对`sphinx-quickstart`若干问题回答）如下所示，：
+
+![project-information](images/project-information.png)
+
+此外，可以注意到 release 所在行之上的一条注释，实际上 release 指的是完整的项目版本，除了项目的主要版本 (version) 外，通常还包括 alpha/beta/rc 等标签，例如目前最新的 Python 文档版本号便是 3.9.0a2。
+
+项目主要版本 (version) 也可单独作为一条属性添加在 *conf.py* 中，这样会在之后导出的文档中，在  version 和 release 之间提供分隔。
+
+现在我们可对这些项目属性进行一些改动：
+
+![project-information-modified](images/project-information-modified.png)
+
+#### 一般配置项 (General configuration)
+
+一般配置项 (General configuration) 的内容十分丰富，我们这里只介绍最常用的几个：
+
++ **extensions:** 配置 Sphinx 的扩展，内容是 extensions 模块下的字符串列表。
++ **source_suffix:** 定义源文件的文件扩展名，该值可以是字典映射文件扩展名到文件类型，默认为 `source_suffix = {'.rst': 'restructuredtext'}`。
+
+##### 练习1：为 Sphinx 项目添加 Markdown 支持
+
+Sphinx 默认仅支持 reStructuredText 文件类型，但我们可以使用源解析器扩展添加新文件类型。
+
+recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的源文档，安装方法可参阅 [Sphinx 官网文档](http://www.sphinx-doc.org/en/master/usage/markdown.html)。
+
+请尝试为我们的 ***learn-sphinx*** 项目添加 Markdown 支持，并在原文档目录下添加一个由 ***index.rst*** 管理的 ***chapter3.md*** 文件（从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source) 获取该文件）。 
+
+> **步骤如下：**
+>
+> 1. 首先，我们需要使用 conda 工具将这个扩展安装到 Anaconda 环境中，在 Anaconda Prompt 中执行命令:
+>
+> ```
+> conda install recommonmark
+> ```
+>
+> ![conda-install-recommonmark](images/conda-install-recommonmark.png)
+>
+> 2. 然后，对 *conf.py* 做如下修改：
+>
+> ```python
+> extensions = ['recommonmark']
+> 
+> source_suffix = {
+>  '.rst': 'restructuredtext',
+>  '.txt': 'restructuredtext',
+>  '.md': 'markdown',
+> }
+> ```
+>
+> ![extensions_source_suffix](images/extensions-source_suffix.png) 
+>
+> 这里我们通过添加 `recommonmark`扩展为 Sphinx 开启了 Markdown 支持，并将 `.rst` 和 `.txt` 映射到 `'restructuredtext'` 文件类型，将 `.md`映射到 Markdown 文件类型。
+>
+> 3. 接着，请同学们从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source) 获取 ***chapter3.md*** 文件，并将其存放在我们的 ../learn-sphinx/source 目录下。 
+> 4. 最后，修改 ***index.rst*** 文件，将 ***chapter3.md*** 添加到文件目录下：
+>
+> ![reorganize-contents](images/reorganize-contents.png)
+>
+> **特别注意：** 在 *index.rst* 引用 reStructuredText 文件时可省略`.rst` 扩展名，但在引用 Markdown 文件时不可省略 `.md` 扩展名；为确保引用格式正确，建议在一个文档内引用不同格式文本时不省略`.rst` 扩展名。
+
++ **language:** 文档编写的语言代码，Sphinx自动生成的任何文本都将使用该语言。
+> 目前 Sphinx [支持的语言](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)及其代码包括：
+> - `ar` – Arabic
+> - `bn` – Bengali
+> - `ca` – Catalan
+> - `cak` – Kaqchikel
+> - `cs` – Czech
+> - `cy` – Welsh
+> - `da` – Danish
+> - `de` – German
+> - `el` – Greek
+> - `en` – English
+> - `eo` – Esperanto
+> - `es` – Spanish
+> - `et` – Estonian
+> - `eu` – Basque
+> - `fa` – Iranian
+> - `fi` – Finnish
+> - `fr` – French
+> - `he` – Hebrew
+> - `hi` – Hindi
+> - `hr` – Croatian
+> - `hu` – Hungarian
+> - `id` – Indonesian
+> - `it` – Italian
+> - `ja` – Japanese
+> - `ko` – Korean
+> - `lt` – Lithuanian
+> - `lv` – Latvian
+> - `mk` – Macedonian
+> - `nb_NO` – Norwegian Bokmal
+> - `ne` – Nepali
+> - `nl` – Dutch
+> - `pl` – Polish
+> - `pt` – Portuguese
+> - `pt_BR` – Brazilian Portuguese
+> - `pt_PT` – European Portuguese
+> - `ro` – Romanian
+> - `ru` – Russian
+> - `si` – Sinhala
+> - `sk` – Slovak
+> - `sl` – Slovenian
+> - `sr` – Serbian
+> - `sv` – Swedish
+> - `ta` – Tamil
+> - `tr` – Turkish
+> - `uk_UA` – Ukrainian
+> - `ur` – Urdu
+> - `vi` – Vietnamese
+> - `zh_CN` – Simplified Chinese
+> - `zh_TW` – Traditional Chinese
+
+#### HTML 输出选项 (Options for HTML output)
+
+这些选项会影响 Sphinx 中 HTML 文档的输出，以及其他使用 Sphinx 的 HTMLWriter 类的文档构建器。
+
+这里只介绍一个最常用的 **html_theme** 配置项，该配置项决定了输出 HTML 文档的主题风格，Sphinx 默认输出的 HTML 主题是 alabaster（Sphinx 的内置主题之一）。
+
+![default-html_theme](images/default-html_theme.png)
+
+目前 Sphinx 一共提供包括 **basic**、**alabaster**、**classic**、**sphinxdoc**、**scrolls**、**agogo**、**nature**、**pyramid**、**haiku**、**traditional**、**epub**、**bizstyle** 等 12 种内置主题，此外还有不少第三方主题（例如 **sphinx_rtd_theme**）可通过额外安装后使用。
+
+更多有关主题的内容请参考 [Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/theming.html)，之后的 “**Sphinx 主题定制**” 学习专题中也会对此有进一步介绍。
+
+##### 练习2：发布新主题的 Sphinx-HTML 网页
+
+请在完成 **练习1：为 Sphinx 项目添加 Markdown 支持** 的基础上，修改 Sphinx 项目的 HTML 的主题为任一 Sphinx 内置主题，并将其发布。
+
+> **参考样例：**
+>
+> ![html-demo-scrolls](images/html-demo-scrolls.jpg)
+>
+> 样例源文件位于从本教程 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/) 的 ***html-demo*** 目录下，其 HTML 主题为 Sphinx 内置的**scrolls**。
+
+本小节只介绍了一些比较常用的 Sphinx 项目配置属性，更多内容请参考 [Sphinx 官方文档](https://www.sphinx-doc.org/en/master/usage/configuration.html)。
 
 
 
 ### 2.4 发布文档
 
+在前面三个小节中，我们已经多次使用 `make html` 将我们的 Sphinx 项目发布成本地的 HTML 网页。
 
+实际上，我们也可以使用 Sphinx 的 [`sphinx-build`](http://www.sphinx-doc.org/en/master/man/sphinx-build.html) 命令达到相同的效果，删除先前用 `make html` 生成的`../build/html/`目录内的全部文件，然后在终端中输入下面这行命令：
 
+```powershell
+sphinx-build -b html <sourcedir> <builddir>
+
+# -b 是创建工具的选项，html 指创建的是 html 文件
+# <sourcedir> 指项目的源目录，默认应填 source 
+# <builddir> 指导出文档的目录，默认应填 build
+```
+
+![sphinx-build](images/sphinx-build.png)
+
+命令执行完成后，网页文件会存放在指定的导出目录下。实际上，`make html` 即是利用 Makefile 和 make.bat 批处理文件简化了 `sphinx-build` 的操作，两者在本质上基本相同。
+
+教程第三部分的 “**Sphinx 文档发布**” 学习专题将进一步介绍如何使用 Sphinx 构建 PDF、LaTeX 等格式的文档，此专题还介绍了如何将 Sphinx 发布的网页托管至云端，实现公网访问。
+
+---
+
+至此，同学们应已初步了解了文档代码化的基本思想，并着手创建、完善了自己的第一个 Sphinx 项目。下面我们还将学习 reStructuredText 和 Markdown 的基础语法，更多的进阶内容也将以学习专题的形式呈现，欢迎同学们继续学习！
