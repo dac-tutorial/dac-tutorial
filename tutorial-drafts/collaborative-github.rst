@@ -22,7 +22,7 @@ Github 支持多人协作开发的三种模式：
 
 .. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-settings.jpg
 
-在设置中添加合作者
+在设置中通过邮箱或用户名添加合作者
 
 .. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-collaborators.jpg
 
