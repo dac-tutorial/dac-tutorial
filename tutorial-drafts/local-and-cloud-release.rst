@@ -1,9 +1,12 @@
+Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Texinfo、纯文本等。在这里我们主要为同学们介绍几种常见的发布格式。
+
 本地发布
 ========
 
 发布 HTML
 ------------
-发布HTML格式是Sphinx发布最基础的操作，只需在发布时使用 make html 语法即可。 
+发布 HTML 格式是 Sphinx 发布最基础的操作，如我们在学习生成第一个 Sphinx 项目时所看到的，只需在发布时使用 make html 语法即可。 
+（图片）
 
 发布 PDF
 ------------
@@ -26,10 +29,9 @@ latex_elements = {
 ''',
 最后运行 make latexpdf 即可。
 
-发布 LaTeX
-------------
 发布纯文本
 ------------
+
 云端发布
 ========
 使用 Read the Docs 进行发布
