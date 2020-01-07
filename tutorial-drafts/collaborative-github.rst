@@ -12,7 +12,7 @@ Github支持三种合作模式
 - fork
 - organization
 - collaborator
-开发者在这三种模式下的权限依次升高
+开发者在这三种模式下的权限依次升高,
 
 Github Pages
 ----------------
