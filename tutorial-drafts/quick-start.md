@@ -319,7 +319,7 @@ Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sph
 + **extensions:** 配置 Sphinx 的扩展，内容是 extensions 模块下的字符串列表。
 + **source_suffix:** 定义源文件的文件扩展名，该值可以是字典映射文件扩展名到文件类型，默认为 `source_suffix = {'.rst': 'restructuredtext'}`。
 
-##### 练习1：为 Sphinx 项目添加 Markdown 支持
+#### *练习1：为 Sphinx 项目添加 Markdown 支持
 
 Sphinx 默认仅支持 reStructuredText 文件类型，但我们可以使用源解析器扩展添加新文件类型。
 
@@ -375,11 +375,9 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的�
 
 ![default-html_theme](images/default-html_theme.png)
 
-目前 Sphinx 一共提供包括 **basic**、**alabaster**、**classic**、**sphinxdoc**、**scrolls**、**agogo**、**nature**、**pyramid**、**haiku**、**traditional**、**epub**、**bizstyle** 等 12 种内置主题，此外还有不少第三方主题（例如 **sphinx_rtd_theme**）可通过额外安装后使用。
+目前 Sphinx 一共提供包括 **basic**、**alabaster**、**classic**、**sphinxdoc**、**scrolls**、**agogo**、**nature**、**pyramid**、**haiku**、**traditional**、**epub**、**bizstyle** 等 12 种内置主题，此外还有不少第三方主题（例如 **sphinx_rtd_theme**）可通过额外安装后使用。更多有关主题的内容请参考 [Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/theming.html)，之后的 “**Sphinx 主题定制**” 学习专题也会对此有进一步介绍。
 
-更多有关主题的内容请参考 [Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/theming.html)，之后的 “**Sphinx 主题定制**” 学习专题中也会对此有进一步介绍。
-
-##### 练习2：发布新主题的 Sphinx-HTML 网页
+#### *练习2：发布新主题的 Sphinx-HTML 网页
 
 请在完成 **练习1：为 Sphinx 项目添加 Markdown 支持** 的基础上，修改 Sphinx 项目的 HTML 的主题为任一 Sphinx 内置主题，并将其发布。
 
