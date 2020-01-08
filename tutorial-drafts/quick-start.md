@@ -319,7 +319,9 @@ Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sph
 + **extensions:** 配置 Sphinx 的扩展，内容是 extensions 模块下的字符串列表。
 + **source_suffix:** 定义源文件的文件扩展名，该值可以是字典映射文件扩展名到文件类型，默认为 `source_suffix = {'.rst': 'restructuredtext'}`。
 
-#### *练习1：为 Sphinx 项目添加 Markdown 支持
+---
+
+##### 练习1：为 Sphinx 项目添加 Markdown 支持
 
 Sphinx 默认仅支持 reStructuredText 文件类型，但我们可以使用源解析器扩展添加新文件类型。
 
@@ -329,7 +331,7 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的�
 
 > **步骤如下：**
 >
-> 1. 首先，我们需要使用 conda 工具将这个扩展安装到 Anaconda 环境中，在 Anaconda Prompt 中执行命令:
+> 1. 首先，使用 conda 工具安装 recommonmark 扩展，在 Anaconda Prompt 中执行命令:
 >
 > ```
 > conda install recommonmark
@@ -337,7 +339,9 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的�
 >
 > ![conda-install-recommonmark](images/conda-install-recommonmark.png)
 >
-> 2. 然后，对 *conf.py* 做如下修改：
+> > **提示：**非 Anaconda 环境下可使用 `pip install recommonmark` 安装 recommonmark 扩展。
+>
+> 2. 然后，对 ***learn-sphinx*** 项目 ***conf.py*** 做如下修改：
 >
 > ```python
 > extensions = ['recommonmark']
@@ -360,10 +364,9 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的�
 >
 > **特别注意：** 在 *index.rst* 种引用 reStructuredText 文件时可省略`.rst` 扩展名，但引用 Markdown 文件时不可省略 `.md` 扩展名。为确保引用格式正确，建议在一个文档内引用不同格式文本时不省略`.rst` 扩展名。
 
-+ **language:** 文档编写的语言代码，Sphinx自动生成的任何文本都将使用该语言。目前 Sphinx 支持的语言及其代码可在 [Sphinx 官方文档](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)上查询到，我们平时比较常用的有英文和简体中文两种，其语言代码如下：
+---
 
-  > - `en` – English 
-  > - `zh_CN` – Simplified Chinese
++ **language:** 文档编写的语言代码，Sphinx自动生成的任何文本都将使用该语言。目前 Sphinx 支持的语言及其代码可在 [Sphinx 官方文档](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)上查询到，我们平时比较常用的有英文和简体中文两种，其语言代码分别是`en` 与`zh_CN`。
 
 
 
@@ -371,15 +374,17 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的�
 
 这些选项会影响 Sphinx 中 HTML 文档的输出，以及其他使用 Sphinx 的 HTMLWriter 类的文档构建器。
 
-这里只介绍一个最常用的 **html_theme** 配置项，该配置项决定了输出 HTML 文档的主题风格，Sphinx 默认输出的 HTML 主题是 alabaster（Sphinx 的内置主题之一）。
+这里只介绍一个最常用的 **html_theme** ，该配置项会影响 Sphinx 编译输出 HTML 的主题风格，用户通过修改 **html_theme** 的值以修改 HTML 主题。
 
-![default-html_theme](images/default-html_theme.png)
+![html_theme-default](images/html_theme-default.png)
 
-目前 Sphinx 一共提供包括 **basic**、**alabaster**、**classic**、**sphinxdoc**、**scrolls**、**agogo**、**nature**、**pyramid**、**haiku**、**traditional**、**epub**、**bizstyle** 等 12 种内置主题，此外还有不少第三方主题（例如 **sphinx_rtd_theme**）可通过额外安装后使用。
+Sphinx 默认的 HTML 主题为 alabaster，alabaster 是 Sphinx 的内置主题之一，Sphinx 内置主题还包括 **basic**、**classic**、**sphinxdoc**、**scrolls**、**agogo**、**nature**、**pyramid**、**haiku**、**traditional**、**epub**、**bizstyle** 等 11 种。
 
-更多有关主题设置与定制的内容请参考 [Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/theming.html)，之后的 “**Sphinx 主题定制**” 学习专题也会对此有进一步介绍。
+此外，还有不少第三方主题（例如 **sphinx_rtd_theme**）可通过额外安装后使用，更多有关主题设置与定制的内容请参考 [Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/theming.html)，之后的 “**Sphinx 主题定制**” 学习专题也会对此有进一步介绍。
 
-#### *练习2：发布新主题的 Sphinx-HTML 网页
+---
+
+##### 练习2：为 Sphinx-HTML 网页换一种风格
 
 请在完成 **练习1：为 Sphinx 项目添加 Markdown 支持** 的基础上，修改 Sphinx 项目的 HTML 的主题为任一 Sphinx 内置主题，并将其发布。
 
@@ -387,7 +392,11 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的�
 >
 > ![html-demo-scrolls](images/html-demo-scrolls.jpg)
 >
-> 样例源文件位于从本教程 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/) 的 ***html-demo*** 目录下，其 HTML 主题为 Sphinx 内置的**scrolls**。
+> 样例源文件位于从本教程 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/) 的 ***html-demo*** 目录下，其 HTML 主题为 Sphinx 内置的 **scrolls**。
+>
+> ![html_theme-modified](images/html_theme-modified.png)
+
+---
 
 本小节只介绍了一些比较常用的 Sphinx 项目配置属性，更多内容请参考 [Sphinx 官方文档](https://www.sphinx-doc.org/en/master/usage/configuration.html)。
 
@@ -411,7 +420,7 @@ sphinx-build -b html <sourcedir> <builddir>
 
 命令执行完成后，网页文件会存放在指定的导出目录下。实际上，`make html` 即是利用 Makefile 和 make.bat 批处理文件简化了 `sphinx-build` 的操作，两者在本质上基本相同。
 
-教程第三部分的 “**Sphinx 文档发布**” 学习专题将进一步介绍如何使用 Sphinx 构建 PDF、LaTeX 等格式的文档，此专题还介绍了如何将 Sphinx 发布的网页托管至云端，实现公网访问。
+教程第三部分的 “**Sphinx 文档发布**” 学习专题将进一步介绍如何使用 Sphinx 构建 PDF、LaTeX 等格式的文档，此专题还介绍了如何将 Sphinx 发布的网页托管至云端，以实现 HTML 文档的公网访问。
 
 ---
 
