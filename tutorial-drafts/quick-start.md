@@ -11,9 +11,9 @@
     - [2.3 修改配置](#23-修改配置)
       - [项目信息 (Project information)](#项目信息-project-information)
       - [一般配置项 (General configuration)](#一般配置项-general-configuration)
-        - [练习1：为 Sphinx 项目添加 Markdown 支持](#练习1为-sphinx-项目添加-markdown-支持)
+      - [*练习1：为 Sphinx 项目添加 Markdown 支持](#练习1为-sphinx-项目添加-markdown-支持)
       - [HTML 输出选项 (Options for HTML output)](#html-输出选项-options-for-html-output)
-        - [练习2：发布新主题的 Sphinx-HTML 网页](#练习2发布新主题的-sphinx-html-网页)
+      - [*练习2：发布新主题的 Sphinx-HTML 网页](#练习2发布新主题的-sphinx-html-网页)
     - [2.4 发布文档](#24-发布文档)
 
 ---
@@ -375,7 +375,9 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的�
 
 ![default-html_theme](images/default-html_theme.png)
 
-目前 Sphinx 一共提供包括 **basic**、**alabaster**、**classic**、**sphinxdoc**、**scrolls**、**agogo**、**nature**、**pyramid**、**haiku**、**traditional**、**epub**、**bizstyle** 等 12 种内置主题，此外还有不少第三方主题（例如 **sphinx_rtd_theme**）可通过额外安装后使用。更多有关主题的内容请参考 [Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/theming.html)，之后的 “**Sphinx 主题定制**” 学习专题也会对此有进一步介绍。
+目前 Sphinx 一共提供包括 **basic**、**alabaster**、**classic**、**sphinxdoc**、**scrolls**、**agogo**、**nature**、**pyramid**、**haiku**、**traditional**、**epub**、**bizstyle** 等 12 种内置主题，此外还有不少第三方主题（例如 **sphinx_rtd_theme**）可通过额外安装后使用。
+
+更多有关主题设置与定制的内容请参考 [Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/theming.html)，之后的 “**Sphinx 主题定制**” 学习专题也会对此有进一步介绍。
 
 #### *练习2：发布新主题的 Sphinx-HTML 网页
 
