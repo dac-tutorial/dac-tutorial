@@ -68,10 +68,9 @@ Markdown 允许人们使用易读易写的纯文本格式编写文档，让写�
 
 ## 编辑器
 
-本教程使用 [Typora](https://typora.io/) 编辑器来讲解 Markdown 的语法，Typora 支持 macOS 、Windows、Linux 平台，且包含多种主题，编辑后直接渲染出效果。Typora 支持导出HTML、PDF、Word、图片等多种类型文件。
+本教程建议使用 [Typora](https://typora.io/) 或 [Visual Studio Code](https://code.visualstudio.com/) + [Markdown All in One 扩展](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) 编写 Markdown 文档。
 
-> **注意：** 不同平台对于 Markdown 语法的支持不尽相同，表现效果可能会出现些许偏差。本教程主要采用 [Github Flavored Markdown (GFM)](https://help.github.com/articles/basic-writing-and-formatting-syntax/) 标准，并进行了适当的内容补充。
-
+> **注意：** 不同编辑器平台对于 Markdown 语法的支持不尽相同，表现效果可能会出现些许偏差。本教程主要采用 [GitHub Flavored Markdown (GFM)](https://help.github.com/articles/basic-writing-and-formatting-syntax/) 标准，并进行了适当的内容补充。
 
 # 2 标题
 
