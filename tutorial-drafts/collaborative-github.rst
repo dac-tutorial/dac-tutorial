@@ -18,7 +18,7 @@ Github Desktop 下载以及快速入门
 **********************************
 GitHub Desktop 官网： https://desktop.github.com/
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-desktop-official.png
+.. image:: images/github-desktop-official.png
 
 根据自己的操作系统安装相应的 GitHub Desktop 版本，以下操作均基于GitHub Desktop for Windows (64bit)版（GitHub Desktop无法在32位Windows系统下工作），安装完成后需要登录到 GitHub 帐户，之后是“Configure Git（配置 Git）”步骤，用于设置名称和电子邮件地址。为确保提交正确到你的GitHub 帐户上， 这里需要填写GitHub 帐户关联的电子邮件地址（但如果同学们希望将自己的邮箱保密，可以使用 GitHub-提供的“no-reply（无需回复）”电子邮件地址， 默认为 ID+username@users.noreply.github.com ）。
 
