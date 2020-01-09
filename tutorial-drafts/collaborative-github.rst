@@ -10,7 +10,8 @@ Github 使用手册
 
 安装 Github Desktop 
 ^^^^^^^^^^^^^^^^^^^^
-
+注册 Github 账号
+**
 
 Github 协作开发
 ---------------
