@@ -22,27 +22,27 @@ GitHub Desktop 官网： https://desktop.github.com/
 
 根据自己的操作系统安装相应的 GitHub Desktop 版本，以下操作均基于GitHub Desktop for Windows (64bit)版（GitHub Desktop无法在32位Windows系统下工作），安装完成后需要登录到 GitHub 帐户，之后是“Configure Git（配置 Git）”步骤，用于设置名称和电子邮件地址。为确保提交正确到你的GitHub 帐户上， 这里需要填写GitHub 帐户关联的电子邮件地址（但如果同学们希望将自己的邮箱保密，可以使用 GitHub-提供的“no-reply（无需回复）”电子邮件地址， 默认为 ID+username@users.noreply.github.com ）。
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-desktop-config.png
+.. image:: images/github-desktop-config.png
 
 然后，同学们会看到 GitHub Desktop 的主界面，让我们从**Create a tutorial repository and clone it**开始快速创建我们的第一个Git仓库！
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-desktop-create-repo.png
+.. image:: images/github-desktop-create-repo.png
 
 **Tip**：为减少设置开发环境的时间，建议同学们安装 Visual Studio Code 并将其作为 GitHub Desktop 的默认文本编辑器，并将 GitHub Desktop 的默认 Shell 设置为 PowerShell（或 Git Bash，如果同学们已经安装了Git SCM的话），这些可以在 File-Options-Advanced 中找到，本教程会在后面提到两者的使用。
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-desktop-vscode.png
+.. image:: images/github-desktop-vscode.png
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-desktop-options.png
+.. image:: images/github-desktop-options.png
 
 仓库创建与管理
 ^^^^^^^^^^^^^^^^^^^^
 单击 **Create a New Repository on your Hard Drive...** （在硬盘上创建新仓库...）
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-new-repo-hd.png
+.. image:: images/github-new-repo-hd.png
 
 之后可以看到一个设置面板，填写好相关字段后单击 **Create repository** 即可创建本地仓库。
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-created.png
+.. image:: images/github-created.png
 
  **NOTES:** （来自 GitHub 官方帮助文档）
 - “Name” （名称）定义仓库在本地以及 GitHub 上的名称。
@@ -60,31 +60,31 @@ GitHub Desktop 官网： https://desktop.github.com/
 - **Current branch：** （当前分支）目前正在处理的分支的名称。 可以单击 **Current branch** 来查看仓库中的所有分支、切换到不同的分支或者创建新分支。在仓库中创建拉取请求后，也可单击 **Current branch** 查看。
 - **Publish repository：** （发布仓库）目前我们的 “Learn-Git” 仓库只存在于同学们自己的计算机中，同学们是唯一能访问该仓库的人。将仓库发布到 GitHub 可使其在多个处理同一项目的计算机和团队成员之间保持同步。  
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-three-funcs.png
+.. image:: images/github-three-funcs.png
 
 2. 在左侧边栏中，你可以看到 **Changes** （更改）和 **History** （历史记录）视图。
 
 - **Changes** 视图显示同学们对当前分支中的文件已经做出但尚未提交到本地仓库的更改。在底部，同学们还能看到“Summary”（摘要）框和“Description”（说明）文本框，以及 **Commit to master** （提交到 master）按钮。此操作是提交新更改的位置。 **Commit** （提交）按钮指示要将更改提交到哪个分支。
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-commit2master.png
+.. image:: images/github-commit2master.png
 
 - **History** （历史记录）视图显示仓库当前分支上以前的提交。同学们应会看到在创建仓库时 GitHub Desktop 所创建的“初始提交”。可以单击每个文件以查看该文件的差异，也就是提交中对该文件的更改。差异只显示文件已更改的部分，而不显示文件的全部内容。
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-history.png
+.. image:: images/github-history.png
 
 3. 将仓库推送到 GitHub，将仓库推送到 GitHub，这样它也会出现在 GitHub.com 上。
 
 - 单击 **Publish repository** （发布仓库）
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-publish-repo.png
+.. image:: images/github-publish-repo.png
 
 - 你会看到 “Name”（名称）和“Description”（说明）与创建仓库时完成的字段匹配，此外还有一个选项 **Keep this code private** （保留此代码为私有），如果不想与 GitHub 的其他用户公开分享代码，可选择此选项，然后单击 **Publish repository**，即可发布仓库。
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-keep-private.png
+.. image:: images/github-keep-private.png
 
 - 同学们可以从 GitHub Desktop 访问 GitHub.com 上的仓库。在文件菜单中，单击 **Repository** （仓库），然后单击 **View on GitHub** （在 GitHub 上查看），即可直接在默认浏览器中打开仓库。
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-view.jpg
+.. image:: images/github-view.jpg
 
 接下来，同学们就可以对于自己的 `Learn-Git `仓库进行提交和推送更改了！
 
@@ -104,7 +104,7 @@ Github 支持多人协作开发的三种模式：
 
 进入 Repo，点击仓库右上角的 fork，还可以将项目克隆到本地。
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-fork.jpg
+.. image:: images/github-fork.jpg
 
 - collaborator
 此种模式下，代码仓库的所有者可以为单个仓库增加具备读写权限的合作者。被添加进来的成员就拥有了对该仓库的读写权限，可以将该仓库 clone 到本地进行开发，也同样拥有向该仓库远程提交的权限，但是该仓库不会出现在合作开发者的仓库中。每个合作者都能看到代码库页面访问状态的变化。
@@ -115,11 +115,11 @@ Github 支持多人协作开发的三种模式：
 
 进入 Repo，点击 Settings-> Collaborators-> Add collaborator 即可邀请，被邀请者需要在邮箱中进行确认。
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-settings.jpg
+.. image:: images/github-settings.jpg
 
 在设置中通过邮箱或用户名添加合作者
 
-.. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-collaborators.jpg
+.. image:: images/github-collaborators.jpg
 
 - organization
 此种模式下，组织的所有者可以针对不同的代码仓库建立不同访问权限的团队。如果需要为监管的几个团队设置不同的权限级别，或者为不同的代码仓库增加不同的成员，希望项目既有 collaborator 同时又可以限制他们的读写权利，尤其是限制其“写”的权利，可利用 organization 来为成员赋予不同等级的权力。
