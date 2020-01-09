@@ -14,7 +14,7 @@
   - [删除线](#删除线)
   - [任务列表](#任务列表)
   - [下划线](#下划线)
-  - [脚注](#脚注)
+  - [*脚注 （GFW 暂不支持）](#脚注-gfw-暂不支持)
 - [4 列表](#4-列表)
   - [无序列表](#无序列表)
   - [有序列表](#有序列表)
@@ -39,7 +39,7 @@
 - [10 高级技巧](#10-高级技巧)
   - [HTML 支持](#html-支持)
   - [转义字符](#转义字符)
-  - [数学公式](#数学公式)
+  - [*数学公式 （GFW 暂不支持）](#数学公式-gfw-暂不支持)
 - [参考资料](#参考资料)
 
 ---
@@ -71,7 +71,7 @@ Markdown 允许人们使用易读易写的纯文本格式编写文档，让写�
 
 本教程使用 [Typora](https://typora.io/) 编辑器来讲解 Markdown 的语法，Typora 支持 macOS 、Windows、Linux 平台，且包含多种主题，编辑后直接渲染出效果。Typora 支持导出HTML、PDF、Word、图片等多种类型文件。
 
-> **注意：** 不同平台对于 Markdown 语法的支持不尽相同，表现效果可能会出现些许偏差。本教程主要采用 [Github Flavored Markdown (GFM)](https://help.github.com/articles/basic-writing-and-formatting-syntax/) 标准，并做了适当的内容补充。
+> **注意：** 不同平台对于 Markdown 语法的支持不尽相同，表现效果可能会出现些许偏差。本教程主要采用 [Github Flavored Markdown (GFM)](https://help.github.com/articles/basic-writing-and-formatting-syntax/) 标准，并进行了适当的内容补充。
 
 
 # 2 标题
@@ -236,7 +236,9 @@ ___粗斜体文本___
 
 ## 分隔线
 
-你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：
+可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西，但可以在星号或是减号中间插入空格；此外，还可以使用 HTML 的 `<hr>` 标签创建分割线。
+
+下面每种写法都可以建立分隔线：
 
 ```
 ***
@@ -244,6 +246,7 @@ ___粗斜体文本___
 *****
 - - -
 ----------
+<hr>
 ```
 
 渲染结果如下所示：
@@ -257,7 +260,8 @@ ___粗斜体文本___
 > - - -
 >
 > ----------
-
+> 
+> <hr>
 
 ## 删除线
 
@@ -299,7 +303,7 @@ ___粗斜体文本___
 
 > <u>带下划线文本</u>
 
-## 脚注
+## *脚注 （GFW 暂不支持）
 
 脚注是对文本的补充说明，内容将会在文档底部看到。
 
@@ -616,7 +620,7 @@ This is [an example][id] reference-style link.
 - 标题名相同时，第2个锚点引用时加后缀，如 `标题-2`
 - GFM 锚点也支持中文
 
-我们可以使用锚点来创建 GFM 标准下的 Mardown 文档目录，本教程目录的源码如下所示：
+可以使用锚点来创建 GFM 标准下的文档目录（GFW 不支持使用 `[TOC]` 创建文档目录），本教程目录的源码如下所示：
 
 ```
 
@@ -711,11 +715,37 @@ Markdown 表格使用 **|** 来分隔每列，使用 **-** 来分隔表头和其
 
 # 10 高级技巧
 
-本节介绍一些常用的 Mardown 高级技巧，更多内容请参考 [Commonmark](https://spec.commonmark.org/ ) 的说明。
+本节介绍一些常用的 Mardown 高级技巧，更多内容请参考  [Commonmark](https://spec.commonmark.org/ ) 与 [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)。
+
+
+
+## Emoji 支持
+
+GFM 支持通过键入 `:EMOJICODE:` 添加表情符号。
+
+例如：
+
+```
+我觉得这个想法非常棒！:+1:
+```
+
+渲染结果如下：
+
+> 我觉得这个想法非常棒！:+1:
+
+在 GitHub 网页端的 Mardown 编辑器中键入 `:` 后将显示建议的表情符号列表，列表将在你键入时进行过滤，一旦找到所需表情符号，通过 **Tab** 或 **Enter** 键以填写选中的结果。​
+
+有关可用表情符号及其代码的完整列表，请查看 [Emoji Cheat Sheet](http://emoji-cheat-sheet.com/)。
+
+
 
 ##  HTML 支持
 
-不在 Markdown 涵盖范围之内的标签，可以直接在文档里面使用 HTML 撰写。
+Markdown 兼容HTML，不在 Markdown 涵盖范围之内的标签，可以直接在文档里面用 HTML 撰写，不需要额外标注。
+
+能制约的只有一些 HTML 区块元素――比如 `<div>、<table>、<pre>、<p>` 等标签，必须在前后加上空行与其它内容区隔开，还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。
+
+HTML 的区段（行内）标签如 `<span>、<cite>、<del> `可以在 Markdown 的段落、列表或是标题里随意使用。
 
 例如要在 Markdown 中表示键盘按键可使用 `<kbd>` 标签：
 
@@ -760,9 +790,9 @@ _   下划线
 !   感叹号
 ```
 
-## 数学公式
+## *数学公式 （GFW 暂不支持）
 
-Markdown 可使用 Mathjax 对 LaTeX 数学公式进行渲染。
+部分 Markdown 编辑器（如 Typora）支持使用 Mathjax 对 LaTeX 数学公式进行渲染。
 
 如果要写一小段行内数学公式，使用一对 `$` 把它包起来，例如：
 
@@ -770,7 +800,7 @@ Markdown 可使用 Mathjax 对 LaTeX 数学公式进行渲染。
 $\begin{aligned}  f(x) &=(m+n)^2 \\ & =m^2+2m+n^2 \end{aligned}$
 ```
 
-渲染结果如下：
+Typora 渲染结果如下：
 
 > $\begin{aligned}  f(x) &=(m+n)^2 \\ & =m^2+2m+n^2 \end{aligned}$
 
@@ -786,7 +816,7 @@ $$
 $$ 
 ```
 
-渲染结果如下：
+Typora 渲染结果如下：
 
 > $$
 > \mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
