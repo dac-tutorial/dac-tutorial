@@ -11,7 +11,10 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 发布 PDF
 ------------
-发布 PDF 格式的过程较为复杂，也有几种不同的途径，例如可以使用 rst2pdf 这个工具，但它只能处理较为基本的格式。当我们需要解决分页、目录、排版、换行、脚注、表格、交叉参考、插图等问题时，就可以选用 LaTeX 作为中间格式来转换 PDF。LaTeX 中的文档结构可以单独设置样式，相同的数据结构可以用不同的格式显示，并具有不同的设计。下面就为同学们介绍如何使用 Sphinx 输出 LaTeX 格式文件，再使用 Pandoc 转换为 PDF 格式文件的方法。
+发布 PDF 格式的过程较为复杂，也有几种不同的途径，例如可以使用 rst2pdf 这个工具，但它只能处理较为基本的格式。当我们需要解决分页、目录、排版、换行、脚注、表格、交叉参考、插图等问题时，就可以选用 LaTeX 作为中间格式来转换 PDF。LaTeX 中的文档结构可以单独设置样式，相同的数据结构可以用不同的格式显示，并具有不同的设计。下面就为同学们介绍如何使用 rst2pdf 输出简单 PDF，以及使用 Sphinx 输出 LaTeX 格式文件，再使用 Pandoc 转换为 PDF 格式文件的方法。
+
+1. 使用 rst2pdf 输出简易 PDF
+-通过 pip install --user rst2pdf 下载 rst2pdf 工具。
 
 * 使用 Sphinx 输出 LaTeX 格式文件
 
@@ -72,6 +75,7 @@ Read the Docs 是一个提供了托管服务的平台。我们可以把生成的
 .. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/rtd-extra-info.png
 
 在额外信息界面，我们可以补充诸如所使用的编程语言等信息。最后点击完成，即可完成导入项目过程。
+接下来，回到 Github，在项目仓库的首页右边寻找 Settings，点击进入，
 
 此外，我们还可以自定义域名：
 
