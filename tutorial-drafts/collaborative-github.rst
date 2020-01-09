@@ -6,6 +6,12 @@ Sphinx多人协作开发（Github）
 
 Github 使用手册
 -----------
+本教程将以 Github Desktop （目前仅支持支持Windows和macOS两个平台）为例，带同学们学习一些 Github 的基础操作。
+
+安装 Github Desktop 
+^^^^^^^^^^^^^^^^^^^^
+
+
 Github 协作开发
 ---------------
 Github 支持多人协作开发的三种模式：
