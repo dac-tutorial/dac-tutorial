@@ -45,14 +45,14 @@ GitHub Desktop 官网： https://desktop.github.com/
 .. image:: https://github.com/yangzy1202/Docs-as-Code/blob/master/tutorial-drafts/images/github-created.png
 
  **NOTES:** （来自 GitHub 官方帮助文档）
-- “Name（名称）” 定义仓库在本地以及 GitHub 上的名称。
-- “Description（说明）” 是一个可选字段，可用于提供有关仓库目的的更多信息。
-- “Local path（本地路径）” 设置仓库在计算机上的位置。
+- “Name” （名称）定义仓库在本地以及 GitHub 上的名称。
+- “Description”（说明） 是一个可选字段，可用于提供有关仓库目的的更多信息。
+- “Local path” （本地路径）设置仓库在计算机上的位置。
 - **Initialize this repository with a README** （使用自述文件初始化此仓库）创建包含 README.md 文件的初始提交。自述文件帮助了解项目的目的，因此建议选择此选项并加入有用的信息。更多信息请参阅 `关于自述文件 <https://help.github.com/articles/about-readmes>`_。 
 - **Git ignore** （Git 忽略）下拉菜单可添加自定义文件，以忽略本地仓库中不想存储在版本控制中的特定文件。如有要使用的特定语言或框架，可以从可用的列表中选择选项。如果刚刚开始学习使用 Github，尽请跳过此选择。更多信息请参阅 `忽略文件 <https://help.github.com/articles/ignoring-files>`_。 
 - **License** （许可证）下拉菜单可将开源许可证添加到仓库中的 LICENSE 文件。无需担心要立即添加许可证。有关可用开源许可证以及如何将它们添加到仓库的更多信息，请参阅 `许可仓库 <https://help.github.com/articles/licensing-a-repository>`_。 
 
-接着，让我们来认识一下 “Lean-Git” 仓库的管理界面：
+接着，让我们来认识一下 “Lean-Git” 仓库的 **管理界面**：
 
 1. 菜单下方的栏显示了 GitHub Desktop 中仓库的当前状态：
 
