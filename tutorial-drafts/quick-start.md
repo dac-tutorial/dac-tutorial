@@ -11,9 +11,9 @@
     - [2.3 修改配置](#23-修改配置)
       - [项目信息 (Project information)](#项目信息-project-information)
       - [一般配置项 (General configuration)](#一般配置项-general-configuration)
-      - [*练习1：为 Sphinx 项目添加 Markdown 支持](#练习1为-sphinx-项目添加-markdown-支持)
+        - [练习1：为 Sphinx 项目添加 Markdown 支持](#练习1为-sphinx-项目添加-markdown-支持)
       - [HTML 输出选项 (Options for HTML output)](#html-输出选项-options-for-html-output)
-      - [*练习2：发布新主题的 Sphinx-HTML 网页](#练习2发布新主题的-sphinx-html-网页)
+        - [练习2：为 Sphinx-HTML 网页换一种风格](#练习2为-sphinx-html-网页换一种风格)
     - [2.4 发布文档](#24-发布文档)
 
 ---
@@ -237,7 +237,7 @@ Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 
 > + index.rst 是由 Sphinx 的文档主入口，它可被转换成文档的欢迎页；
 > + 建议在 source 目录下新建一个 images 目录用于存放文档中需要插入的图片。
 
-我们将在下一章学习 reStructuredText 的语法，现在先请同学们从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source) 获取 chapter1.rst、chapter2.rst 以及 images/basic_screenshot.png 等文件，并将他们合理地存放在我们的 “learn-sphinx” 目录下。
+我们将在下一章学习 reStructuredText 的语法，现在先请同学们从本教程的 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source) 获取 chapter1.rst、chapter2.rst 以及 images/basic_screenshot.png 等文件，并将他们合理地存放在我们的 “learn-sphinx” 目录下。
 
 > **提示：** 若需要从 GitHub 仓库中获取单个文件，请在 GitHub 网页端打开该文件后，切换到 Raw 视图，然后右键另存即可。另外请注意 rst 文件会被默认识别为 txt 文件，需要手动在保存时进行修改；也可以在 *conf.py* 中将 txt 扩展名识别为 reStructuredText 文本（在下一小节会提到如何修改 *conf.py* ）。
 >
@@ -327,7 +327,7 @@ Sphinx 默认仅支持 reStructuredText 文件类型，但我们可以使用源�
 
 recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的源文档，安装方法可参阅 [Sphinx 官网文档](http://www.sphinx-doc.org/en/master/usage/markdown.html)。
 
-请尝试为我们的 ***learn-sphinx*** 项目添加 Markdown 支持，并在原文档目录下添加一个由 ***index.rst*** 管理的 ***chapter3.md*** 文件（从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source) 获取该文件）。 
+请尝试为我们的 ***learn-sphinx*** 项目添加 Markdown 支持，并在原文档目录下添加一个由 ***index.rst*** 管理的 ***chapter3.md*** 文件（从本教程的 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source) 获取该文件）。 
 
 > **步骤如下：**
 >
@@ -357,7 +357,7 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的�
 >
 > 这里我们通过添加 `recommonmark`扩展为 Sphinx 开启了 Markdown 支持，并将 `.rst` 和 `.txt` 映射到 `'restructuredtext'` 文件类型，将 `.md`映射到 Markdown 文件类型。
 >
-> 3. 接着，请同学们从本教程的 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/tree/master/learn-sphinx/source) 获取 ***chapter3.md*** 文件，并将其存放在我们的 ../learn-sphinx/source 目录下。 
+> 3. 接着，请同学们从本教程的 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source) 获取 ***chapter3.md*** 文件，并将其存放在我们的 ../learn-sphinx/source 目录下。 
 > 4. 最后，修改 ***index.rst*** 文件，将 ***chapter3.md*** 添加到文件目录下：
 >
 > ![reorganize-contents](images/reorganize-contents.png)
@@ -392,7 +392,7 @@ Sphinx 默认的 HTML 主题为 alabaster，alabaster 是 Sphinx 的内置主题
 >
 > ![html-demo-scrolls](images/html-demo-scrolls.jpg)
 >
-> 样例源文件位于从本教程 [GitHub 仓库](https://github.com/yangzy1202/Docs-as-Code/) 的 ***html-demo*** 目录下，其 HTML 主题为 Sphinx 内置的 **scrolls**。
+> 样例源文件位于从本教程 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial) 的 ***html-demo*** 目录下，其 HTML 主题为 Sphinx 内置的 **scrolls**。
 >
 > ![html_theme-modified](images/html_theme-modified.png)
 
