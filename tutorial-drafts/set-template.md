@@ -1,10 +1,10 @@
-# Sphinx定制主题
+# Sphinx主题定制
 
 
 ##  使用既定主题
 
 
-下载 Sphinx 后，其安装包中即含有名为 "themes" 的文件夹，包括  包括 basic、alabaster、classic、sphinxdoc、scrolls、agogo、nature、pyramid、haiku、traditional、epub、bizstyle 等 12 种内置主题，此外还有不少第三方主题（例如 sphinx_rtd_theme）可通过额外安装后使用。
+下载 Sphinx 后，其安装包中即含有名为 *themes* 的文件夹， 包括 basic、alabaster、classic、sphinxdoc、scrolls、agogo、nature、pyramid、haiku、traditional、epub、bizstyle 等 12 种内置主题，此外还有不少第三方主题（例如 sphinx_rtd_theme）可通过额外安装后使用。
 
 ### 修改配置文件
 
@@ -32,7 +32,7 @@
 	  Successfully installed sphinx-rtd-theme-0.4.3
 
 主题的配置文件在 *sphinx_rtd
-_theme* - *theme.conf* 文件中,默认配置如下：
+_theme* - *theme.conf*  文件中,默认配置如下：
 
      [theme]
      inherit = basic
@@ -75,7 +75,7 @@ _theme* - *theme.conf* 文件中,默认配置如下：
 
 ### 修改配置文件：
 
-在 "conf.py" 中进行如下设置：
+在 *conf.py* 中进行如下设置：
 
     html_theme = 'sphinx_rtd_theme'
 
@@ -91,21 +91,21 @@ _theme* - *theme.conf* 文件中,默认配置如下：
 
 
 
-##  用户自定义主题（需要有一定的Python/HTML/CSS基础）
-Sphinx里面的模板是已经定义好了的，但是如果我们想修改样式、添加内容该怎么办呢？
+##  用户自定义主题
 
-### 增添内容（***jinja2***、***HTML***）
+Sphinx里面的模板是已经定义好了的，如果想要自定义主题，如修改主题的颜色、为主题增添内容等，那我们需要掌握一定的 ***jinja2***、***HTML*** 与 ***CSS知识***。
+
+### 基础知识
 
 
-#### ***HTML***介绍
+#### ***HTML***
 
-##### 概述
 
 超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。
 
 同学们可以使用 ***HTML*** 来建立自己的 WEB 站点，***HTML*** 运行在浏览器上，由浏览器来解析。
 
-##### 示例
+##### 代码示例
 
      <!DOCTYPE html>
      <html>
@@ -143,19 +143,70 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
 
 + [SiKi学院JavaEE WEB前端第一季](https://www.bilibili.com/video/av35875257?from=search&seid=1420480764639162062)
 
+#### CSS
 
-#### ***jinja***介绍
 
-##### 概述
+ ***CSS*** 用于控制网页的样式和布局。
 
-如若想对主题增添内容，那我们需要使用 ***jinja2*** 语言， ***jinja2*** 是 ***Flask*** 作者开发的一个模板系统，起初是仿 ***django*** 模板的一个模板引擎，为 ***Flask*** 提供模板支持，由于其灵活，快速和安全等优点被广泛使用。
+
+##### 示例
+
+     body
+     {
+     background-color:red;
+     }
+     h1
+     {
+     color:orange;
+     text-align:center;
+     }
+     p
+     {
+     font-family:"Times New Roman";
+     font-size:20px;
+     }
+
+##### 代码解释
+
+       body
+          {
+          background-color:#d0e4fe;
+          } 
+
+这段代码表示网页主题的背景色为红色。
+
+
+       h1
+          {
+          color:orange;
+          text-align:center;
+          }
+这段代码表示标题1字体颜色为橘色，居中显示。
+
+      p
+          {
+          font-family:"Times New Roman";
+          font-size:20px;
+          }
+这段代码表示段落文字的字体为 ***Times New Roman***，字体大小为 ***20px***。
+
+
+##### 推荐学习
+
+网上有很多免费的 ***CSS*** 教程，推荐如下：
+
++ [CSS菜鸟教程](https://www.runoob.com/css/css-tutorial.html)
+
+
+#### ***jinja2***
+
+如想对主题增添内容，那我们需要使用 ***jinja2*** 语言， ***jinja2*** 是 ***Flask*** 作者开发的一个模板系统，起初是仿 ***django*** 模板的一个模板引擎，为 ***Flask*** 提供模板支持，由于其灵活，快速和安全等优点被广泛使用。
 
 
 ***Jinja*** 模版是一个文本文件，通过它可以生成任何文本格式的文件，例如 ***.html***、***.xml***、***.csv*** 等等。一个 ***Jinja*** 模版并不需要有一个特定的扩展名，完全可以自定义或是不定义.
 
 ***Jinja*** 模版包含了变量、表达式和标签，当模版被渲染时，变量和表达式会被替换为特定的值，标签用来控制模版的逻辑。
 
-在本教程中，我们使用Flask框架来辅助jinja2的讲解。
 
 
 ##### 代码示例
@@ -196,12 +247,22 @@ Sphinx里面的模板是已经定义好了的，但是如果我们想修改样�
 网上有很多免费的 ***HTML*** 教程，推荐如下：
 
 + [jinja2教程](https://www.w3cschool.cn/yshfid/)
++ [jinja2教程](https://read.helloflask.com/c3-template)
 
-####  在Sphinx中的具体操作
 
-###### 安装jinja2 
+
+
+### 自定义主题
+ 
+这里简单演示如何更改 ***Sphinx_rtd_theme*** 主题左侧导航栏的颜色。
+
+
+#### 安装jinja2 
+
 
 Anaconda 环境中已经集成了 jinja2，因此无需再次安装。
+
+#### 方法1
 
 ##### 创建 “layout.html”
 要自定义文档的输出，可以通过将与原始文件名同名的文件添加到模板目录中来覆盖所有的模板。Sphinx将首先在 *config.py* 中的 *template_path* 中查找模板，如果找不到它正在寻找的模板，将回退到所选主题的模板。
@@ -212,14 +273,20 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
 
 使用 ***jinja2*** 在 *layout.html* 中编写如下代码：
 
-     {# Import the theme's layout. #}
      {% extends "!layout.html" %}
-    
-     {# Add some extra stuff before and use existing with 'super()' call. #}
-     {% block footer %}
-     <h2>My footer of awesomeness.</h2>
-     {{ super() }}
-     {% endblock %}
+     {% block footer %} {{ super() }}
+
+     <style>
+     /* Sidebar header (and topbar for mobile) */
+     .wy-side-nav-search, .wy-nav-top {
+          background: green;
+     }
+     /* Sidebar */
+     .wy-nav-side {
+          background: #ff0000;
+     }
+     </style>
+     % endblock %}
 
 对以上代码块解释如下：
 
@@ -233,7 +300,8 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
 
 + `{% endblock %}` 表示代码块结束。
 
-此段代码的作用是在网页底端加入 *My footer of awesomeness* 这句话。
+此段代码的作用是在把网页头部导航栏背景色设置为绿色，左侧导航栏背景色设置为深橘色。
+
 
 ##### 修改配置文件
 
@@ -245,81 +313,44 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
 ##### 生成网页
 点击保存后，重新在命令行中键入  `make html`，即可生成如下网页：
 
-![添加内容至网页](images/add-footer.png)
+![改变导航栏颜色](images/change-nav-color.png)
 
 
-### 修改样式（CSS）
+#### 方法2
 
-如若想对主题增添内容，那我们需要使用 ***css*** 语言
+该方法与方法1 同理，只是把 *css* 文件单拎了出来, 即在 *layout.html* 中链接了外部的 *css* 文件。
 
-#### CSS
+##### 创建 *layout.html*
 
-##### 概述
+编写代码如下：
 
- ***CSS*** 用于控制网页的样式和布局。
+     {% extends "!layout.html" %}
+     {% block footer %} {{ super() }}
 
+     <link rel="stylesheet" type="text/css"
+     href="_static/custom.css">
 
-##### 示例
+     % endblock %}
 
-     body
+对以上代码块解释如下：
+
++ `link rel="stylesheet"...custom.css` 表示外链样式表。
+
+##### 创建 *custom.css*
+
+在文件夹里找到 *source*-*static* 文件夹，然后在 *static* 文件夹下创建 *custom.css*.
+
+使用 ***css*** 语言 在 *custom.css* 中编写如下代码：
+
+     .wy-side-nav-search, .wy-nav-top 
      {
-     background-color:red;
+          background: green;
      }
-     h1
+     .wy-nav-side 
      {
-     color:orange;
-     text-align:center;
-     }
-     p
-     {
-     font-family:"Times New Roman";
-     font-size:20px;
+          background: darkorange;
      }
 
-##### 代码解释
-
-+         body
-          {
-          background-color:#d0e4fe;
-          } 
-     这段代码表示网页主题的背景色为红色
-
-
-+         h1
-          {
-          color:orange;
-          text-align:center;
-          }
-     这段代码表示标题1字体颜色为橘色，居中显示
-
-+         p
-          {
-          font-family:"Times New Roman";
-          font-size:20px;
-          }
-     这段代码表示段落文字的字体为 ***Times New Roman***，字体大小为 ***20px***
-
-
-##### 推荐学习
-
-网上有很多免费的 ***CSS*** 教程，推荐如下：
-
-+ [CSS菜鸟教程](https://www.runoob.com/css/css-tutorial.html)
-
-
-#### 在Sphinx中的具体操作
-##### 创建样式文件
-
-
-在文件夹里找到 *source*-*static* 文件夹，然后在 *static* 文件夹下创建 *my-styles.css*.
-
-使用 ***css*** 语言 在 *my-styles.css* 中编写如下代码：
-
-     footer {
-     background-color: red;
-     }
-
-该行代码的作用是把网页脚注背景色设置为红色。
 
 
 ##### 修改配置文件
@@ -328,24 +359,13 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
 
      html_static_path = ["_static"]
 
-+ 如果同学们的Sphinx版本<=1.5, 请在 *config.py* 添加如下代码：
+     templates_path = ['_templates']
 
-      {# Import the theme's layout. #}
-      {% extends "!layout.html" %}
 
-      {# Custom CSS overrides #}
-      {% set css_files = css_files + ['_static/my-styles.css'] %}
-
-+ 如果同学们的Sphinx版本>1.5, 请在 *config.py* 添加如下代码：
-
-          def setup(app):
-          app.add_stylesheet("my-styles.css") # also can be a full URL
-          #app.add_stylesheet("ANOTHER.css")
-          #app.add_stylesheet("AND_ANOTHER.css")
 
 ##### 生成网页
 
 点击保存后，重新在命令行中键入  `make html`，即可生成如下网页：
 
-![改变网页样式](images/change-footer-color.png)
+![改变网页样式](images/change-nav-color.png)
 
