@@ -20,7 +20,7 @@
 
 2. 下载完成后，运行可执行文件进行安装：
 
-> **注意：**请在 “Advanced Options” 中将勾选两个可选选项：**这里重装暂时没搞定，待补充**
+> **注意：** 请在 “Advanced Options” 中将勾选两个可选选项：**这里重装暂时没搞定，待补充**
 >
 > - **第一个选项** 会将 Anaconda 的安装目录添加至系统环境变量的 path 中，有利于我们之后在 VS Code 中快速激活 conda 环境，以及直接使用 base 环境中已安装的库和脚本，简化操作流程。
 >   - 如上图红字所示，Anaconda 官方不建议勾选此选项，而建议使用 Anaconda Prompt (或 Anaconda Powershell Prompt，以下将两者统称为 Anaconda Prompt) 。这是因为勾选此选项会将 Anaconda 的若干目录添加至 path 目录中的最前面；如果用户之前已经安装了其他 Python 解释器，勾选此选项会导致用户直接调用 Python 时优先调用 Anaconda 内置的 Python 解释器，而不是用户单独安装的 Python 解释器，如下图所示：
@@ -38,7 +38,7 @@
 
 ![conda-list-sphinx-mac](images/conda-list-sphinx-mac.png)
 
-4. *（可选）*Sphinx 预装在 Anaconda 的默认环境下，同学们可以进一步通过 Anaconda Navigator 中检查 Sphinx 包配置情况，安装更多的包。
+4. *（可选）* Sphinx 预装在 Anaconda 的默认环境下，同学们可以进一步通过 Anaconda Navigator 中检查 Sphinx 包配置情况，安装更多的包。
 
 > 提示 ：Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。这里可通过 Anaconda Prompt 输入命令行操作，也可以通过 Anaconda Navigator 进行可视化操作，相对上手更快。
 
