@@ -20,9 +20,11 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 .. image:: images/rst2pdf-download.png
 
-* 进入源文件所在文件夹路径，输入 rst2pdf <document name> <output name>.pdf，如 rst2pdf <document name> output.pdf
+* 进入源文件所在文件夹路径，输入 rst2pdf <document name> <output name>.pdf，如 rst2pdf chapter1.rst chapter1.pdf
 
 .. image:: images/rst2pdf-chapter1.png
+
+注意：这个过程仅涉及转换的流程，若要处理导出时的显示格式等问题，需要配置 conf.py 文件。
 
 2. 使用 LaTeX 转换 PDF
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
