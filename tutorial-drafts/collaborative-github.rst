@@ -24,7 +24,7 @@ GitHub Desktop 官网： https://desktop.github.com/
 
 .. image:: images/github-desktop-config.png
 
-然后，同学们会看到 GitHub Desktop 的主界面，让我们从**Create a tutorial repository and clone it**开始快速创建我们的第一个Git仓库！
+然后，同学们会看到 GitHub Desktop 的主界面，让我们从**Create a tutorial repository and clone it**开始快速创建第一个Git仓库！
 
 .. image:: images/github-desktop-create-repo.png
 
@@ -144,7 +144,17 @@ Github 支持多人协作开发的三种模式：
 
 .. image:: images/github-org-set-up-team.jpg
 
+5. 为组织添加成员。
+
+.. image:: images/github-org-add-orgmem.jpg
+
 5. 为新建组织设定拥有者（Owner），当前用户，即正在创建组织的用户是组织拥有者之一，用户还可以为组织指派更多的组织拥有者，多个组织拥有者的权限并无差别，都可以管理组织，甚至可以将其他用户从拥有者团队中删除。
+
+.. image:: images/github-org-add-owner.jpg
+
+6. 设置组员权限。在项目主页(https://github.com/组名)找到 Settings->Member privileges 进行设置。默认情况下组员是没有权限进行 push 操作的,把 Default repository permission 设置为 Write 保存即可 ,这样组员就可以对仓库文件进行 push 操作了
+
+.. image:: images/github-org-member-privileges.png
 
 如果需要项目团队中的每一个人都可以管理当前的项目资产，拥有同样的等级权限，organization 模式便是最佳选择，编写本教程过程中也是考虑到资产管理和使用的方便，将协作模式由 collaborator 转为了 organization。
 
