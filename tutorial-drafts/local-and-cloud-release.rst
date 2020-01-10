@@ -31,7 +31,7 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 * 使用 Sphinx 输出 LaTeX 格式文件
 
-首先，我们需要在官网http://tug.org/texlive/acquire-netinstall.html或清华大学的镜像站下载并安装 TeX Live，这是一款……的工具，目前于2019年4月发布了19版本。安装过程可能会花费比较长的时间，可以通过安装过程对话框查看安装进度。
+首先，我们需要在`官网 <http://tug.org/texlive/acquire-netinstall.html>`_或清华大学的镜像站下载并安装 TeX Live，这是一款……的工具，目前于2019年4月发布了最新版本。安装过程可能会花费比较长的时间，可以通过安装过程对话框查看安装进度。
 
 .. image:: images/texlive1.png
 
@@ -43,7 +43,9 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 * 使用 Pandoc 将 LaTeX 格式文件转换为 PDF 格式文件
 
-Pandoc 是一款标记语言转换工具，可实现不同标记语言间的格式转换。https://www.pandoc.org/installing.html
+`Pandoc <https://www.pandoc.org/installing.html>`_ 是一款标记语言转换工具，可实现不同标记语言间的格式转换。 
+
+在官网下载后，我们就可以在命令行或终端中使用了。我们需要用到的语法很简单，为 pandoc <源文件名> -o <转换后的文件名>
 
 
 
@@ -73,9 +75,9 @@ latex_elements = {
 
 云端发布
 ========
-使用 Read the Docs 进行发布
+使用 ReadTheDocs 进行发布
 -----------------------------
-Read the Docs 是一个提供了托管服务的平台。我们可以把生成的 Sphinx 网页托管到这个平台上进行在线发布。首先我们需要在这个平台注册账号，不过也可以选择关联我们的 Github 账号。
+ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 Sphinx 网页托管到这个平台上进行在线发布。首先我们需要在这个平台注册账号，不过也可以选择关联我们的 Github 账号。
 
 .. image:: images/rtd-register.png
 
@@ -88,7 +90,10 @@ Read the Docs 是一个提供了托管服务的平台。我们可以把生成的
 .. image:: images/rtd-extra-info.png
 
 在额外信息界面，我们可以补充诸如所使用的编程语言等信息。最后点击完成，即可完成导入项目过程。
-接下来，回到 Github，在项目仓库的首页右边寻找 Settings，点击进入，
+
+接下来，回到 Github，在项目仓库的首页右边寻找 Settings -> Webhooks & Services， 启用 Add Service 下的 ReadTheDocs 选项。
+
+返回 ReadTheDocs，点击 Build 或 创建进行在线网页的发布。
 
 此外，我们还可以自定义域名：
 
