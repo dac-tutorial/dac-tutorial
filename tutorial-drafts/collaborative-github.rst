@@ -174,7 +174,7 @@ Github 支持多人协作开发的三种模式：
 
 Github Pages
 ----------------
-Github Pages 基本
+Github Pages 基本功能
 ^^^^^^^^^^^^^^^^^^^^
 Github Pages 官网：https://pages.github.com/
 
@@ -190,16 +190,41 @@ Github Pages 作为一种线上发布方式，完全免费，零成本，提供 
 
 选择网页生成的来源，用户和组织站点的默认发布源是主分支。
 
-.. image:: images/
+.. image:: images/githubpages-settings.jpg
 
 选择合适的发布主题。
 
-.. image:: images/
+.. image:: images/githubpages-choose-theme.jpg
 
 **注意** 这里提供的主题需要配合jekll使用才能生效。
 
 设置完成后，显示已自动生成网页，除了通过自动生成的域名进行访问，用户也可以自定义域名。
 
-.. image:: images/
+.. image:: images/githubpages-publish.jpg
+
+sphinx 与 Github Pages 发布
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+利用 sphinx 制作的文档可以借助 Github Pages 进行发布，具体操作如下：
+
+正常情况下 Github Pages 只能发布由 sphinx 编译后的 html 文件包，不能直接发布 rst、md 等格式的其他文件。如果需要使用 sphinx 发布 Github Pages 兼容的 html，需要添加一个 sphinx 内置拓展 'sphinx.ext.githubpages'，具体配置如下图：
+
+.. image:: images/githubpages-config.jpg
+ 
+ 配置过程中可能会报错提示未安装某些拓展包，按照提示安装既可。
+ 
+ 1. 按照本教程的 **quick-start** -> **创建项目** 一节中的输出 html 文件方法输出 html 文件。Sphinx 默认的 html 主题在本教程的 **quick-start** -> **HTML 输出选项** (Options for HTML output)一节中有介绍，同学们可以回顾相关章节对内容进行复习。输出结果如下：
+ 
+.. image:: images/githubpages-html-output.jpg
+ 
+2. 创建一个名为 username.github.io 的仓库（username 指的是 Github 账户名），然后将上一步中生成的文件，即 build/html 里的全部文件上传到 username.github.io 仓库中。
+
+.. image:: images/githubpages-create-new-repo.jpg
+
+3. 访问 即可看到发布的 Github Pages 静态网页。
 
 
+
+本教程的完整文档最终也使用了 Github Pages 进行发布，具体请点击：**待补**
+ 
+操作是不是十分简单呢？同学们赶紧用 sphinx 生成的 html 文件制作 Github Pages 静态网页吧！
+ 
