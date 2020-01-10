@@ -78,7 +78,7 @@ GitHub Desktop 官网： https://desktop.github.com/
 
 .. image:: images/github-publish-repo.png
 
-- 你会看到 “Name”（名称）和“Description”（说明）与创建仓库时完成的字段匹配，此外还有一个选项 **Keep this code private** （保留此代码为私有），如果不想与 GitHub 的其他用户公开分享代码，可选择此选项，然后单击 **Publish repository**，即可发布仓库。
+- 同学们会看到 “Name”（名称）和“Description”（说明）与创建仓库时完成的字段匹配，此外还有一个选项 **Keep this code private** （保留此代码为私有），如果不想与 GitHub 的其他用户公开分享代码，可选择此选项，然后单击 **Publish repository**，即可发布仓库。
 
 .. image:: images/github-keep-private.png
 
@@ -95,7 +95,7 @@ Github 协作开发
 ---------------
 Github 支持多人协作开发的三种模式：
 
-- fork
+**- fork**
 此种模式下，开发者 fork 自己生成一个独立的分支，跟主分支完全独立，pull 代码后，项目维护者可根据代码质量决定是否 merge 代码。如果同学们想参与开发某个开源项目，可以将这个项目 fork 到自己的仓库中，此操作会创建一份完全相同的项目到自己的仓库中，也可以 clone 到本地，参与开发，但是对 fork 的项目进行的修改内容并不会影响原本的仓库。如果同学们在原仓库的基础上有修改，可以向原仓库提出 pull request 申请，请求 merge，原仓库的管理者会收到系统的消息提示，决定是否将修改合并到原仓库。
 
 值得注意的是，fork 这种协作方式下，每个成员在开发时都是独立的，可以自行对项目的某一部分进行修改，之后请求合并，但将分支合并的时候，比较容易出现冲突，导致 merge 无法自动完成，最终必须手动处理这些冲突。所以同学们在 fork 模式下进行协作开发的时候，分工一定要明确，不能让两个人都对一个文件进行操作。
@@ -106,7 +106,7 @@ Github 支持多人协作开发的三种模式：
 
 .. image:: images/github-fork.jpg
 
-- collaborator
+**- collaborator**
 此种模式下，代码仓库的所有者可以为单个仓库增加具备读写权限的合作者。被添加进来的成员就拥有了对该仓库的读写权限，可以将该仓库 clone 到本地进行开发，也同样拥有向该仓库远程提交的权限，但是该仓库不会出现在合作开发者的仓库中。每个合作者都能看到代码库页面访问状态的变化。
 
 本教程的开发最早是基于此种模式，后来为了教程资产管理的方便，转而基于 organization 模式，在 organization 部分会做详细阐述。
@@ -121,7 +121,7 @@ Github 支持多人协作开发的三种模式：
 
 .. image:: images/github-collaborators.jpg
 
-- organization
+**- organization**
 此种模式下，组织的所有者可以针对不同的代码仓库建立不同访问权限的团队。如果需要为监管的几个团队设置不同的权限级别，或者为不同的代码仓库增加不同的成员，希望项目既有 collaborator 同时又可以限制他们的读写权利，尤其是限制其“写”的权利，可利用 organization 来为成员赋予不同等级的权力。
 
 *具体操作*
@@ -160,17 +160,30 @@ Github 支持多人协作开发的三种模式：
 
 **Tip**：GitHub 提供了由个人账号向组织账号迁移的途径。但需要注意的是，个人账号一旦转换为组织账号，无法还原。删除后，所有的项目也会随之删除。
 
-用户加入组织成为拥有者后，可在个人主页看到组织，并且可以由个人账户切换到组织账户。
+同学们加入组织成为拥有者后，可在个人主页看到组织，并且可以由个人账户切换到组织账户。
 
 .. image:: images/github-org-profile.jpg
 
 .. image:: images/github-org-switch2org.jpg
 
-用户还可以对当前加入的组织进行管理，可以选择离开当前组织。
+同学们还可以对当前加入的组织进行管理，可以选择离开当前组织。
 
 .. image:: images/github-org-leave.jpg
 
-开发者在这三种模式下的权限依次为 fork < organization < collaborator
+开发者在这三种模式下的权限依次为 fork < organization < collaborator。
 
 Github Pages
 ----------------
+Github Pages 基本
+^^^^^^^^^^^^^^^^^^^^
+Github Pages 官网：https://pages.github.com/
+
+利用 Github Pages 进行基本的静态网页发布的方式有两种，一是打开 Github Pages 官网，点击 Github Repository ，会自动跳转到当前 Github 账户；同学们也可以直接登录自己的 Github 账号。
+
+.. image:: images/githubpages-home.jpg
+
+进入需要发布的 Repo 界面，选择 Settings，下拉找到 Github Pages 选项
+
+.. image:: images/githubpages-settings.jpg
+
+
