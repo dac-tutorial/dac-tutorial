@@ -240,7 +240,7 @@ sphinx 与 Github Pages 发布
 
 .. image:: images/githubpages-show-in-explore.jpg
 
-3. 和上边提到过的操作一致，提交 changes，然后点击 **publish branch** 将变动提交至云端。
+3. 和直接通过 Desktop 创建新仓库操作一致，提交 changes，然后点击 **publish branch** 将变动提交至云端。
 
 .. image:: images/githubpages-publish-branch.jpg
 
