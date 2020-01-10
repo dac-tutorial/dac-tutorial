@@ -5,7 +5,7 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 发布 HTML
 ------------
-发布 HTML 格式是 Sphinx 发布最基础的操作，如我们在学习生成第一个 Sphinx 项目时所看到的，只需在发布时使用 make html 或 sphinx-build -b html <sourcedir> <builddir> 命令即可。更多有关 HTML 主题定制的内容，请参阅后文 HTML 主题定制章节。
+发布 HTML 格式是 Sphinx 发布最基础的操作，如我们在学习生成 **第一个 Sphinx 项目** 时所看到的，只需在发布时使用 ``make html`` 或 sphinx-build -b html <sourcedir> <builddir> 命令即可。更多有关 HTML 主题定制的内容，请参阅后文 HTML 主题定制章节。
 
 .. image:: images/make-html.png
 
