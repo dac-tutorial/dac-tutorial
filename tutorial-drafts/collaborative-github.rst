@@ -222,6 +222,12 @@ sphinx 与 Github Pages 发布
 
 .. image:: images/githubpages-create-new-repo.jpg
 
+**Tip**：此步骤可通过 Github Desktop 中的 publish repository 功能实现（如下图），也可以通过 Git GUI 以及 Git Bash 实现（这两种方式此处不再描述，感兴趣的同学可以上网查找相关教程）。
+
+.. image:: images/githubpages-add-exist-from-hd.jpg
+
+.. image:: images/githubpages-publish-from-desktop.jpg.jpg
+
 3. 访问 https://username.github.io 即可看到发布的 Github Pages 静态网页。
 
 本教程的完整文档最终也使用了 Github Pages 进行发布，具体请点击：**待补**
