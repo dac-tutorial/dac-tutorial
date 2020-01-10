@@ -232,5 +232,5 @@ sphinx 与 Github Pages 发布
 
 本教程的完整文档最终也使用了 Github Pages 进行发布，具体请点击：**待补**
  
-操作是不是十分简单呢？同学们赶紧用 sphinx 生成的 html 文件制作 Github Pages 静态网页吧！
+操作是不是十分简单呢？同学们赶紧用 sphinx 生成的 html 文件发布  Github Pages 静态网页吧！
  
