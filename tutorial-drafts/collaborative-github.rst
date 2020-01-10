@@ -220,8 +220,7 @@ sphinx 与 Github Pages 发布
 
 .. image:: images/githubpages-create-new-repo.jpg
 
-3. 访问 即可看到发布的 Github Pages 静态网页。
-
+3. 访问 https://username（自己的账户名）.github.io 即可看到发布的 Github Pages 静态网页。
 
 
 本教程的完整文档最终也使用了 Github Pages 进行发布，具体请点击：**待补**
