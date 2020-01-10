@@ -148,11 +148,11 @@ Github 支持多人协作开发的三种模式：
 
 .. image:: images/github-org-add-orgmem.jpg
 
-5. 为新建组织设定拥有者（Owner），当前用户，即正在创建组织的用户是组织拥有者之一，用户还可以为组织指派更多的组织拥有者，多个组织拥有者的权限并无差别，都可以管理组织，甚至可以将其他用户从拥有者团队中删除。
+6. 为新建组织设定拥有者（Owner），当前用户，即正在创建组织的用户是组织拥有者之一，用户还可以为组织指派更多的组织拥有者，多个组织拥有者的权限并无差别，都可以管理组织，甚至可以将其他用户从拥有者团队中删除。
 
 .. image:: images/github-org-add-owner.jpg
 
-6. 设置组员权限。在项目主页(https://github.com/组名)找到 Settings->Member privileges 进行设置。默认情况下组员是没有权限进行 push 操作的,把 Default repository permission 设置为 Write 保存即可 ,这样组员就可以对仓库文件进行 push 操作了
+7. 设置组员权限。在项目主页(https://github.com/组名)找到 Settings->Member privileges 进行设置。默认情况下组员是没有权限进行 push 操作的,把 Default repository permission 设置为 Write 保存即可 ,这样组员就可以对仓库文件进行 push 操作了
 
 .. image:: images/github-org-member-privileges.png
 
@@ -211,8 +211,8 @@ sphinx 与 Github Pages 发布
 .. image:: images/githubpages-config.jpg
  
  配置过程中可能会报错提示未安装某些拓展包，按照提示安装既可。
- 
- 1. 按照本教程的 **quick-start** -> **创建项目** 一节中的输出 html 文件方法输出 html 文件。Sphinx 默认的 html 主题在本教程的 **quick-start** -> **HTML 输出选项** (Options for HTML output)一节中有介绍，同学们可以回顾相关章节对内容进行复习。输出结果如下：
+  
+1. 按照本教程的 **quick-start** -> **创建项目** 一节中的输出 html 文件方法输出 html 文件。Sphinx 默认的 html 主题在本教程的 **quick-start** -> **HTML 输出选项** (Options for HTML output)一节中有介绍，同学们可以回顾相关章节对内容进行复习。输出结果如下：
  
 .. image:: images/githubpages-config.jpg
  
@@ -223,7 +223,6 @@ sphinx 与 Github Pages 发布
 .. image:: images/githubpages-create-new-repo.jpg
 
 3. 访问 https://username.github.io 即可看到发布的 Github Pages 静态网页。
-
 
 本教程的完整文档最终也使用了 Github Pages 进行发布，具体请点击：**待补**
  
