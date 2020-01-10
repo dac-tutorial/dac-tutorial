@@ -188,4 +188,13 @@ Github Pages 作为一种线上发布方式，完全免费，零成本，提供 
 
 .. image:: images/githubpages-settings.jpg
 
+选择网页生成的来源
+
+.. image:: images/
+
+
+
+选择合适的发布主题
+
+.. image:: images/
 
