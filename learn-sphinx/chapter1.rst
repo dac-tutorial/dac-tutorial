@@ -69,7 +69,7 @@ need into my :file:`sampledoc` directory::
   Unpacking objects: 100% (87/87), done.
   Checking connectivity... done
   home:~/tmp> cp tutorial/getting_started.rst sampledoc/
-  home:~/tmp> cp tutorial/_static/basic_screenshot.png sampledoc/_static/
+  home:~/tmp> cp tutorial/_static/images/basic_screenshot.png sampledoc/_static/
 
 The last step is to modify :file:`index.rst` to include the
 :file:`getting_started.rst` file (be careful with the indentation, the

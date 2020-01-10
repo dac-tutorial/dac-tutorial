@@ -237,7 +237,7 @@ Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 
 > + index.rst 是由 Sphinx 的文档主入口，它可被转换成文档的欢迎页；
 > + 建议在 source 目录下新建一个 images 目录用于存放文档中需要插入的图片。
 
-我们将在下一章学习 reStructuredText 的语法，现在先请同学们从本教程的 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source) 获取 chapter1.rst、chapter2.rst 以及 images/basic_screenshot.png 等文件，并将他们合理地存放在我们的 “learn-sphinx” 目录下。
+我们将在下一章学习 reStructuredText 的语法，现在先请同学们从本教程的 [GitHub 仓库](https://github.com/dac-tutorial/DAC-Tutorial/tree/master/learn-sphinx) 中获取 chapter1.rst、chapter2.rst、images/basic_screenshot.png 等文件，并将它们存放在我们的 `../learn-sphinx/source` 目录下。
 
 > **提示：** 若需要从 GitHub 仓库中获取单个文件，请在 GitHub 网页端打开该文件后，切换到 Raw 视图，然后右键另存即可。另外请注意 rst 文件会被默认识别为 txt 文件，需要手动在保存时进行修改；也可以在 *conf.py* 中将 txt 扩展名识别为 reStructuredText 文本（在下一小节会提到如何修改 *conf.py* ）。
 >
