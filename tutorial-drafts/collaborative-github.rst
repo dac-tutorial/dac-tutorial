@@ -130,19 +130,19 @@ Github 支持多人协作开发的三种模式：
 
 1. 进入 Github 点击个人头像，选择 Settings。
 
-.. image:: images/
+.. image:: images/github-org-settings.jpg
 
 2. Organization-> New Organization。
 
-.. image:: images/
+.. image:: images/github-org-org.jpg
 
 3. 为组织选择合适的计划（免费还是不同级别的付费），默认会选择免费的没有私有版本库的开源方案。
 
-.. image:: images/
+.. image:: images/github-org-choose-plan.jpg
 
 4. 填写组织相关信息。
 
-.. image:: images/
+.. image:: images/github-org-set-up-team.jpg
 
 5. 为新建组织设定拥有者（Owner），当前用户，即正在创建组织的用户是组织拥有者之一，用户还可以为组织指派更多的组织拥有者，多个组织拥有者的权限并无差别，都可以管理组织，甚至可以将其他用户从拥有者团队中删除。
 
@@ -150,13 +150,15 @@ Github 支持多人协作开发的三种模式：
 
 **Tip**：GitHub 提供了由个人账号向组织账号迁移的途径。但需要注意的是，个人账号一旦转换为组织账号，无法还原。删除后，所有的项目也会随之删除。
 
-用户加入组织成为拥有者后，可在个人界面看到组织，并且可以由个人账户切换到组织账户。
+用户加入组织成为拥有者后，可在个人主页看到组织，并且可以由个人账户切换到组织账户。
 
-.. image:: images/
+.. image:: images/github-org-profile.jpg
+
+.. image:: images/github-org-switch2org.jpg
 
 用户还可以对当前加入的组织进行管理，可以选择离开当前组织。
 
-.. image:: images/
+.. image:: images/github-org-leave.jpg
 
 开发者在这三种模式下的权限依次为 fork < organization < collaborator
 
