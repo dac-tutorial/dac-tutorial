@@ -152,7 +152,7 @@ Github 支持多人协作开发的三种模式：
 
 .. image:: images/github-org-add-owner.jpg
 
-7. 设置组员权限。在项目主页(https://github.com/组名)找到 Settings->Member privileges 进行设置。默认情况下组员是没有权限进行 push 操作的,把 Default repository permission 设置为 Write 保存即可 ,这样组员就可以对仓库文件进行 push 操作了
+7. 设置组员权限。在项目主页(https://github.com/组名)找到 Settings->Member privileges 进行设置。默认情况下组员是没有权限进行 push 操作的,把 Default repository permission 设置为 Write 保存即可 ,这样组员就可以对仓库文件进行 push 操作了。
 
 .. image:: images/github-org-member-privileges.png
 
