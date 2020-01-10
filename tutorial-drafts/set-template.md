@@ -4,35 +4,29 @@
 ##  使用既定主题
 
 
-下载 Sphinx 后，其安装包中即含有名为 *themes* 的文件夹， 包括 basic、alabaster、classic、sphinxdoc、scrolls、agogo、nature、pyramid、haiku、traditional、epub、bizstyle 等 12 种内置主题，此外还有不少第三方主题（例如 sphinx_rtd_theme）可通过额外安装后使用。
+正如入门指南中所述，下载 Sphinx 后，其安装包中即含有名为 *themes* 的文件夹， 包括 basic、alabaster、classic、sphinxdoc、scrolls、agogo、nature、pyramid、haiku、traditional、epub、bizstyle 等 12 种内置主题，此外还有不少第三方主题（例如 sphinx_rtd_theme）可通过额外安装后使用。
 
-### 修改配置文件
+这里我们主要介绍如何安装并使用 [sphinx-rtd-theme](https://sphinx-rtd-theme.readthedocs.io/en/latest/)
 
-假设我们想使用 *haiku* 主题，则需要在 *conf.py* 中进行如下设置：
+### 1. 安装主题模板
 
-     html_theme = "haiku"
+直接进入命令行，输入 `pip install sphinx-rtd-theme`，如下图所示：
 
-### 生成网页
+![intall-rtd](images/install-rtd.png)
 
-命令行中再次输入 `make html`, 即可生成相应主题的网页：
-
-     C:\Users\hp\Desktop\learn-sphinx>make html
-
-![haiku主题展示](images/haiku-theme.png)
-
-而其实，Sphinx中最常使用的主题是 [sphinx-rtd-theme](https://sphinx-rtd-theme.readthedocs.io/en/latest/)，但是在 *themes* 文件夹里却没有，因此我们需要先安装该主题，再进行设置。
-
-### 安装主题模板
-
-     C:\Users\hp>pip install sphinx-rtd-theme
 
 出现如下代码段即可表示安装成功：
 
-	  Installing collected packages: sphinx-rtd-theme
-	  Successfully installed sphinx-rtd-theme-0.4.3
+![intall-rtd](images/rtd-install-done.png)
 
-主题的配置文件在 *sphinx_rtd
-_theme* - *theme.conf*  文件中,默认配置如下：
+完成以上步骤后，同学们可以在 ***python*** 的安装文件下找到
+***sphinx-rtd-theme***文件夹，笔者的文件夹路径则如下所示：
+
+     D:\Python\Python38-32\Lib\site-packages\sphinx_rtd_theme
+
+
+在 *sphinx_rtd
+_theme* - *theme.conf*  文件中,该主题的默认配置如下：
 
      [theme]
      inherit = basic
@@ -73,18 +67,20 @@ _theme* - *theme.conf*  文件中,默认配置如下：
 
 
 
-### 修改配置文件：
+### 2. 修改配置文件：
 
 在 *conf.py* 中进行如下设置：
 
     html_theme = 'sphinx_rtd_theme'
 
 
-### 生成网页
+### 3. 生成网页
 
- 命令行中再次输入 `make html`, 即可生成相应主题的网页：
+ 命令行中再次输入 `make html`
 
-     C:\Users\hp\Desktop\learn-sphinx>make html
+![make-rtd-html](images/make-rtd-html.png)
+
+即可生成相应主题的网页：
 
 ![rtd主题展示](images/sphinx-rtd-theme.png)
 
@@ -97,9 +93,7 @@ Sphinx里面的模板是已经定义好了的，如果想要自定义主题，�
 
 ### 基础知识
 
-
 #### ***HTML***
-
 
 超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。
 
@@ -253,23 +247,37 @@ Sphinx里面的模板是已经定义好了的，如果想要自定义主题，�
 
 
 ### 自定义主题
- 
-这里简单演示如何更改 ***Sphinx_rtd_theme*** 主题左侧导航栏的颜色。
+
+要自定义文档的输出，可以通过将与原始文件名同名的文件添加到模板目录中来覆盖所有的模板。Sphinx将首先在 *config.py* 中的 *template_path* 和*html_static_path*中查找模板，如果找不到它正在寻找的模板，将回退到所选主题的模板。
+
+Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题中的 *layout.html* 为基本模板提供了几个块，这些块使用***jinja2***首先填充原始数据，并由所有内置的Sphinx主题使用。而 ***templates_path*** 中具有相同名称的模板会覆盖所选主题提供的模板。
+
+该教程简单演示如何使用两种方法更改 ***Sphinx_rtd_theme*** 主题左侧导航栏的颜色。
 
 
-#### 安装jinja2 
-
+#### 1. 安装jinja2 
 
 Anaconda 环境中已经集成了 jinja2，因此无需再次安装。
 
-#### 方法1
+#### 2. 查看【导航栏】对应的网页模块
 
-##### 创建 “layout.html”
-要自定义文档的输出，可以通过将与原始文件名同名的文件添加到模板目录中来覆盖所有的模板。Sphinx将首先在 *config.py* 中的 *template_path* 中查找模板，如果找不到它正在寻找的模板，将回退到所选主题的模板。
+因为我们需要修改导航栏的颜色，所以需要知道生成的网页中左侧导航栏所对应的网页代码。
 
-Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题中的 *layout.html* 为基本模板提供了几个块，这些块将首先填充数据，并由所有内置的Sphinx主题使用。而在 ***templates_path*** 中具有相同名称的模板会覆盖所选主题提供的模板。
+我们首先进入生成的网页，点击鼠标右键，进入***检查***，找到如下代码块：
 
-因此，我们需要在文件夹里找到 *source*-*templates* 文件夹，然后在 *templates* 文件夹下创建 “layout.html”。
+![nav-class](images/nav-class.png)
+
+![nav-class2](images/nav-class2.png)
+
+由以上代码块可知，导航栏所对应的模块属性为 `wy-side-nav-search`、
+`wy-nav-top`、`.wy-nav-side`。因此，我们只需要对这几个属性进行修改即可。
+
+
+#### 方法一
+
+##### 1. 创建 同名模板“layout.html”
+
+在文件夹里找到 *source*-*templates* 文件夹，然后在 *templates* 文件夹下创建 “layout.html”。
 
 使用 ***jinja2*** 在 *layout.html* 中编写如下代码：
 
@@ -283,7 +291,7 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
      }
      /* Sidebar */
      .wy-nav-side {
-          background: #ff0000;
+          background: darkorange;
      }
      </style>
      % endblock %}
@@ -303,24 +311,25 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
 此段代码的作用是在把网页头部导航栏背景色设置为绿色，左侧导航栏背景色设置为深橘色。
 
 
-##### 修改配置文件
+##### 2. 修改配置文件
 
-与此同时，在 *config.py* 中进行如下设置：
+我们需要同步修改 *config.py* 中的配置：
 
      templates_path = ['_templates']
 
 
-##### 生成网页
+##### 3. 生成网页
+
 点击保存后，重新在命令行中键入  `make html`，即可生成如下网页：
 
 ![改变导航栏颜色](images/change-nav-color.png)
 
 
-#### 方法2
+#### 方法二
 
-该方法与方法1 同理，只是把 *css* 文件单拎了出来, 即在 *layout.html* 中链接了外部的 *css* 文件。
+该方法与方法一同理，只是把 *css* 文件单拎了出来, 即在 *layout.html* 中链接了外部的 *css* 文件，并将 *css* 文件置于*static* 文件夹下。
 
-##### 创建 *layout.html*
+##### 1. 创建同名模板 *layout.html*
 
 编写代码如下：
 
@@ -336,7 +345,7 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
 
 + `link rel="stylesheet"...custom.css` 表示外链样式表。
 
-##### 创建 *custom.css*
+##### 2. 创建 *custom.css*
 
 在文件夹里找到 *source*-*static* 文件夹，然后在 *static* 文件夹下创建 *custom.css*.
 
@@ -353,7 +362,7 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
 
 
 
-##### 修改配置文件
+##### 3. 修改配置文件
 
 与此同时，在 *config.py* 中进行如下设置：
 
@@ -363,7 +372,7 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
 
 
 
-##### 生成网页
+##### 4. 生成网页
 
 点击保存后，重新在命令行中键入  `make html`，即可生成如下网页：
 

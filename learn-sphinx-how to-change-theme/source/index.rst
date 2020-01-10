@@ -13,6 +13,7 @@ Welcome to demo's documentation!
    contents/Chapter1.rst
    contents/Chapter2.rst
    contents/Chapter3.rst
+   contents/Chapter4.rst
 
    
 
