@@ -152,7 +152,7 @@ Github 支持多人协作开发的三种模式：
 
 .. image:: images/github-org-add-owner.jpg
 
-7. 设置组员权限。在项目主页(https://github.com/组名)找到 Settings->Member privileges 进行设置。默认情况下组员是没有权限进行 push 操作的,把 Default repository permission 设置为 Write 保存即可 ,这样组员就可以对仓库文件进行 push 操作了
+7. 设置组员权限。在项目主页(https://github.com/组名)找到 Settings->Member privileges 进行设置。默认情况下组员是没有权限进行 push 操作的,把 Default repository permission 设置为 Write 保存即可 ,这样组员就可以对仓库文件进行 push 操作了。
 
 .. image:: images/github-org-member-privileges.png
 
@@ -212,25 +212,45 @@ sphinx 与 Github Pages 发布
  
  配置过程中可能会报错提示未安装某些拓展包，按照提示安装既可。
   
-1. 按照本教程的 **quick-start** -> **创建项目** 一节中的输出 html 文件方法输出 html 文件。Sphinx 默认的 html 主题在本教程的 **quick-start** -> **HTML 输出选项** (Options for HTML output)一节中有介绍，同学们可以回顾相关章节对内容进行复习。输出结果如下：
+1. 按照本教程的 **quick-start** -> **创建项目** 一节中的输出 html 文件方法输出 html 文件。Sphinx 默认的 html 主题在本教程的 **quick-start** -> **HTML 输出选项** (Options for HTML output)一节中有介绍，同学们可以回顾相关章节对内容进行复习。输出结果如下图：
  
-.. image:: images/githubpages-config.jpg
- 
-2. 创建一个名为 username.github.io 的仓库（username 指的是 Github 账户名），然后将上一步中生成的文件，即 build/html 里的全部文件上传到 username.github.io 仓库中。
-
 .. image:: images/githubpages-html-output.jpg
-
-.. image:: images/githubpages-create-new-repo.jpg
-
-**Tip**：此步骤可通过 Github Desktop 中的 publish repository 功能实现（如下图），也可以通过 Git GUI 以及 Git Bash 实现（这两种方式此处不再描述，感兴趣的同学可以上网查找相关教程）。
+ 
+2. 直接通过 Github Desktop 在本地创建新仓库（记住要命名为 username.github.io），直接导入文件中的内容。
 
 .. image:: images/githubpages-add-exist-from-hd.jpg
 
-.. image:: images/githubpages-publish-from-desktop.jpg.jpg
+3. 在左侧填写 **Summary** （此项必填），然后点击 **commit to master** 提交，并 publish repository。
 
-3. 访问 https://username.github.io 即可看到发布的 Github Pages 静态网页。
+.. image:: images/githubpages-publish-from-desktop.jpg
+
+在 Github.com 中可以看到从本地成功上传的文件：
+
+.. image:: images/githubpages-upload2github.jpg
+
+另外，如果云端已经创建了一个名为 username.github.io 的仓库（username 指的是 Github 账户名），操作如下：
+
+1. 先将仓库 clone 到本地。
+
+.. image:: images/githubpages-clone-repo.jpg
+
+可以直接选中要克隆的仓库，也可以输入仓库的 URL 进行克隆。
+
+2. 在仓库界面按快捷键 **Ctrl+Shift+F** 或根据提示将本地的文件拷贝到仓库目录下。
+
+.. image:: images/githubpages-show-in-explore.jpg
+
+3. 和直接通过 Desktop 创建新仓库操作一致，提交 changes，然后点击 **publish branch** 将变动提交至云端。
+
+.. image:: images/githubpages-publish-branch.jpg
+
+**Tip**：上述操作可以通过 Git GUI 以及 Git Bash 实现（这两种方式此处不再描述，感兴趣的同学可以上网查找相关教程）。
+
+4. 访问 https://username.github.io 即可看到发布的 Github Pages 静态网页。
+
+.. image:: images/githubpages-homepage.jpg
 
 本教程的完整文档最终也使用了 Github Pages 进行发布，具体请点击：**待补**
  
-操作是不是十分简单呢？同学们赶紧用 sphinx 生成的 html 文件制作 Github Pages 静态网页吧！
+操作是不是十分简单呢？同学们赶紧用 sphinx 生成的 html 文件发布  Github Pages 静态网页吧！
  
