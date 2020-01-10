@@ -392,7 +392,7 @@ Sphinx 默认的 HTML 主题为 alabaster，alabaster 是 Sphinx 的内置主题
 >
 > ![html-demo-scrolls](images/html-demo-scrolls.jpg)
 >
-> 样例源文件位于从本教程 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial) 的 ***html-demo*** 目录下，其 HTML 主题为 Sphinx 内置的 **scrolls**。
+> 样例源文件存放在本教程的 [GitHub 仓库](https://github.com/dac-tutorial/sphinx-html-demo) 中，其 HTML 主题为 Sphinx 内置的 **scrolls**。
 >
 > ![html_theme-modified](images/html_theme-modified.png)
 
