@@ -1,23 +1,3 @@
-- [Sphinx 快速入门](#sphinx-快速入门)
-  - [1 Sphinx 开发环境配置](#1-sphinx-开发环境配置)
-    - [1.1 Windows 环境配置](#11-windows-环境配置)
-      - [Anaconda 安装与配置](#anaconda-安装与配置)
-      - [Visual Studio Code 安装与配置](#visual-studio-code-安装与配置)
-      - [VS Code 调用 Sphinx (Anaconda)](#vs-code-调用-sphinx-anaconda)
-    - [1.2 macOS 环境配置（暂缺）](#12-macos-环境配置暂缺)
-  - [2 第一个 Sphinx 项目](#2-第一个-sphinx-项目)
-    - [2.1 创建项目](#21-创建项目)
-    - [2.2 组织内容](#22-组织内容)
-    - [2.3 修改配置](#23-修改配置)
-      - [项目信息 (Project information)](#项目信息-project-information)
-      - [一般配置项 (General configuration)](#一般配置项-general-configuration)
-        - [练习1：为 Sphinx 项目添加 Markdown 支持](#练习1为-sphinx-项目添加-markdown-支持)
-      - [HTML 输出选项 (Options for HTML output)](#html-输出选项-options-for-html-output)
-        - [练习2：为 Sphinx-HTML 网页换一种风格](#练习2为-sphinx-html-网页换一种风格)
-    - [2.4 发布文档](#24-发布文档)
-
----
-
 # Sphinx 快速入门
 
 - [Sphinx](http://www.sphinx-doc.org/) 是一种基于 Python 的文档工具，它可以令人轻松的撰写出清晰且优美的文档，由 Georg Brandl 在 BSD 许可证下开发。
@@ -169,9 +149,9 @@
 
 
 
-### 1.2 macOS 环境配置（暂缺）
+### 1.2 macOS 环境配置
 
-
+（暂未并入此文档）
 
 
 
