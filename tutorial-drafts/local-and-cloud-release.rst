@@ -13,25 +13,27 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 ------------
 发布 PDF 格式的过程较为复杂，也有几种不同的途径，例如可以使用 rst2pdf 这个工具，但它只能处理较为基本的格式。当我们需要解决分页、目录、排版、换行、脚注、表格、交叉参考、插图等问题时，就可以选用 LaTeX 作为中间格式来转换 PDF。LaTeX 中的文档结构可以单独设置样式，相同的数据结构可以用不同的格式显示，并具有不同的设计。下面就为同学们介绍如何使用 rst2pdf 输出简单 PDF，以及使用 Sphinx 输出 LaTeX 格式文件，再使用 Pandoc 转换为 PDF 格式文件的方法。
 
-1. 使用 rst2pdf 输出单个 PDF
+1. 使用 rst2pdf 输出 PDF
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 在命令行中或如 VS Code 的终端中通过 ``pip install --user rst2pdf`` 下载 rst2pdf 工具。
 
 .. image:: images/rst2pdf-download.png
 
+* 在 ``confpy`` 文件中，将 extensions 的内容填写为 ``'rst2pdf.pdfbuilder'``。
+
 * 进入源文件所在文件夹路径，输入 ``rst2pdf <document name> <output name>.pdf``，如 ``rst2pdf chapter1.rst chapter1.pdf``。
 
 .. image:: images/rst2pdf-chapter1.png
 
-注意：这个过程仅涉及转换的流程，若要处理导出时的显示格式等问题，需要配置 conf.py 文件。
+**注意：** 这个过程仅涉及格式转换，若要自定义配置，需在 ``conf.py`` 文件添加相关内容。
 
 2. 使用 LaTeX 转换 PDF
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * 使用 Sphinx 输出 LaTeX 格式文件
 
-首先，我们需要在 `官网 <http://tug.org/texlive/acquire-netinstall.html>`_ 或清华大学的镜像站下载并安装 TeX Live，这是一款……的工具，目前于2019年4月发布了最新版本。安装过程可能会花费比较长的时间，可以通过安装过程对话框查看安装进度。
+首先，我们需要在 `官网 <http://tug.org/texlive/acquire-netinstall.html>`_ 或清华大学的镜像站下载并安装 TeX Live，这是一款处理 tex 格式文件的工具，目前于2019年4月发布了最新版本。安装过程可能会花费比较长的时间，可以通过安装过程对话框查看安装进度。
 
 .. image:: images/texlive1.png
 
@@ -41,11 +43,15 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 .. image:: images/texlive-version.png
 
+完成后，我们就可以通过 ``make latex`` 或 ``sphinx-build -b latex source build`` 输出 LaTeX 格式文件。
+
+.. image:: images/latex-output.png
+
 * 使用 Pandoc 将 LaTeX 格式文件转换为 PDF 格式文件
 
 `Pandoc <https://www.pandoc.org/installing.html>`_ 是一款标记语言转换工具，可实现不同标记语言间的格式转换。 
 
-在官网下载后，我们就可以在命令行或终端中使用了。我们需要用到的语法很简单，为 ``pandoc <源文件名> -o <转换后的文件名>``，一般情况下，Pandoc 会根据文件名的后缀自动识别文件类型并进行相应的转换，十分方便。
+我们需要用到的语法很简单，为 ``pandoc <源文件名> -o <转换后的文件名>``，一般情况下，Pandoc 会根据文件名的后缀自动识别文件类型并进行相应的转换，十分方便。
 
 
 
@@ -99,6 +105,8 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 1. 在域名管理中添加 DNS 的 CNAME 记录到 readthedocs.io。
 2. 在项目的 Admin -> Domains 中设置上一步添加的域名，开启 HTTPS，保存。
+
+现在，每当我们推送新的内容到 Github， ReadTheDocs 都会识别并对在线文档进行更新。
 
 使用 Github Pages 进行发布
 -----------------------------
