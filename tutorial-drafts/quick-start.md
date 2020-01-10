@@ -276,7 +276,7 @@ Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 
    chapter2
 ```
 
-其中，toctree 用来于产生目录表，numbered 表示章节编号，maxdepth 表示目录中只显示几层标题，之后空一行，在下面列出各子文档，可以不加文件后缀，但需要注意代码对齐，更多有关`toctree` 的内容可以参见[ Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#toctree-directive)。
+其中，toctree 用来于产生目录表，numbered 表示章节编号，maxdepth 表示目录中只显示几层标题，之后空一行，在下面列出各 `.rst` 子文档，可以不加文件后缀，但要注意代码对齐，更多有关`toctree` 的内容可以参见[ Sphinx 官方文档](http://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#toctree-directive)。
 
 修改完成后，我们再一次在终端中使用 `make html` 命令，并在浏览器中打开 `../learn-sphinx/build/html/`目录下的 index.html 文件，看看这次我们生成的网页有何不同！
 
