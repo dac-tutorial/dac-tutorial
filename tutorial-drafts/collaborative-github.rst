@@ -178,6 +178,8 @@ Github Pages 基本
 ^^^^^^^^^^^^^^^^^^^^
 Github Pages 官网：https://pages.github.com/
 
+Github Pages 作为一种线上发布方式，完全免费，零成本，提供 username.github.io 的域名, 免费的静态网站服务器；集成在 Github 中, 直接和代码管理绑定在一起, 随着代码更新自动重新部署, 使用非常方便；没有数量限制, 每一个 Github repository 都可以部署为一个静态网站。
+
 利用 Github Pages 进行基本的静态网页发布的方式有两种，一是打开 Github Pages 官网，点击 Github Repository ，会自动跳转到当前 Github 账户；同学们也可以直接登录自己的 Github 账号。
 
 .. image:: images/githubpages-home.jpg
