@@ -72,7 +72,7 @@ GitHub Desktop 官网： https://desktop.github.com/
 
 .. image:: images/github-history.png
 
-3. 将仓库推送到 GitHub，将仓库推送到 GitHub，这样它也会出现在 GitHub.com 上。
+3. 将仓库推送到 GitHub，这样同学们也能在 GitHub.com 上对仓库进行修改了。
 
 - 单击 **Publish repository** （发布仓库）
 
@@ -86,7 +86,7 @@ GitHub Desktop 官网： https://desktop.github.com/
 
 .. image:: images/github-view.jpg
 
-接下来，同学们就可以对于自己的 `Learn-Git `仓库进行提交和推送更改了！
+接下来，同学们就可以对于自己的仓库进行提交和推送更改了！
 
 **Tip:** GitHub Desktop 中的大多数操作也有对应的快捷键，掌握一些常用的快捷键有助于提高工作效率。 
 关键盘快捷键的完整列表，请参阅 `GitHub Desktop 中的键盘快捷键 <https://help.github.com/desktop/getting-started-with-github-desktop/keyboard-shortcuts-in-github-desktop>`_。
