@@ -214,9 +214,11 @@ sphinx 与 Github Pages 发布
  
  1. 按照本教程的 **quick-start** -> **创建项目** 一节中的输出 html 文件方法输出 html 文件。Sphinx 默认的 html 主题在本教程的 **quick-start** -> **HTML 输出选项** (Options for HTML output)一节中有介绍，同学们可以回顾相关章节对内容进行复习。输出结果如下：
  
-.. image:: images/githubpages-html-output.jpg
+.. image:: images/githubpages-config.jpg
  
 2. 创建一个名为 username.github.io 的仓库（username 指的是 Github 账户名），然后将上一步中生成的文件，即 build/html 里的全部文件上传到 username.github.io 仓库中。
+
+.. image:: images/githubpages-html-output.jpg
 
 .. image:: images/githubpages-create-new-repo.jpg
 
