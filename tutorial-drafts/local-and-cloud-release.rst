@@ -5,7 +5,7 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 发布 HTML
 ------------
-发布 HTML 格式是 Sphinx 发布最基础的操作，如我们在学习生成 **第一个 Sphinx 项目** 时所看到的，只需在发布时使用 ``make html`` 或 sphinx-build -b html <sourcedir> <builddir> 命令即可。更多有关 HTML 主题定制的内容，请参阅后文 HTML 主题定制章节。
+发布 HTML 格式是 Sphinx 发布最基础的操作，如我们在学习生成 **第一个 Sphinx 项目** 时所看到的，只需在发布时使用 ``make html`` 或 ``sphinx-build -b html <sourcedir> <builddir>`` 命令即可。更多有关 HTML 主题定制的内容，请参阅后文 HTML 主题定制章节。
 
 .. image:: images/make-html.png
 
@@ -16,11 +16,11 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 1. 使用 rst2pdf 输出单个 PDF
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* 在命令行中或如 VS Code 的终端中通过 pip install --user rst2pdf 下载 rst2pdf 工具。
+* 在命令行中或如 VS Code 的终端中通过 ``pip install --user rst2pdf`` 下载 rst2pdf 工具。
 
 .. image:: images/rst2pdf-download.png
 
-* 进入源文件所在文件夹路径，输入 rst2pdf <document name> <output name>.pdf，如 rst2pdf chapter1.rst chapter1.pdf
+* 进入源文件所在文件夹路径，输入 ``rst2pdf <document name> <output name>.pdf``，如 ``rst2pdf chapter1.rst chapter1.pdf``。
 
 .. image:: images/rst2pdf-chapter1.png
 
@@ -31,7 +31,7 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 * 使用 Sphinx 输出 LaTeX 格式文件
 
-首先，我们需要在`官网 <http://tug.org/texlive/acquire-netinstall.html>`_或清华大学的镜像站下载并安装 TeX Live，这是一款……的工具，目前于2019年4月发布了最新版本。安装过程可能会花费比较长的时间，可以通过安装过程对话框查看安装进度。
+首先，我们需要在 `官网 <http://tug.org/texlive/acquire-netinstall.html>`_ 或清华大学的镜像站下载并安装 TeX Live，这是一款……的工具，目前于2019年4月发布了最新版本。安装过程可能会花费比较长的时间，可以通过安装过程对话框查看安装进度。
 
 .. image:: images/texlive1.png
 
@@ -45,13 +45,13 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 `Pandoc <https://www.pandoc.org/installing.html>`_ 是一款标记语言转换工具，可实现不同标记语言间的格式转换。 
 
-在官网下载后，我们就可以在命令行或终端中使用了。我们需要用到的语法很简单，为 pandoc <源文件名> -o <转换后的文件名>
+在官网下载后，我们就可以在命令行或终端中使用了。我们需要用到的语法很简单，为 ``pandoc <源文件名> -o <转换后的文件名>``，一般情况下，Pandoc 会根据文件名的后缀自动识别文件类型并进行相应的转换，十分方便。
 
 
 
 
 
-我们要去修改 conf.py 中 Options for LaTeX output 的 latex_elements 变量。
+我们要去修改 ``conf.py`` 中 Options for LaTeX output 的 latex_elements 变量。
 
 如果要生成中文PDF，还需要确认安装了东亚语言包和字体包(texlive-lang-cjk, texlive-fonts-recommands之类）。
 然后配置conf.py，在latex_elements中加入:
@@ -69,7 +69,7 @@ latex_elements = {
 \\AtBeginDocument{\\begin{CJK}{UTF8}{gbsn}}
 \\AtEndDocument{\\end{CJK}}
 ''',
-最后运行 make latexpdf 即可。
+最后运行 ``make latexpdf`` 即可。
 
 
 
@@ -81,7 +81,7 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 .. image:: images/rtd-register.png
 
-之后我们选择 Import a Project 来导入项目，如果没有自动识别，则可以点击手动导入。
+之后我们选择 ``Import a Project`` 来导入项目，如果没有自动识别，则可以点击手动导入。
 
 .. image:: images/rtd-set-project.png
 
@@ -91,9 +91,9 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 在额外信息界面，我们可以补充诸如所使用的编程语言等信息。最后点击完成，即可完成导入项目过程。
 
-接下来，回到 Github，在项目仓库的首页右边寻找 Settings -> Webhooks & Services， 启用 Add Service 下的 ReadTheDocs 选项。
+接下来，回到 Github，在项目仓库的首页右边寻找 ``Settings`` -> ``Webhooks & Services``， 启用 ``Add Service`` 下的 ``ReadTheDocs`` 选项。
 
-返回 ReadTheDocs，点击 Build 或 创建进行在线网页的发布。
+返回 ReadTheDocs，点击 ``Build`` 或 ``创建`` 进行在线网页的发布。
 
 此外，我们还可以自定义域名：
 
