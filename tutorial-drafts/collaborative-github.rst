@@ -1,6 +1,6 @@
-Sphinx多人协作开发（Github）
+Sphinx 多人协作开发（Github）
 =========
-速识Github
+速识 Github
 --------------
 **Github** 是一个基于 **Git** （一个开源的分布式版本控制系统）的版本控制和协作的代码托管平台，因为只支持 git 作为唯一的版本库格式进行托管，因此得名 Github。使用 Github 只需要利用邮箱注册账户，访问 https://github.com 或下载 Github Desktop 既可。将 Github 作为一个协作开发工具，能够使团队工作更有效率，具有更高的生产力。
 
