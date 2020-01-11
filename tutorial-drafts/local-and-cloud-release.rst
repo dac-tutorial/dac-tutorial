@@ -98,13 +98,13 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 接下来，返回 Github，在项目仓库的首页右侧寻找 ``Settings`` ，进行以下操作：
 
 - 在 ``Settings`` -> ``Options`` 的 ``Danger Zone`` 中将仓库设为公开（ ``Make Public`` ）。
-- ``Settings`` -> ``Webhooks``， 点击 ``Add webhook``进行添加（也有可能已自动识别好 ReadTheDocs 项目地址）。
+- ``Settings`` -> ``Webhooks``， 点击 ``Add webhook`` 进行添加（也有可能已自动识别好 ReadTheDocs 项目地址）。
 
 .. image:: images/add-webhook.png
 
 - 在项目的根目录下创建文件 ``readthedocs.yml``，参考 `官网文档 <https://docs.readthedocs.io/en/stable/config-file/v2.html>`_ 的介绍进行文件配置。 
 
-返回 ReadTheDocs，点击 ``Build`` 或 ``创建`` 进行在线网页的发布。
+返回 ReadTheDocs，点击 ``Build version`` 进行在线网页的发布。
 
 此外，我们还可以自定义域名：
 
