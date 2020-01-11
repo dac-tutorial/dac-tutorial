@@ -306,13 +306,7 @@ rst 标记格式为： ``.. code:: 语言名`` ，如：
 
 渲染效果如下：
 
-.. code:: php
-
-    <?php
-        if(1 == 1){
-            $joke = "Life is short, not int.";
-        }
-    ?>
+.. image:: images/rst-code-highlight.jpg
 
 可以进一步查看 `代码高亮支持列表 <https://pygments.org/languages/>`_，`详细用法 <https://pygments.org/docs/lexers/>`_ 。
 
