@@ -2,6 +2,8 @@ reStructuredText 语法指南
 ###########################
 1 简介
 *******
+理解 RST
++++++++++
 reStructuredText（可简写为RST、ReST或reST）是一种用于文本数据的文件格式，主要用于 Python 编程语言社区的技术文档。
 它是Python Doc-SIG（Documentation Special Interest Group）的 Docutils 项目的一部分，旨在为 Python 创建一组类似于 Java 的 Javadoc 或 Perl 的 Plain Old Documentation（pod）的工具。Docutils 可以从 Python 程序中提取注释和信息，并将它们格式化为各种形式的程序文档。
 
@@ -9,10 +11,14 @@ reStructuredText 是一种轻量级标记语言，其设计目的是（a）文�
 
 学习本章 reStructuredText 语法，首先要理解两种标记元素：指令（Directives）和角色（Role）。区别在于指令是块级元素，像段落一样使用。角色是行内元素，可以写在普通文本之中。
 
-    提示：
+插件安装
++++++++++
 
-    1. 在第一小节 Sphinx开发环境配置中，已经介绍了如何在 Visual Studio Code 中安装reStructuredText 拓展。（补链接）请同学们开始学习本节 reStructuredText 前，确认插件已安装。
-    2. 同学们在练习当中，可以随时预览 rst 文件渲染效果，检查自己书写是否正确。比如新建一个 rst-test.rst 文件，分别输入斜体文本、加粗文本，点击如下标志，可以看到已经有了相应效果：
+在第一小节 Sphinx开发环境配置中，已经介绍了如何在 Visual Studio Code 中安装 reStructuredText 拓展。（补链接）开始学习本节 reStructuredText 前，同学们可以再前往 extensions 安装 RST Preview 插件。
+    
+.. image:: images/rst-extension-preview.jpg
+
+安装插件后，同学们可以一边练习，一边随时预览文件渲染效果，检查自己书写是否正确。比如新建一个 rst-test.rst 文件，分别输入斜体文本、加粗文本，点击如下标志，可以看到已经有了相应效果：
 
 .. image:: images/rst-welcome-preview.jpg
 .. image:: images/rst-preview-result.jpg
