@@ -103,8 +103,7 @@ sphinx\_rtd\_theme）可通过额外安装后使用。
 --------------
 
 Sphinx里面的模板是已经定义好了的，如果想要自定义主题，如修改主题的颜色、为主题增添内容等，那我们需要掌握一定的
-**jinja2**\ 、\ **HTML** 与 **CSS** 知识\ 。
-
+**jinja2**\ 、\ **HTML** 与 **CSS知识**\ 。
 
 基础知识
 ~~~~~~~~
@@ -304,7 +303,7 @@ Sphinx安装目录下的 *themes*-*basic* 中包含 *basic* 主题，该主题�
 主题左侧导航栏的颜色。
 
 1. 安装jinja2
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 Anaconda 环境中已经集成了 jinja2，因此无需再次安装。
 
@@ -450,5 +449,31 @@ Anaconda 环境中已经集成了 jinja2，因此无需再次安装。
 .. figure:: images/change-nav-color.png
    :alt: 改变网页样式
 
-  
 
+5. 单个网页主题修改
+^^^^^^^^^^^^^^^^^^^
+
+经过以上操作步骤后，主页主题已修改完毕，但是当我们打开单个页面（如Chapter1）后，主题样式却并没有发生更改。如下图所示：
+
+.. figure:: images/single-html.png
+   :alt: 单个主题页面
+
+原因为何呢？我们可以通过检查网页代码来找到答案。
+
+在上图所示的页面点击鼠标右键，然后点击 **检查** ，在控制台可以看到如下提示：
+
+.. figure:: images/error-warning.png
+   :alt: 控制台错误
+
+报错信息提示：找不到 **css** 文件的位置。将鼠标悬浮在报错信息上，出现如下路径地址：
+
+
+.. figure:: images/get-path.png
+   :alt: 路径地址
+
+
+发现原来是 **css** 文件的地址出错了。为解决该问题，我们按照提示，
+将 *static* 文件夹复制到 *build*-*html*-*contents* 文件夹下，保存后再次输入 ``make html``\ ，即可看到成功生成了子页面的主题。
+
+.. figure:: images/single-html-theme.png
+   :alt: 路径地址

@@ -449,5 +449,31 @@ Anaconda 环境中已经集成了 jinja2，因此无需再次安装。
 .. figure:: images/change-nav-color.png
    :alt: 改变网页样式
 
-  
 
+5. 单个网页主题修改
+^^^^^^^^^^^^^^^^^^^
+
+经过以上操作步骤后，主页主题已修改完毕，但是当我们打开单个页面（如Chapter1）后，主题样式却并没有发生更改。如下图所示：
+
+.. figure:: images/single-html.png
+   :alt: 单个主题页面
+
+原因为何呢？我们可以通过检查网页代码来找到答案。
+
+在上图所示的页面点击鼠标右键，然后点击 **检查** ，在控制台可以看到如下提示：
+
+.. figure:: images/error-warning.png
+   :alt: 控制台错误
+
+报错信息提示：找不到 **css** 文件的位置。将鼠标悬浮在报错信息上，出现如下路径地址：
+
+
+.. figure:: images/get-path.png
+   :alt: 路径地址
+
+
+发现原来是 **css** 文件的地址出错了。为解决该问题，我们按照提示，
+将 *static* 文件夹复制到 *build*-*html*-*contents* 文件夹下，保存后再次输入 ``make html``\ ，即可看到成功为子页面生成了主题。
+
+.. figure:: images/single-html-theme.png
+   :alt: 路径地址
