@@ -13,6 +13,7 @@ Welcome to learn-sphinx's documentation!
 
    introduction.rst
    quick-start.md
+   rst-guide.rst
    local-and-cloud-release.rst
    set-theme.rst
    collaborative-github.rst

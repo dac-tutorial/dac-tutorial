@@ -14,7 +14,7 @@ reStructuredText 是一种轻量级标记语言，其设计目的是（a）文�
 插件安装
 +++++++++
 
-在第一小节 Sphinx开发环境配置中，已经介绍了如何在 Visual Studio Code 中安装 reStructuredText 拓展。（补链接）开始学习本节 reStructuredText 前，同学们可以再前往 extensions 安装 RST Preview 插件。
+在第一小节 Sphinx开发环境配置中，已经介绍了如何在 Visual Studio Code 中安装 reStructuredText 拓展。开始学习本节 reStructuredText 前，同学们可以再前往 extensions 安装 RST Preview 插件。
     
 .. image:: images/rst-extension-preview.jpg
 
@@ -46,18 +46,9 @@ reStructuredText中，没有特定的字符指定给标题级别，这是因为�
 
 渲染效果如下：
 
-我展示的是一级标题
-##################
-我展示的是二级标题
-******************
-我展示的是三级标题
-++++++++++++++++++
-我展示的是四级标题
-==================
-我展示的是五级标题
-::::::::::::::::::
-我展示的是六级标题
-------------------
+.. image:: images/rst-heading-preview.jpg
+
+..
 
     注意：
 
