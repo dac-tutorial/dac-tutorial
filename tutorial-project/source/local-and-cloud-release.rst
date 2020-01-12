@@ -99,7 +99,7 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 .. image:: images/add-webhook.png
 
-- 若有需要，在项目的根目录下创建文件 ``readthedocs.yml`` 和 ``requirements.txt``，参考 ``官网 <https://docs.readthedocs.io/en/stable/config-file/v2.html>``_ 的介绍进行文件配置。 
+- 将 ``index.rst`` 改名为 ``contents.rst`` 或在根目录下创建文件 ``readthedocs.yml`` 和 ``requirements.txt``，参考 ``官网 <https://docs.readthedocs.io/en/stable/config-file/v2.html>``_ 的介绍进行更多配置。 
 
 返回 ReadTheDocs，点击 ``Build version`` 进行在线网页的发布。
 
