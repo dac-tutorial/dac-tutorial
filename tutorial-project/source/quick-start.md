@@ -176,16 +176,14 @@
 >
 > - **第一个选项** 会将 Anaconda 的安装目录添加至系统环境变量的 path 中，有利于我们之后在 VS Code 中快速激活 conda 环境，以及直接使用 base 环境中已安装的库和脚本，简化操作流程。
 >   
->   - 如上图红字所示，Anaconda 官方不建议勾选此选项，而建议使用 Anaconda Prompt (或 Anaconda Powershell Prompt，以下将两者统称为 Anaconda Prompt) 。这是因为勾选此选项会将 Anaconda 的若干目录添加至 path 目录中的最前面；如果用户之前已经安装了其他 Python 解释器，勾选此选项会导致用户直接调用 Python 时优先调用 Anaconda 内置的 Python 解释器，而不是用户单独安装的 Python 解释器，如下图所示：
+>   - Anaconda 官方不建议勾选此选项，而建议使用 Anaconda Prompt (或 Anaconda Powershell Prompt，以下将两者统称为 Anaconda Prompt) 。这是因为勾选此选项会将 Anaconda 的若干目录添加至 path 目录中的最前面；如果用户之前已经安装了其他 Python 解释器，勾选此选项会导致用户直接调用 Python 时优先调用 Anaconda 内置的 Python 解释器，而不是用户单独安装的 Python 解释器，如下图所示：
 >   
 >     ![check-anaconda-mac](images/check-anaconda-mac.jpg)
 > - **第二个选项** 可使其他 Python 开发工具（如 VS Code）自动探测到 Anaconda。
 
 Ⅲ. Anaconda 预装了 Sphinx。完成 Anaconda 安装后，可检查一下 Sphinx 的安装情况：
 
-点击启动台-其他-终端，输入`conda list`，回车：
-
-此指令会列出当前 conda 环境 (base) 下所有已安装的包，正常情况下可以看到若干以 Sphinx 开头的包：
+点击启动台-其他-终端，输入`conda list`，回车，此指令会列出当前 conda 环境 (base) 下所有已安装的包，正常情况下可以看到若干以 Sphinx 开头的包：
 
 ![conda-list-mac](images/conda-list-mac.jpg)
 
@@ -193,7 +191,7 @@
 
 Ⅳ. （可选） Sphinx 预装在 Anaconda 的默认环境下，同学们可以进一步通过 Anaconda Navigator 中检查 Sphinx 包配置情况，安装更多的包。
 
-> 提示 ：Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。这里可通过 Anaconda Prompt 输入命令行操作，也可以通过 Anaconda Navigator 进行可视化操作，相对上手更快。
+> **提示 ：**Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。这里可通过 Anaconda Prompt 输入命令行操作，也可以通过 Anaconda Navigator 进行可视化操作，相对上手更快。
 
 点击启动台 - Anaconda Navigator，左侧菜单选择 Environments，检索框输入 Sphinx ，得到以下列表：
 
@@ -490,7 +488,7 @@ Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sph
 > 这里我们通过添加 `recommonmark`扩展为 Sphinx 开启了 Markdown 支持，并将 `.rst` 和 `.txt` 映射到 `'restructuredtext'` 文件类型，将 `.md`映射到 Markdown 文件类型。
 >
 > ⑶ 接着，请同学们从本教程的 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source) 获取 ***chapter3.md*** 文件，并将其存放在我们的 ../learn-sphinx/source 目录下。
->  
+> 
 > ⑷ 最后，修改 ***index.rst*** 文件，将 ***chapter3.md*** 添加到文件目录下：
 >
 > ![reorganize-contents](images/reorganize-contents.png)
