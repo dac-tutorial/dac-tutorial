@@ -1,4 +1,4 @@
-![tutorial-contents](tutorial-contents.png)
+![tutorial-outline](tutorial-outline.png)
 
 + 教程博客：<https://dac-tutorial.github.io/>
 
