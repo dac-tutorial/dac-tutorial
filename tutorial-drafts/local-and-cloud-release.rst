@@ -91,20 +91,25 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 .. image:: images/rtd-set-project.png
 
-在添加项目页面，我们需要填写好项目的名称、地址等信息。
+在添加项目页面，我们需要填写好项目的名称、地址等信息。在额外信息界面，我们可以补充诸如所使用的编程语言等信息。最后点击完成，即可完成导入项目过程。
 
 .. image:: images/rtd-extra-info.png
 
-在额外信息界面，我们可以补充诸如所使用的编程语言等信息。最后点击完成，即可完成导入项目过程。
+接下来，返回 Github，在项目仓库的首页右侧寻找 ``Settings`` ，进行以下操作：
 
-接下来，回到 Github，在项目仓库的首页右边寻找 ``Settings`` -> ``Webhooks & Services``， 启用 ``Add Service`` 下的 ``ReadTheDocs`` 选项。
+- 在 ``Settings`` -> ``Options`` 的 ``Danger Zone`` 中将仓库设为公开（ ``Make Public`` ）。
+- ``Settings`` -> ``Webhooks``， 点击 ``Add webhook`` 进行添加（也有可能已自动识别好 ReadTheDocs 项目地址）。
 
-返回 ReadTheDocs，点击 ``Build`` 或 ``创建`` 进行在线网页的发布。
+.. image:: images/add-webhook.png
+
+- 在项目的根目录下创建文件 ``readthedocs.yml``，参考 `官网文档 <https://docs.readthedocs.io/en/stable/config-file/v2.html>`_ 的介绍进行文件配置。 
+
+返回 ReadTheDocs，点击 ``Build version`` 进行在线网页的发布。
 
 此外，我们还可以自定义域名：
 
-1. 在域名管理中添加 DNS 的 CNAME 记录到 readthedocs.io。
-2. 在项目的 Admin -> Domains 中设置上一步添加的域名，开启 HTTPS，保存。
+- 在域名管理中添加 DNS 的 CNAME 记录到 readthedocs.io。
+- 在项目的 Admin -> Domains 中设置上一步添加的域名，开启 HTTPS，保存。
 
 现在，每当我们推送新的内容到 Github， ReadTheDocs 都会识别并对在线文档进行更新。
 
@@ -188,5 +193,5 @@ sphinx 与 Github Pages 发布
 
 本教程的完整文档最终也使用了 Github Pages 进行发布，具体请点击：**待补**
  
-操作是不是十分简单呢？同学们赶紧用 sphinx 生成的 html 文件发布  Github Pages 静态网页吧！
+操作是不是十分简单呢？同学们赶紧试试用 sphinx 生成的 html 文件发布  Github Pages 静态网页吧！
  
