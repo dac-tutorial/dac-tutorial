@@ -187,7 +187,7 @@ sphinx 与 Github Pages 发布
 
 .. image:: images/githubpages-homepage.jpg
 
-本教程的完整文档最终也使用了 Github Pages 进行发布，具体请点击：**待补**
+本教程的完整文档最终也使用了 Github Pages 进行发布，具体请点击： https://dac-tutorial.github.io/tutorial-by-sphinx/.
  
 操作是不是十分简单呢？同学们赶紧试试用 sphinx 生成的 html 文件发布  Github Pages 静态网页吧！
  
