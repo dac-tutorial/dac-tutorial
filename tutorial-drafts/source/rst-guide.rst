@@ -596,6 +596,4 @@ col 1  col 2
       - 内部链接
       - 
 
-参考文档
-********
 更多详细说明，请参考 `reStructuredText官方文档 <https://docutils.sourceforge.io/rst.html#reference-documentation>`_ 。
