@@ -1,4 +1,4 @@
-# 拓展内容：使用 Jekyll 搭建个人博客
+# 拓展：Jekyll 博客搭建
 
 > **提示：** 在学习此部分内容之前，希望同学们已经了解如何管理 GitHub 远程仓库，并且能够熟练使用 VS Code 代码编辑器与 Markdown 标记语言（本教程的博客上有一个 [Markdown 简明教程](https://dac-tutorial.github.io/Markdown-%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/)，欢迎同学们学习！），对这些内容还不太熟悉的同学请先复习一下教程前面章节的相应内容，然后再学习开始此专题。
 
@@ -6,7 +6,7 @@
 
 本专题将会向大家介绍如何使用 Jekyll 搭建免费的个人博客，经过这一段时间的学习，相信同学们一定有了不少学习心得与感悟，何不将他们记录下来，与大家一同分享、一同进步呢！
 
-# 1 Jekyll 是什么？
+## Jekyll 简介
 
 Jekyll 是一个基于简单、可扩展的静态网站生成器，提供了模板、变量、插件等功能。Jekyll 的核心是一个文本转换引擎。它的方便之处在于支持多种文本标记语言：Markdown，Textile，HTML，然后 Jekyll 就会帮你加入你选择主题的样式的布局中，最终生成你自己的静态博客网站。
 
@@ -18,7 +18,7 @@ Jekyll 可以运行在 [GitHub Pages](http://pages.github.com/) 上，也就是�
 > + [GitHub Help | About GitHub Pages and Jekyll](https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll)
 > + [Microsoft Docs | Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/windows/wsl/about)
 
-# 2 Jekyll 开发环境配置
+## 配置 Jekyll 开发环境
 
 Jekyll 是一个 [Ruby Gem](https://www.jekyll.com.cn/docs/ruby-101/#gems) 组件，支持各大主流的操作系统平台，详情参阅 [Jekyll 官方文档](https://jekyllrb.com/docs/installation/)。
 
@@ -26,7 +26,7 @@ Jekyll 是一个 [Ruby Gem](https://www.jekyll.com.cn/docs/ruby-101/#gems) 组�
 
 > **提示：** 使用 WSL 配置 Jekyll 环境与在标准的 Linux 平台下配置 Jekyll 基本相同，本节介绍的安装配置 Jekyll 的方法大部分可直接应用在 Linux 平台上。
 
-## 2.1 WSL-Ubuntu 安装与配置
+### WSL-Ubuntu 安装与配置
 
 Windows 并未得到 Jekyll 官方的正式支持，但是也可以通过合适的方法使 Jekyll 运行在 Windows 平台上。在 Windows 10 之前，在 Windows 上搭建 Jekyll 开发环境比在 Linux/Unix/macOS 上要麻烦不少，并且有时会遇到一些难以预料的错误。
 
@@ -36,7 +36,7 @@ Windows 并未得到 Jekyll 官方的正式支持，但是也可以通过合适�
 
 > **注意：** WSL 不适用于运行图形用户界面，将以独占方式使用命令行。
 
-### 步骤1：启用 “适用于 Linux 的 Windows 子系统” 可选功能
+#### 步骤1：启用 “适用于 Linux 的 Windows 子系统” 可选功能
 
 1. 以管理员身份打开 PowerShell 并运行：
 
@@ -46,7 +46,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 2. 出现提示后，重启计算机即可。
 
-### 步骤2：获取 Linux 分发版 (Ubuntu)
+#### 步骤2：获取 Linux 分发版 (Ubuntu)
 
 1. 打开 Microsoft Store，搜索 "Linux” ，选择 Ubuntu
 
@@ -56,7 +56,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ![microsoft-store-ubuntu](images/microsoft-store-ubuntu.png)
 
-### 步骤3：初始化 Linux 分发版 (Ubuntu)
+#### 步骤3：初始化 Linux 分发版 (Ubuntu)
 
 安装 Linux 分发版后，必须先初始化一次后才能使用，步骤如下：
 
@@ -70,7 +70,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 > - 打开新的分发版实例时，系统不会提示你输入密码，但**如果使用 `sudo` 提升了进程的权限，则需要输入密码**
 > - Linux/Unix 在输入密码的时候不会有任何提示，Unix的哲学是“没有消息就是好消息”！
 
-### 步骤4：更新和升级 Linux 分发版 (Ubuntu)
+#### 步骤4：更新和升级 Linux 分发版 (Ubuntu)
 
 + Windows 不会自动更新或升级 Linux 分发版，需要使用 Linux 分发版的包管理器升级已安装的包，建议定期更新。
 
@@ -82,7 +82,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ![ubuntu-apt](images/ubuntu-apt.png)
 
-### 附录：Linux 基础命令
+#### 附录：Linux 基础命令
 
 打开 WSL - Ubuntu 命令行窗口，试一试以下 Linux 命令：
 
@@ -163,17 +163,17 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 
 
-## 2.2 使用 VS Code 创建 WSL 集成开发环境
+### 使用 VS Code 创建 WSL 集成开发环境
 
 VS Code 内置的命令行可以将它与 WSL Linux 发行版本集成，同时在代码编辑器与 Bash 和 PowerShell 工具之间建立无缝工作流（请在安装 VS Code 时将 VS Code 添加至 path）。
 
-### 步骤1：安装适用于 Windows 的 VS Code 和 Git
+#### 步骤1：安装适用于 Windows 的 VS Code 和 Git
 
 1. 下载适用于 Windows 的 VS Code：[https://code.visualstudio.com](https://code.visualstudio.com/)。
 2. 首次打开 VS Code 时，可能会看到以下错误消息：“找不到 Git。请使用“git.path”设置来安装或使用它。” 
    请从 git-scm 网站下载并安装适用于 Windows 的 Git：https://git-scm.com/download/win，为 VS Code 工作区中的“源代码管理”面板提供技术支持。
 
-### 步骤2：安装 Remote - WSL 扩展
+#### 步骤2：安装 Remote - WSL 扩展
 
 在 VS Code 中，打开“扩展”视图（选择 “查看” - “扩展” 或按 `Ctrl+Shift+X` 并搜索 “wsl”。 选择如下所示的 “Remote - WSL” 扩展（应位于列表顶端）并按 “安装”。
 
@@ -181,7 +181,7 @@ VS Code 内置的命令行可以将它与 WSL Linux 发行版本集成，同时�
 
 使用 Remote - WSL 扩展，可以在 WSL 的上下文中使用 VS Code 编辑器，享受对 IntelliSense、代码导航、调试等语言功能的完整支持。 还可以选择安装[远程开发扩展包](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)，其中捆绑了全部三个 VS Code 远程扩展，除 WSL 外还支持在 Docker 容器内通过 SSH 工作。
 
-### 步骤3：将默认终端 Shell 更改为 WSL
+#### 步骤3：将默认终端 Shell 更改为 WSL
 
 在 VS Code 中，选择“视图” > “终端”（或选择使用反撇号字符的 Ctrl+`）。 将在 VS Code 窗口的底部打开命令行（或终端 shell）窗口。 通过此窗口可以运行各种命令行工具，而无需离开 VS Code。
 
@@ -200,8 +200,7 @@ VS Code 的默认终端是 PowerShell，若要更改默认 VS Code 终端 Shell�
 >
 > ![vscode-encoding](images/vscode-encoding.png)
 
-
-## 2.3 使用 WSL-Ubuntu 安装 Jekyll
+### 使用 WSL-Ubuntu 安装 Jekyll
 
 安装当前最新版本的 Jekyll V4.0.0 有以下前提条件：
 
@@ -209,7 +208,7 @@ VS Code 的默认终端是 PowerShell，若要更改默认 VS Code 终端 Shell�
 - [RubyGems](https://rubygems.org/pages/download) （可通过执行 `gem -v` 指令检查版本）
 - [GCC](https://gcc.gnu.org/install/) and [Make](https://www.gnu.org/software/make/) （以防你的系统中没有安装这些工具，请通过执行 `gcc -v`,`g++ -v` 和 `make -v` 指令进行检查）
 
-### 步骤1：安装 Ruby
+#### 步骤1：安装 Ruby
 
 打开 WSL-Ubuntu 命令行窗口，分别执行以下命令：
 
@@ -221,7 +220,7 @@ sudo apt-get install ruby2.5 ruby2.5-dev build-essential dh-autoreconf
 
 > **注意：** 我们将会使用到一个 [BrightBox](https://www.brightbox.com/docs/ruby/ubuntu/) 的资源库，该库包含了为 Ubuntu 的 优化的 Ruby。
 
-### 步骤2：更新 Ruby gems
+#### 步骤2：更新 Ruby gems
 
 在 WSL-Ubuntu 命令行窗口中执行以下命令，更新 Ruby gems：
 
@@ -229,7 +228,7 @@ sudo apt-get install ruby2.5 ruby2.5-dev build-essential dh-autoreconf
 gem update
 ```
 
-### 步骤3：安装 Jekyll
+#### 步骤3：安装 Jekyll
 
 在 WSL-Ubuntu 命令行窗口中执行以下命令，安装 Jekyll 相关包：
 
@@ -240,7 +239,7 @@ gem install jekyll-feed
 gem install jekyll-paginate 
 ```
 
-### 步骤4：检查 Jekyll 安装
+#### 步骤4：检查 Jekyll 安装
 
 在 WSL-Ubuntu 命令行窗口中执行以下命令：
 
@@ -254,7 +253,7 @@ jekyll -v
 
 
 
-### 附录：Jekyll 常用命令
+#### 附录：Jekyll 常用命令
 
 - `jekyll new PATH` - 使用基于 gem 的默认主题在指定目录中创建一个全新的 Jekyll 站点。必要的目录也会被自动创建。
 - `jekyll new PATH --blank` - 在指定的目录下创建一个全新的空的 Jekyll 站点框架。
@@ -265,9 +264,9 @@ jekyll -v
 - `jekyll help` - 显示帮助信息，也可以针对特定子命令显示帮助信息，例如 `jekyll help build`
 - `jekyll new-theme` - 创建一个新的 Jekyll 主题框架
 
-## 2.4  小练习：第一个 Jekyll 站点
+### 小练习：第一个 Jekyll 站点
 
-### 步骤1：创建 Jekyll 项目目录
+#### 步骤1：创建 Jekyll 项目目录
 
 在 Windows 合适的位置新建一个 `myblog` 文件夹，按住 <kbd>shift</kbd> 对此文件夹单击鼠标右键，选择 “在此打开 Linux Shell”
 
@@ -279,7 +278,7 @@ jekyll -v
 
 ![vscode-wsl-myblog](images/vscode-wsl-myblog.png)
 
-### 步骤2：添加 index.html 文件
+#### 步骤2：添加 index.html 文件
 
 使用 VS Code 在 ***myblog*** 目录下新建一个 ***index.html*** 文件，填写以下内容，并保存：
 
@@ -298,7 +297,7 @@ jekyll -v
 
 ![myblog-index-html](images/myblog-index-html.png)
 
-### 步骤3：发布 Jekyll 测试站点
+#### 步骤3：发布 Jekyll 测试站点
 
 现在可以使用 Jekyll 发布我们的测试站点了，有两种命令可用于来发布站点：
 
@@ -328,7 +327,7 @@ jekyll -v
 
 
 
-# 3 使用 Jekyll 搭建个人博客
+## 使用 Jekyll 搭建个人博客
 
 > **注意：** 本节部分内容参考了知乎用户[柠檬橙](https://www.zhihu.com/people/ll-chen-2)的文章[《可能是最全面的github pages搭建个人博客教程》](https://zhuanlan.zhihu.com/p/94121927)，感谢他的热心分享！
 
@@ -343,7 +342,7 @@ jekyll -v
 
 下面将向大家介绍如何利用 Jekyll 搭建一个基于 GitHub Pages 的简易博客站点。
 
-## 3.1 创建博客仓库
+### 创建博客仓库
 
 首先，我们需要建设一个用于我们博客站点的 GitHub 仓库，名称必须是：`username.github.io` 这里的 **username** 指的是 GitHub 用户/组织的帐户名称，这个地址将会成为博客站点的网址。例如，本教程博客对应的 GitHub 仓库名称就是 `dac-tutorial.github.io`。
 
@@ -373,7 +372,7 @@ jekyll -v
 
 
 
-## 3.2 修改博客配置
+### 修改博客配置
 
 经过前一小节的操作，我们通过 `fork` 快速创建了[博客仓库](https://github.com/dac-tutorial/dac-tutorial.github.io)，但现在其配置和内容都还是原作者的，我们需要进行一些修改。使用 GitHub Desktop 将仓库 clone 至本地后，将 `_posts` 目录清空，删除 `images` 目录下除了 `404.jpg` 外的其他文件。然后打开博客的配置文件 ***_config.yml*** 文件，它位于博客根目录下，我们需要修改以下内容：
 
@@ -382,8 +381,6 @@ jekyll -v
 ![blog-config-1](images/blog-config-1.png)
 
 + **博客头像和标签图标：**配置博客的头像 (avatar) 和显示在浏览器标签页前面的小图标 (favicon) ，大家可通过搜索引擎寻找自己喜欢的资源，并将其保存在 images 目录下，然后修改相应配置。
-
-![image-20200112132903195](../images/image-20200112132903195.png)
 
 ![blog-config-2](images/blog-config-2.png)
 
@@ -433,7 +430,7 @@ gitalk:
 
 > **提示：** 也可以在完成配置修改后，通过 GitHub Desktop 将修改 push 到远程仓库中，待 GitHub Pages 重构后，可直接在博客网址上看到修改后的效果，但这个方法对于调试不是很方便。
 
-## 3.3 添加博客内容
+### 添加博客内容
 
 修改完博客配置后，我们需要为我们的博客添加内容，也就是我们的的博文。所有的文章都使用 Markdown 标记语言撰写，统一存放在 **_post** 文件夹下。然后，在浏览器中转到（刷新） <http://localhost:4000>页面，就能在页面中看到新增的博文。
 
@@ -444,7 +441,7 @@ gitalk:
 
 ![add-new-article](images/add-new-article.png)
 
-## 3.4 其他博客功能
+### 其他博客功能
 
 经过以上步骤，大家已经基本搭建好了一个个人博客站点，现在我们只需要不断添加、更新博文，以及根据需要修改博客设置就可以了。如果大家还想为自己的博客添加一些其他的功能，提升用户体验，可以参考以下几篇文章：
 

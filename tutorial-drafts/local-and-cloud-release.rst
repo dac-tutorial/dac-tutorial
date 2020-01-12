@@ -1,16 +1,17 @@
+Sphinx 文档发布
+=========================
+
 Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Texinfo、纯文本等。在这里我们主要为同学们介绍几种常见的发布格式。
 
-本地发布
-========
 
 发布 HTML
-------------
+---------------
 发布 HTML 格式是 Sphinx 发布最基础的操作，如我们在学习生成 **第一个 Sphinx 项目** 时所看到的，只需在发布时使用 ``make html`` 或 ``sphinx-build -b html <sourcedir> <builddir>`` 命令即可。更多有关 HTML 主题定制的内容，请参阅后文 HTML 主题定制章节。
 
 .. image:: images/make-html.png
 
 发布 PDF
-------------
+----------------
 发布 PDF 格式的过程较为复杂，也有几种不同的途径，例如可以使用 rst2pdf 这个工具，但它只能处理较为基本的格式。当我们需要解决分页、目录、排版、换行、脚注、表格、交叉参考、插图等问题时，就可以选用 LaTeX 作为中间格式来转换 PDF。LaTeX 中的文档结构可以单独设置样式，相同的数据结构可以用不同的格式显示，并具有不同的设计。下面就为同学们介绍如何使用 rst2pdf 输出简单 PDF，以及使用 Sphinx 输出 LaTeX 格式文件，再使用 Pandoc 转换为 PDF 格式文件的方法。
 
 1. 使用 rst2pdf 输出 PDF
@@ -73,12 +74,8 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 最后运行 ``make latexpdf`` 即可。
 
 
-
-云端发布
-========
-
 使用 ReadTheDocs 进行发布
------------------------------
+------------------------------
 ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 Sphinx 网页托管到这个平台上进行在线发布。首先我们需要在这个平台注册账号，不过也可以选择关联我们的 Github 账号。
 
 .. image:: images/rtd-register.png
@@ -98,7 +95,9 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 .. image:: images/add-webhook.png
 
-- 在项目的根目录下创建文件 ``readthedocs.yml`` 和 ``requirements.txt``，参考 `官网 <https://docs.readthedocs.io/en/stable/config-file/v2.html>`_ 的介绍进行文件配置。 
+
+- 在项目的根目录下创建文件 ``readthedocs.yml`` 和 ``requirements.txt``，参考 <https://docs.readthedocs.io/en/stable/config-file/v2.html>的介绍进行文件配置。 
+
 
 返回 ReadTheDocs，点击 ``Build version`` 进行在线网页的发布。
 
@@ -110,26 +109,25 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 现在，每当我们推送新的内容到 Github， ReadTheDocs 都会识别并对在线文档进行更新。
 
 
-
 使用 Github Pages 进行发布
------------------------------
+-----------------------------------------
 Github Pages 基本功能
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 Github Pages 官网：https://pages.github.com/
 
 Github Pages 作为一种线上发布方式，完全免费，零成本，提供 username.github.io 的域名, 免费的静态网站服务器；集成在 Github 中, 直接和代码管理绑定在一起, 随着代码更新自动重新部署, 使用非常方便；没有数量限制, 每一个 Github repository 都可以部署为一个静态网站。
 
 利用 Github Pages 进行基本的静态网页发布的方式有两种，一是打开 Github Pages 官网，点击 Github Repository ，会自动跳转到当前 Github 账户；同学们也可以直接登录自己的 Github 账号。
 
-.. image:: images/githubpages-home.jpg
+.. figure:: images/githubpages-home.jpg
 
 进入需要发布的 Repo 界面，选择 Settings，下拉找到 Github Pages 选项
 
-.. image:: images/githubpages-settings.jpg
+.. figure:: images/githubpages-settings.jpg
 
 选择网页生成的来源，用户和组织站点的默认发布源是主分支。
 
-.. image:: images/githubpages-settings.jpg
+.. figure:: images/githubpages-settings.jpg
 
 选择合适的发布主题。
 
@@ -139,7 +137,7 @@ Github Pages 作为一种线上发布方式，完全免费，零成本，提供 
 
 设置完成后，显示已自动生成网页，除了通过自动生成的域名进行访问，用户也可以自定义域名。
 
-.. image:: images/githubpages-publish.jpg
+.. figure:: images/githubpages-publish.jpg
 
 sphinx 与 Github Pages 发布
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -147,7 +145,7 @@ sphinx 与 Github Pages 发布
 
 正常情况下 Github Pages 只能发布由 sphinx 编译后的 html 文件包，不能直接发布 rst、md 等格式的其他文件。如果需要使用 sphinx 发布 Github Pages 兼容的 html，需要添加一个 sphinx 内置拓展 'sphinx.ext.githubpages'，具体配置如下图：
 
-.. image:: images/githubpages-config.jpg
+.. figure:: images/githubpages-config.jpg
  
  配置过程中可能会报错提示未安装某些拓展包，按照提示安装既可。
   
