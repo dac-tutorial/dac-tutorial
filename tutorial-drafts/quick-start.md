@@ -10,7 +10,7 @@
 
 ---
 
-## 1 Sphinx 开发环境配置
+## Sphinx 开发环境配置
 
 参考 Sphinx 的官方文档，[配置 Sphinx 开发环境](http://www.sphinx-doc.org/en/master/usage/installation.html)主要包括安装 Python 开发环境、使用 pip 工具安装 sphinx 、安装配置文本、代码编辑器等步骤，同时还涉及到使用命令行和修改系统环境变量等操作。这些步骤对于初学者来说略有些复杂繁琐，很容易就迷失在各种琐碎的配置细节中，打击同学们的学习热情。
 
@@ -22,7 +22,7 @@
 
 ---
 
-### 1.1 Windows 环境配置
+### Windows 环境配置
 
 > **注意：** 以下步骤不需要同学们预先安装 Python 解释器（如果之前有安装也可以考虑将其卸载），而是直接使用 Anaconda 内集成的 Python 解释器，如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接在命令行中使用命令 `pip install sphinx` 安装 Sphinx 及运行 Sphinx 所需要的 [docutils](http://docutils.sourceforge.net/)、[jinja2](http://jinja.pocoo.org/) 等第三方库（前提是 Python 和 Pip 已添加在系统变量的 path 中）。
 >
@@ -149,14 +149,14 @@
 
 
 
-### 1.2 macOS 环境配置
+### macOS 环境配置
 
 
 在mac上配置 Sphinx，可以通过 Anaconda，Homebrew，MacPorts 等方式来完成，这里介绍使用 Anaconda，Pip，和 Homebrew 完成 Sphinx 安装与配置，三种方式选其一即可。
 
 这三种相同点在于都是软件包管理工具，不同点在于 Homebrew 是一个通用的软件包管理工具，终端安装的很多软件包都可以用它来安装；Pip 一般安装一些与 Python 环境相关的软件包，conda 功能与 Pip 类似，目的是为了解决对 Python 以外的依赖环境问题，Pip 在任何环境中安装 Python 包; conda 在 conda 环境中装任何包。
 
-#### Anaconda 安装与配置
+#### Anaconda 安装与配置 （推荐）
 
 > **注意：**
 >
@@ -301,13 +301,13 @@ Homebrew 可以视为套件管理器。它是一款 Mac OS 平台下的软件包
 
 ---
 
-## 2 第一个 Sphinx 项目
+## 第一个 Sphinx 项目
 
 > **注意：** 以下内容以 Windows 作为操作演示平台，macOS 上的操作基本一致。
 
 前一小节我们利用 Anaconda 和 VS Code 搭建了一体化的 Sphinx 工作台，现在可以启动我们第一个Sphinx 项目了！
 
-### 2.1 创建项目
+### 创建项目
 
 Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，这个脚本相当于一个设置向导，它会询问我们一系列问题，并根据我们的回答生成此项目的文档源目录及默认配置文件 conf.py，如图所示：
 
@@ -352,7 +352,7 @@ Sphinx 提供了一个快速创建 Sphinx 项目的脚本 `sphinx-quickstart`，
 
 
 
-### 2.2 组织内容
+### 组织内容
 
 Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 source 目录下添加 chapter1.rst、chapter2.rst 等源文件，用于撰写文档的不同章节，并使用 index.rst 对其他 rst 文件进行组织管理。
 
@@ -408,7 +408,7 @@ Sphinx 使用 reStructuredText 作为默认标记语言，通常我们可以在 
 
 
 
-### 2.3 修改配置
+### 修改配置
 
 前一小节我们尝试了使用 Sphinx 默认配置发布了我们的 HTML 网页，现在我们来学习如何修改文档的格式与风格！
 
@@ -447,13 +447,16 @@ Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sph
 
 ##### 练习1：为 Sphinx 项目添加 Markdown 支持
 
-Sphinx 默认仅支持 reStructuredText 文件类型，但我们可以使用源解析器扩展添加新文件类型。
+> **提示：**
+>
+> + Markdown 是一种与 reStructuredText 类似的标记语言，其语法甚至比 reStructuredText 更加简单一些。Markdown 是目前最受欢迎的标记语言，GitHub、Stack Overflow、reddit 以及知乎、简书等网站均支持这种格式。本教程的博客提供了一个 [Markdown 简明教程](https://dac-tutorial.github.io/Markdown-%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/)，欢迎同学们学习！
+>
+> + Sphinx 默认仅支持 reStructuredText 标记语言，但我们可以通过安装 recommonmark 源解析器扩展使其支持添加 Markdown 标记语言。安装方法可参阅 [Sphinx 官网文档](http://www.sphinx-doc.org/en/master/usage/markdown.html)。
 
-recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的源文档，安装方法可参阅 [Sphinx 官网文档](http://www.sphinx-doc.org/en/master/usage/markdown.html)。
 
 请尝试为我们的 ***learn-sphinx*** 项目添加 Markdown 支持，并在原文档目录下添加一个由 ***index.rst*** 管理的 ***chapter3.md*** 文件（从本教程的 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source) 获取该文件）。 
 
-> **步骤如下：**
+> **步骤：**
 >
 > 1. 首先，使用 conda 工具安装 recommonmark 扩展，在 Anaconda Prompt 中执行命令:
 >
@@ -526,7 +529,7 @@ Sphinx 默认的 HTML 主题为 alabaster，alabaster 是 Sphinx 的内置主题
 
 
 
-### 2.4 发布文档
+### 发布文档
 
 在前面三个小节中，我们已经多次使用 `make html` 将我们的 Sphinx 项目发布成本地的 HTML 网页。
 
