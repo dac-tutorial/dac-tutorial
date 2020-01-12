@@ -139,7 +139,7 @@ Github Pages 作为一种线上发布方式，完全免费，零成本，提供 
 
 .. figure:: images/githubpages-publish.jpg
 
-sphinx 与 Github Pages 发布
+Sphinx 与 Github Pages 发布
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 利用 sphinx 制作的文档可以借助 Github Pages 进行发布，具体操作如下：
 
@@ -147,7 +147,7 @@ sphinx 与 Github Pages 发布
 
 .. figure:: images/githubpages-config.jpg
  
- 配置过程中可能会报错提示未安装某些拓展包，按照提示安装既可。
+ 配置过程中可能会报错提示未安装某些拓展包，按照提示安装即可。
   
 1. 按照本教程的 **quick-start** -> **创建项目** 一节中的输出 html 文件方法输出 html 文件。Sphinx 默认的 html 主题在本教程的 **quick-start** -> **HTML 输出选项** (Options for HTML output)一节中有介绍，同学们可以回顾相关章节对内容进行复习。输出结果如下图：
  
