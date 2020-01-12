@@ -1,0 +1,23 @@
+.wy-side-nav-search, .wy-nav-top 
+     {
+          background: #0099CC;
+     }
+.wy-nav-side
+{
+     height: 200px;
+          background-color:#0099CC; /* 浏览器不支持时显示 */
+          background-image: linear-gradient(#0099CC, #9198e5);
+}
+
+.caption-text{
+     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.reference internal
+{color:black;}
+
+h1{
+     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;}
+
+     .simple{
+     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
