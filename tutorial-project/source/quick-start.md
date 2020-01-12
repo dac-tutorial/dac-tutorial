@@ -273,7 +273,7 @@ Homebrew 可以视为套件管理器。它是一款 Mac OS 平台下的软件包
 
 1. 打开 [Visual Studio Code 官网](https://code.visualstudio.com/Download)，下载适合的安装包，可以勾选全部复选框完成安装任务。
 
-<img src="images/vscode-download-mac.jpg" alt="vscode-download-mac" style="zoom:50%;" />
+![vscode-download-mac](images/vscode-download-mac.jpg)
 
 2. 完成安装后打开 VS Code，在  ***Extentions*** 中安装 ***Python*** 和 ***reStructuredText*** 拓展。
 
