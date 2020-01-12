@@ -139,7 +139,7 @@ Github Pages 作为一种线上发布方式，完全免费，零成本，提供 
 
 .. figure:: images/githubpages-publish.jpg
 
-sphinx 与 Github Pages 发布
+Sphinx 与 Github Pages 发布
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 利用 sphinx 制作的文档可以借助 Github Pages 进行发布，具体操作如下：
 
