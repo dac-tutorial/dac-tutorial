@@ -55,7 +55,7 @@
 > >
 > >   ![two-python-interpreter](images/two-python-interpreter.png)
 > >
-> > ②（可选） 假如同学们依然希望系统默认调用先前单独安装的 Python 解释器，只需要在完成Anaconda 安装后，手动将 path 中单独安装的 Python 解释器的路径移动到 Anaconda 目录之前，操作方法如下：
+> > ②（可选）假如同学们依然希望系统默认调用先前单独安装的 Python 解释器，只需要在完成Anaconda 安装后，手动将 path 中单独安装的 Python 解释器的路径移动到 Anaconda 目录之前，操作方法如下：
 > >
 > >   ![windows-path-config](images/windows-path-config.gif)
 > >
@@ -69,7 +69,7 @@
 
 Ⅲ. 完成 Anaconda 的安装后，检查 Sphinx 是否已安装。
 
-点击 ”开始“ 菜单 - “Anaconda3” -  “Anaconda Powershell Prompt”，输入 `conda list` ，回车；
+点击 “开始” 菜单 - “Anaconda3” -  “Anaconda Powershell Prompt”，输入 `conda list` ，回车；
 
 此指令会列出当前 conda 环境 (base) 下所有已安装的包，正常情况下我们可看到若干以 Sphinx 开头的包：
 
