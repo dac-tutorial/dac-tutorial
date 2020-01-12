@@ -33,11 +33,9 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 * 使用 Sphinx 输出 LaTeX 格式文件
 
-首先，我们需要在 `官网 <http://tug.org/texlive/acquire-netinstall.html>`_ 或清华大学的镜像站下载并安装 TeX Live，这是一款处理 tex 格式文件的工具，目前于2019年4月发布了最新版本。安装过程可能会花费比较长的时间，可以通过安装过程对话框查看安装进度。
+首先，我们需要在 `官网 <http://tug.org/texlive/acquire-netinstall.html>`_ 或清华大学的镜像站下载并安装 TeX Live，这是一款处理 tex 格式文件的工具，目前于2019年4月发布了最新版本。安装过程可能会花费比较长的时间，可以通过安装过程对话框查看安装进度。出现以下对话框说明打开了正确的安装文件：
 
 .. image:: images/texlive1.png
-
-.. image:: images/texlive2.png
 
 安装完成后，我们可以在命令行中输入 lex -version 来检验是否安装成功。
 
@@ -49,38 +47,37 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 * 使用 Pandoc 将 LaTeX 格式文件转换为 PDF 格式文件
 
-`Pandoc <https://www.pandoc.org/installing.html>`_ 是一款标记语言转换工具，可实现不同标记语言间的格式转换。 
+`Pandoc <https://www.pandoc.org/installing.html>`_ 是一款标记语言转换工具，可实现多种不同标记语言间的格式转换。 
 
 我们需要用到的语法很简单，为 ``pandoc <源文件名> -o <转换后的文件名>``，一般情况下，Pandoc 会根据文件名的后缀自动识别文件类型并进行相应的转换，十分方便。
 
 
 
 
+如果要生成中文PDF，还需要确认安装了东亚语言包和字体包（texlive-lang-cjk, texlive-fonts-recommands等），在 ``conf.py`` 中设置 Options for LaTeX output 的 latex_elements 变量，加入如：::
 
-我们要去修改 ``conf.py`` 中 Options for LaTeX output 的 latex_elements 变量。
+  latex_elements = {
+  # The paper size ('letterpaper' or 'a4paper').
+  #'papersize': 'letterpaper',
 
-如果要生成中文PDF，还需要确认安装了东亚语言包和字体包(texlive-lang-cjk, texlive-fonts-recommands之类）。
-然后配置conf.py，在latex_elements中加入:
-latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+  # The font size ('10pt', '11pt' or '12pt').
+  #'pointsize': '10pt',
 
-# The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+  # Additional stuff for the LaTeX preamble.
+  'preamble': '''
+  \\hypersetup{unicode=true}
+  \\usepackage{CJKutf8}
+  \\AtBeginDocument{\\begin{CJK}{UTF8}{gbsn}}
+  \\AtEndDocument{\\end{CJK}}
+  ''',
 
-# Additional stuff for the LaTeX preamble.
-'preamble': '''
-\\hypersetup{unicode=true}
-\\usepackage{CJKutf8}
-\\AtBeginDocument{\\begin{CJK}{UTF8}{gbsn}}
-\\AtEndDocument{\\end{CJK}}
-''',
 最后运行 ``make latexpdf`` 即可。
 
 
 
 云端发布
 ========
+
 使用 ReadTheDocs 进行发布
 -----------------------------
 ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 Sphinx 网页托管到这个平台上进行在线发布。首先我们需要在这个平台注册账号，不过也可以选择关联我们的 Github 账号。
@@ -102,16 +99,18 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 .. image:: images/add-webhook.png
 
-- 在项目的根目录下创建文件 ``readthedocs.yml``，参考 `官网文档 <https://docs.readthedocs.io/en/stable/config-file/v2.html>`_ 的介绍进行文件配置。 
+- 在项目的根目录下创建文件 ``readthedocs.yml`` 和 ``requirements.txt``，参考 `官网 <https://docs.readthedocs.io/en/stable/config-file/v2.html>`_ 的介绍进行文件配置。 
 
 返回 ReadTheDocs，点击 ``Build version`` 进行在线网页的发布。
 
 此外，我们还可以自定义域名：
 
 - 在域名管理中添加 DNS 的 CNAME 记录到 readthedocs.io。
-- 在项目的 Admin -> Domains 中设置上一步添加的域名，开启 HTTPS，保存。
+- 在项目的 ``Admin`` -> ``Domains`` 中设置上一步添加的域名，开启 HTTPS，保存。
 
 现在，每当我们推送新的内容到 Github， ReadTheDocs 都会识别并对在线文档进行更新。
+
+
 
 使用 Github Pages 进行发布
 -----------------------------
