@@ -49,10 +49,9 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 `Pandoc <https://www.pandoc.org/installing.html>`_ 是一款标记语言转换工具，可实现多种不同标记语言间的格式转换。 
 
-我们需要用到的语法很简单，为 ``pandoc <源文件名> -o <转换后的文件名>``，一般情况下，Pandoc 会根据文件名的后缀自动识别文件类型并进行相应的转换，十分方便。
+我们需要用到的语法很简单，为 ``pandoc <源文件名> -o <转换后的文件名>``，如 ``pandoc test.txt -o test.pdf``。一般情况下，Pandoc 会根据文件名的后缀自动识别文件类型并进行相应的转换，十分方便。也可以在 ``pandoc`` 后添加 ``-s``，为聪明模式，具体说明及其他详细语法请见 `帮助文档 <https://pandoc.org/MANUAL.html#creating-a-pdf>`_。
 
-
-
+此外，Pandoc 官网也提供了一个在线的 `转换平台 <https://pandoc.org/try/>`_，但有些格式有欠缺，感兴趣的同学可以前往尝试。
 
 如果要生成中文PDF，还需要确认安装了东亚语言包和字体包（texlive-lang-cjk, texlive-fonts-recommands等），在 ``conf.py`` 中设置 Options for LaTeX output 的 latex_elements 变量，加入如：::
 
