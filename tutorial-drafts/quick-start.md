@@ -156,7 +156,7 @@
 
 这三种相同点在于都是软件包管理工具，不同点在于 Homebrew 是一个通用的软件包管理工具，终端安装的很多软件包都可以用它来安装；Pip 一般安装一些与 Python 环境相关的软件包，conda 功能与 Pip 类似，目的是为了解决对 Python 以外的依赖环境问题，Pip 在任何环境中安装 Python 包; conda 在 conda 环境中装任何包。
 
-#### Anaconda 安装与配置
+#### Anaconda 安装与配置 （推荐）
 
 > **注意：**
 >
@@ -447,13 +447,16 @@ Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sph
 
 ##### 练习1：为 Sphinx 项目添加 Markdown 支持
 
-Sphinx 默认仅支持 reStructuredText 文件类型，但我们可以使用源解析器扩展添加新文件类型。
+> **提示：**
+>
+> + Markdown 是一种与 reStructuredText 类似的标记语言，其语法甚至比 reStructuredText 更加简单一些。Markdown 是目前最受欢迎的标记语言，GitHub、Stack Overflow、reddit 以及知乎、简书等网站均支持这种格式。本教程的博客提供了一个 [Markdown 简明教程](https://dac-tutorial.github.io/Markdown-%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/)，欢迎同学们学习！
+>
+> + Sphinx 默认仅支持 reStructuredText 标记语言，但我们可以通过安装 recommonmark 源解析器扩展使其支持添加 Markdown 标记语言。安装方法可参阅 [Sphinx 官网文档](http://www.sphinx-doc.org/en/master/usage/markdown.html)。
 
-recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx 的源文档，安装方法可参阅 [Sphinx 官网文档](http://www.sphinx-doc.org/en/master/usage/markdown.html)。
 
 请尝试为我们的 ***learn-sphinx*** 项目添加 Markdown 支持，并在原文档目录下添加一个由 ***index.rst*** 管理的 ***chapter3.md*** 文件（从本教程的 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source) 获取该文件）。 
 
-> **步骤如下：**
+> **步骤：**
 >
 > 1. 首先，使用 conda 工具安装 recommonmark 扩展，在 Anaconda Prompt 中执行命令:
 >

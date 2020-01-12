@@ -202,8 +202,8 @@ Visual Studio Code 安装与配置
 
     .. image:: images/vscode-setup-options.png
 
-3. 完成安装后打开 VS Code，在 ***Extentions*** 中安装 ***Python*** 和
-   ***reStructuredText*** 拓展。
+3. 完成安装后打开 VS Code，在 **Extentions** 中安装 **Python** 和
+   **reStructuredText** 拓展。
 
 .. image:: images/vscode-extentions.gif
 
@@ -404,8 +404,8 @@ Visual Studio Code 安装与配置
 1. 打开 `Visual Studio Code
    官网 <https://code.visualstudio.com/Download>`__\ ，下载适合的安装包，可以勾选全部复选框完成安装任务。
 
-2. 完成安装后打开 VS Code，在 ***Extentions*** 中安装 ***Python*** 和
-   ***reStructuredText*** 拓展。
+2. 完成安装后打开 VS Code，在 **Extentions** 中安装 **Python** 和
+   **reStructuredText** 拓展。
 
 .. image:: images/vscode-extension2-mac.jpg
 
@@ -621,18 +621,16 @@ alpha/beta/rc 等标签，例如目前最新的 Python 文档版本号便是 3.9
 
 --------------
 
+
+
 练习1：为 Sphinx 项目添加 Markdown 支持
 '''''''''''''''''''''''''''''''''''''''
+    Markdown 是一种与 reStructuredText 类似的标记语言，其语法甚至比 reStructuredText 更加简单一些，广泛使用在
 
-Sphinx 默认仅支持 reStructuredText
-文件类型，但我们可以使用源解析器扩展添加新文件类型。
+    Sphinx 默认仅支持 reStructuredText 标记语言，但我们可以通过安装 recommonmark 源解析器扩展使其支持添加 Markdown 标记语言。安装方法可参阅 `Sphinx 官网文档 <http://www.sphinx-doc.org/en/master/usage/markdown.html>`__\ 。
 
-recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx
-的源文档，安装方法可参阅 `Sphinx 官网文档 <http://www.sphinx-doc.org/en/master/usage/markdown.html>`__\ 。
-
-请尝试为我们的 ***learn-sphinx*** 项目添加 Markdown
-支持，并在原文档目录下添加一个由 ***index.rst*** 管理的
-***chapter3.md*** 文件（从本教程的 `GitHub 仓库 <https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source>`__
+请你尝试为我们的 **learn-sphinx** 项目添加 Markdown 支持，并在原文档目录下添加一个由 **index.rst** 管理的
+**chapter3.md** 文件（从本教程的 `GitHub 仓库 <https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source>`__
 获取该文件）。
 
     **步骤如下：**
@@ -651,7 +649,7 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx
         **提示：**\ 非 Anaconda 环境下可使用
         ``pip install recommonmark`` 安装 recommonmark 扩展。
 
-    2. 然后，对 ***learn-sphinx*** 项目 ***conf.py*** 做如下修改：
+    2. 然后，对 **learn-sphinx** 项目 **conf.py** 做如下修改：
 
     .. code:: python
 
@@ -670,8 +668,8 @@ recommonmark 扩展能够让我们使用 Markdown 标记语言撰写 Sphinx
 
     3. 接着，请同学们从本教程的 `GitHub
        仓库 <https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source>`__
-       获取 ***chapter3.md*** 文件，并将其存放在我们的 ../learn-sphinx/source 目录下。
-    4. 最后，修改 ***index.rst*** 文件，将 ***chapter3.md***
+       获取 **chapter3.md** 文件，并将其存放在我们的 ../learn-sphinx/source 目录下。
+    4. 最后，修改 **index.rst** 文件，将 **chapter3.md**
        添加到文件目录下：
 
     .. image:: images/reorganize-contents.png
@@ -760,6 +758,5 @@ Sphinx 构建 PDF、LaTeX 等格式的文档，此专题还介绍了如何将 Sp
 --------------
 
 至此，同学们应已初步了解了文档代码化的基本思想，并着手创建、完善了自己的第一个
-Sphinx 项目。下面我们还将学习 reStructuredText 和 Markdown
-的基础语法，更多的进阶内容也将以学习专题的形式呈现，欢迎同学们继续学习！
+Sphinx 项目。下面我们还将学习 reStructuredText 的基础语法，更多的进阶内容也将以学习专题的形式呈现，欢迎同学们继续学习！
 
