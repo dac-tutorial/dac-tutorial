@@ -95,7 +95,7 @@ reStructuredText 可以使用以下几种文字格式::
 
     1. 格式标记不可相互嵌套；
     2. 星号及反引号在文本中容易与内联标记符号混淆，可使用反斜杠符号转义；如果内容需要特殊字符分隔，可使用反斜杠转义，如: ``thisis\ *one*\ word.``
-    3. 文本与格式标记符号之间不要留空格， ``* text*`` 不能实现渲染效果；
+    3. 文本与格式标记符号之间不要留空格， ``* text*`` 不能实现渲染效果。
 
 分隔符
 +++++++
@@ -130,12 +130,7 @@ reStructuredText 可以使用以下几种文字格式::
 
 渲染效果如下：
 
-Let's learn reStructuredText [#f1]_ ! You'll see a footnote [#f2]_.
-
-.. rubric:: Footnotes
-
-.. [#f1] reStructuredText 是一种轻量级标记语言。
-.. [#f2] 这是第二条脚注.
+.. image:: images/rst-footnote-preview.jpg
 
 此外，也可以用数字标注脚注，或者不指定 name，使用自动数字标记脚注 ``[#]_``。 # 有自动数字标记的功能，同学们接下来学习列表时也会注意到这一点。
 
@@ -145,7 +140,7 @@ Let's learn reStructuredText [#f1]_ ! You'll see a footnote [#f2]_.
 
 无序列表
 ++++++++
-无序列表使用星号(``*``)、加号(``+``)或是减号(``-``)作为列表标记。语法格式如下： ::
+无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记。语法格式如下： ::
 
     * 第一项
     * 第二项
@@ -208,10 +203,7 @@ Let's learn reStructuredText [#f1]_ ! You'll see a footnote [#f2]_.
 
 渲染效果如下：
 
-what
-    第一项
-how
-    第二项
+.. image:: images/rst-define-list.jpg
 
 字段列表
 ++++++++
@@ -222,20 +214,18 @@ how
 
 渲染效果如下：
 
-:what: 第一项
-:how: 第二项
+.. image:: images/rst-field-list.jpg
 
 选项列表 
 +++++++++
-使用``-term``， 后面与具体内容间留出两个或以上空格。比如： ::
+使用 ``-term``， 后面与具体内容间留出两个或以上空格。比如： ::
 
     -a  选项一
     -b  选项二
 
 渲染效果如下：
 
--a  选项一
--b  选项二
+.. image:: images/rst-option-list.jpg
    
 定义列表、字段列表、选项列表三种形式都可以灵活用自己 term，保证 term 只有一个文本行即可。比如： ::
 
@@ -244,8 +234,7 @@ how
 
 渲染效果如下：
 
--CAT  描述二
--TC   描述一
+.. image:: images/rst-define-term.jpg
 
 列表嵌套
 +++++++++
@@ -281,7 +270,7 @@ how
 ++++++++
 在段落后使用两个连续英文引号标记 ``::`` 引出原始文本块。
 
-代码块段落缩进，多行代码中间不需要空行，与其他文本前后空行分隔，最后有空行，缩进退回到 :: 的位置，就表示退出原始文本块。比如： ::
+代码块段落缩进，多行代码中间不需要空行，与其他文本前后空行分隔，最后有空行，缩进退回到 ``::`` 的位置，就表示退出原始文本块。比如： ::
 
     第一段文本 ::
 
@@ -299,11 +288,11 @@ how
 
 第二段文本
 
-    提示：在 reStructuredText 中，:: 是很神奇的标记：
+    提示：在 reStructuredText 中， ``::`` 是很神奇的标记：
 
-    1. 如果 :: 标记作为独立段落存在，则整段都不会出现在文档里.
-    2. 如果 :: 标记前面有空白，标记将被删除。
-    3. 如果 :: 标记前面非空白，标记会被单个冒号取代。
+    1. 如果 ``::`` 标记作为独立段落存在，则整段都不会出现在文档里.
+    2. 如果 ``::`` 标记前面有空白，标记将被删除。
+    3. 如果 ``::`` 标记前面非空白，标记会被单个冒号取代。
 
 块级代码与代码高亮
 ++++++++++++++++++
@@ -319,9 +308,6 @@ rst 标记格式为： ``.. code:: 语言名`` ，如：
             }
         ?>
 
-渲染效果如下：
-
-.. image:: images/rst-code-highlight.jpg
 
 可以进一步查看 `代码高亮支持列表 <https://pygments.org/languages/>`_，`详细用法 <https://pygments.org/docs/lexers/>`_ 。
 
@@ -366,11 +352,14 @@ rst 标记格式为： ``.. code:: 语言名`` ，如：
 
 比如： ::
 
-    可参考资料：`Sphinx官网 <http://www.sphinx-doc.org/en/master/>`_ ，`reStructuredText 详细说明 <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#sections>`_
+    可参考资料：`Sphinx官网 <http://www.sphinx-doc.org/en/master/>`_ 
+    
+    `reStructuredText 详细说明 <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#sections>`_
 
 渲染效果如下：
 
-可参考资料：`Sphinx官网 <http://www.sphinx-doc.org/en/master/>`_ ，`reStructuredText 详细说明 <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#sections>`_
+可参考资料：`Sphinx官网 <http://www.sphinx-doc.org/en/master/>`_ 
+`reStructuredText 详细说明 <https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#sections>`_
 
 内部链接
 ++++++++++
@@ -408,7 +397,7 @@ rst 标记格式为： ``.. code:: 语言名`` ，如：
 
 图片格式
 +++++++++
-图片后还可以加入一些额外选项，比如大小选项宽度（width）和高度（height）。如果没有单位或单位为像素, 给定的尺寸信息仅在输出通道支持像素时才有用，如输出LaTeX 没用；其他单位(如 pt)在输出HTML、LaTeX 时被用到.添加选项的格式如： ::
+图片后还可以加入一些额外选项，比如大小选项宽度（width）和高度（height）。如果没有单位或单位为像素, 给定的尺寸信息仅在输出通道支持像素时才有用，如输出 LaTeX 没用；其他单位(如 pt)在输出 HTML、LaTeX 时被用到.添加选项的格式如： ::
 
     .. image:: picture.jpeg
        :height: 100px
@@ -431,7 +420,7 @@ rst 标记格式为： ``.. code:: 语言名`` ，如：
 
 图片输出形式
 +++++++++++++
-Sphinx会自动将图像文件拷贝到输出目录中（例如HTML格式输出，会拷贝到 _static 目录中。）
+Sphinx会自动将图像文件拷贝到输出目录中（例如 HTML格式输出，会拷贝到 _static 目录中。）
 
 Sphinx 延伸了标准的文档化行为，只需在后面加星号： ::
 
@@ -495,7 +484,7 @@ False  True   True
 True   True   True
 =====  =====  ======
 
-如果一些单元格没有内容，需要用".."或"\"表示，否则会被视为上一行的延续： ::
+如果一些单元格没有内容，需要用转义符或者".."表示，否则会被视为上一行的延续： ::
 
     =====  =====
     col 1  col 2
