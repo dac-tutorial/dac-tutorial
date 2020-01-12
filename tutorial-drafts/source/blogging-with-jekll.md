@@ -36,7 +36,7 @@ Windows 并未得到 Jekyll 官方的正式支持，但是也可以通过合适�
 
 > **注意：** WSL 不适用于运行图形用户界面，将以独占方式使用命令行。
 
-#### 步骤1：启用 “适用于 Linux 的 Windows 子系统” 可选功能
+#### 启用 “适用于 Linux 的 Windows 子系统” 可选功能
 
 1. 以管理员身份打开 PowerShell 并运行：
 
@@ -46,7 +46,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 2. 出现提示后，重启计算机即可。
 
-#### 步骤2：获取 Linux 分发版 (Ubuntu)
+#### 获取 Linux 分发版 (Ubuntu)
 
 1. 打开 Microsoft Store，搜索 "Linux” ，选择 Ubuntu
 
@@ -56,7 +56,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ![microsoft-store-ubuntu](images/microsoft-store-ubuntu.png)
 
-#### 步骤3：初始化 Linux 分发版 (Ubuntu)
+#### 初始化 Linux 分发版 (Ubuntu)
 
 安装 Linux 分发版后，必须先初始化一次后才能使用，步骤如下：
 
@@ -70,7 +70,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 > - 打开新的分发版实例时，系统不会提示你输入密码，但**如果使用 `sudo` 提升了进程的权限，则需要输入密码**
 > - Linux/Unix 在输入密码的时候不会有任何提示，Unix的哲学是“没有消息就是好消息”！
 
-#### 步骤4：更新和升级 Linux 分发版 (Ubuntu)
+#### 更新和升级 Linux 分发版 (Ubuntu)
 
 + Windows 不会自动更新或升级 Linux 分发版，需要使用 Linux 分发版的包管理器升级已安装的包，建议定期更新。
 
@@ -167,13 +167,13 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 VS Code 内置的命令行可以将它与 WSL Linux 发行版本集成，同时在代码编辑器与 Bash 和 PowerShell 工具之间建立无缝工作流（请在安装 VS Code 时将 VS Code 添加至 path）。
 
-#### 步骤1：安装适用于 Windows 的 VS Code 和 Git
+#### 安装适用于 Windows 的 VS Code 和 Git
 
 1. 下载适用于 Windows 的 VS Code：[https://code.visualstudio.com](https://code.visualstudio.com/)。
 2. 首次打开 VS Code 时，可能会看到以下错误消息：“找不到 Git。请使用“git.path”设置来安装或使用它。” 
    请从 git-scm 网站下载并安装适用于 Windows 的 Git：https://git-scm.com/download/win，为 VS Code 工作区中的“源代码管理”面板提供技术支持。
 
-#### 步骤2：安装 Remote - WSL 扩展
+#### 安装 Remote - WSL 扩展
 
 在 VS Code 中，打开“扩展”视图（选择 “查看” - “扩展” 或按 `Ctrl+Shift+X` 并搜索 “wsl”。 选择如下所示的 “Remote - WSL” 扩展（应位于列表顶端）并按 “安装”。
 
@@ -181,7 +181,7 @@ VS Code 内置的命令行可以将它与 WSL Linux 发行版本集成，同时�
 
 使用 Remote - WSL 扩展，可以在 WSL 的上下文中使用 VS Code 编辑器，享受对 IntelliSense、代码导航、调试等语言功能的完整支持。 还可以选择安装[远程开发扩展包](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)，其中捆绑了全部三个 VS Code 远程扩展，除 WSL 外还支持在 Docker 容器内通过 SSH 工作。
 
-#### 步骤3：将默认终端 Shell 更改为 WSL
+#### 将默认终端 Shell 更改为 WSL
 
 在 VS Code 中，选择“视图” > “终端”（或选择使用反撇号字符的 Ctrl+`）。 将在 VS Code 窗口的底部打开命令行（或终端 shell）窗口。 通过此窗口可以运行各种命令行工具，而无需离开 VS Code。
 
@@ -208,7 +208,7 @@ VS Code 的默认终端是 PowerShell，若要更改默认 VS Code 终端 Shell�
 - [RubyGems](https://rubygems.org/pages/download) （可通过执行 `gem -v` 指令检查版本）
 - [GCC](https://gcc.gnu.org/install/) and [Make](https://www.gnu.org/software/make/) （以防你的系统中没有安装这些工具，请通过执行 `gcc -v`,`g++ -v` 和 `make -v` 指令进行检查）
 
-#### 步骤1：安装 Ruby
+#### 安装 Ruby
 
 打开 WSL-Ubuntu 命令行窗口，分别执行以下命令：
 
@@ -220,7 +220,7 @@ sudo apt-get install ruby2.5 ruby2.5-dev build-essential dh-autoreconf
 
 > **注意：** 我们将会使用到一个 [BrightBox](https://www.brightbox.com/docs/ruby/ubuntu/) 的资源库，该库包含了为 Ubuntu 的 优化的 Ruby。
 
-#### 步骤2：更新 Ruby gems
+#### 更新 Ruby gems
 
 在 WSL-Ubuntu 命令行窗口中执行以下命令，更新 Ruby gems：
 
@@ -228,7 +228,7 @@ sudo apt-get install ruby2.5 ruby2.5-dev build-essential dh-autoreconf
 gem update
 ```
 
-#### 步骤3：安装 Jekyll
+#### 安装 Jekyll
 
 在 WSL-Ubuntu 命令行窗口中执行以下命令，安装 Jekyll 相关包：
 
@@ -239,7 +239,7 @@ gem install jekyll-feed
 gem install jekyll-paginate 
 ```
 
-#### 步骤4：检查 Jekyll 安装
+#### 检查 Jekyll 安装
 
 在 WSL-Ubuntu 命令行窗口中执行以下命令：
 
@@ -266,7 +266,7 @@ jekyll -v
 
 ### 小练习：第一个 Jekyll 站点
 
-#### 步骤1：创建 Jekyll 项目目录
+#### 创建 Jekyll 项目目录
 
 在 Windows 合适的位置新建一个 `myblog` 文件夹，按住 <kbd>shift</kbd> 对此文件夹单击鼠标右键，选择 “在此打开 Linux Shell”
 
@@ -278,7 +278,7 @@ jekyll -v
 
 ![vscode-wsl-myblog](images/vscode-wsl-myblog.png)
 
-#### 步骤2：添加 index.html 文件
+#### 添加 index.html 文件
 
 使用 VS Code 在 ***myblog*** 目录下新建一个 ***index.html*** 文件，填写以下内容，并保存：
 
@@ -297,7 +297,7 @@ jekyll -v
 
 ![myblog-index-html](images/myblog-index-html.png)
 
-#### 步骤3：发布 Jekyll 测试站点
+#### 发布 Jekyll 测试站点
 
 现在可以使用 Jekyll 发布我们的测试站点了，有两种命令可用于来发布站点：
 

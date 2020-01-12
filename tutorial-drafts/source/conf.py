@@ -17,12 +17,12 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Learn-Sphinx'
+project = '文档代码化 (Sphinx) 教程'
 copyright = '2020, PKU'
-author = 'PKU'
+author = '杨正宇、王晴、魏玉霜、吴绪瑶、许若琳'
 version = '1.0'
 # The full version, including alpha/beta/rc tags
-release = '1.0.0rc1'
+release = '1.0.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -50,7 +50,7 @@ templates_path = ['_templates']
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'en'
+language = 'zh_CN'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
