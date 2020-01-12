@@ -477,3 +477,5 @@ Anaconda 环境中已经集成了 jinja2，因此无需再次安装。
 
 .. figure:: images/single-html-theme.png
    :alt: 路径地址
+
+如果同学们想要改变网页的布局、字体信息等，都可以通过修改 *custom.css* 文件来实现。
