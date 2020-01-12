@@ -46,15 +46,7 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
 
 .. image:: images/latex-output.png
 
-* 使用 Pandoc 将 LaTeX 格式文件转换为 PDF 格式文件
-
-`Pandoc <https://www.pandoc.org/installing.html>`_ 是一款标记语言转换工具，可实现多种不同标记语言间的格式转换。 
-
-我们需要用到的语法很简单，为 ``pandoc <源文件名> -o <转换后的文件名>``，如 ``pandoc test.txt -o test.pdf``。一般情况下，Pandoc 会根据文件名的后缀自动识别文件类型并进行相应的转换，十分方便。也可以在 ``pandoc`` 后添加 ``-s``，为聪明模式，具体说明及其他详细语法请见 `帮助文档 <https://pandoc.org/MANUAL.html#creating-a-pdf>`_。
-
-此外，Pandoc 官网也提供了一个在线的 `转换平台 <https://pandoc.org/try/>`_，但有些格式有欠缺，感兴趣的同学可以前往尝试。
-
-如果要生成中文PDF，还需要确认安装了东亚语言包和字体包（texlive-lang-cjk, texlive-fonts-recommands等），在 ``conf.py`` 中设置 Options for LaTeX output 的 latex_elements 变量，加入如：::
+如果要生成中文PDF，还需要确认安装了东亚语言包和字体包（texlive-lang-cjk, texlive-fonts-recommands等），在 ``conf.py`` 中设置 Options for LaTeX output 的 latex_elements 变量，加入如下配置，并执行输出：::
 
   latex_elements = {
   # The paper size ('letterpaper' or 'a4paper').
@@ -71,7 +63,13 @@ Sphinx 可以为我们提供多种发布的格式，如 HTML、LaTeX、ePub、Te
   \\AtEndDocument{\\end{CJK}}
   ''',
 
-最后运行 ``make latexpdf`` 即可。
+* 使用 Pandoc 将 LaTeX 格式文件转换为 PDF 格式文件
+
+`Pandoc <https://www.pandoc.org/installing.html>`_ 是一款标记语言转换工具，可实现多种不同标记语言间的格式转换。 选择此款工具的原因是它的应用场景十分广泛，在其他时候也一定能为同学们的学习工作助力。
+
+对于当前任务，我们需要用到的语法很简单，为 ``pandoc <filename> -o <output filename>``，如 ``pandoc test.md -o test.pdf``。一般情况下，Pandoc 会根据文件名的后缀自动识别文件类型并进行相应的转换，十分方便。也可以在 ``pandoc`` 后添加 ``-s``，为聪明模式，具体说明及其他详细语法请见 `帮助文档 <https://pandoc.org/MANUAL.html#creating-a-pdf>`_。
+
+此外，Pandoc 官网也提供了一个在线的 `转换平台 <https://pandoc.org/try/>`_，但有些格式有欠缺，感兴趣的同学可以前往尝试。
 
 
 使用 ReadTheDocs 进行发布
@@ -88,25 +86,22 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 .. image:: images/rtd-extra-info.png
 
-接下来，返回 Github，在项目仓库的首页右侧寻找 ``Settings`` ，进行以下操作：
-
-- 在 ``Settings`` -> ``Options`` 的 ``Danger Zone`` 中将仓库设为公开（ ``Make Public`` ）。
-- ``Settings`` -> ``Webhooks``， 点击 ``Add webhook`` 进行添加（也有可能已自动识别好 ReadTheDocs 项目地址）。
-
-.. image:: images/add-webhook.png
-
-
-- 在项目的根目录下创建文件 ``readthedocs.yml`` 和 ``requirements.txt``，参考 <https://docs.readthedocs.io/en/stable/config-file/v2.html>的介绍进行文件配置。 
-
-
-返回 ReadTheDocs，点击 ``Build version`` 进行在线网页的发布。
-
 此外，我们还可以自定义域名：
-
 - 在域名管理中添加 DNS 的 CNAME 记录到 readthedocs.io。
 - 在项目的 ``Admin`` -> ``Domains`` 中设置上一步添加的域名，开启 HTTPS，保存。
 
-现在，每当我们推送新的内容到 Github， ReadTheDocs 都会识别并对在线文档进行更新。
+接下来，返回 Github，在项目仓库的首页右侧寻找 ``Settings`` ，进行以下操作：
+
+- 在 ``Settings`` -> ``Options`` 的 ``Danger Zone`` 中将仓库设为公开（ ``Make Public`` ）。
+- ``Settings`` -> ``Webhooks``， 一般情况下 ReadTheDocs 已自动识别好项目地址；若没有，点击 ``Add webhook`` 手动添加。
+
+.. image:: images/add-webhook.png
+
+- 若有需要，在项目的根目录下创建文件 ``readthedocs.yml`` 和 ``requirements.txt``，参考 ``官网 <https://docs.readthedocs.io/en/stable/config-file/v2.html>``_ 的介绍进行文件配置。 
+
+返回 ReadTheDocs，点击 ``Build version`` 进行在线网页的发布。
+
+现在，每当我们推送新的内容到 Github 仓库， ReadTheDocs 都会自动识别并更新文档。
 
 
 使用 Github Pages 进行发布
