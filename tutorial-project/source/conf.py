@@ -18,12 +18,9 @@
 # -- Project information -----------------------------------------------------
 
 project = '文档代码化 (Sphinx) 教程'
-copyright = '2020, PKU'
+copyright = '2020, PKUCAT'
 author = '杨正宇、王晴、魏玉霜、吴绪瑶、许若琳'
-version = '1.0'
-# The full version, including alpha/beta/rc tags
-release = '1.0.1'
-
+version = 'V1.1'
 
 # -- General configuration ---------------------------------------------------
 
