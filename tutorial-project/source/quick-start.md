@@ -24,50 +24,50 @@
 
 ### Windows 环境配置
 
-> **注意：** 以下步骤不需要同学们预先安装 Python 解释器（如果之前有安装也可以考虑将其卸载），而是直接使用 Anaconda 内集成的 Python 解释器，如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接在命令行中使用命令 `pip install sphinx` 安装 Sphinx 及运行 Sphinx 所需要的 [docutils](http://docutils.sourceforge.net/)、[jinja2](http://jinja.pocoo.org/) 等第三方库（前提是 Python 和 Pip 已添加在系统变量的 path 中）。
+> **注意：** 
+> - 以下步骤不需要同学们预先安装 Python 解释器（如果之前有安装也可以考虑将其卸载），而是直接使用 Anaconda 内集成的 Python 解释器，如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接在命令行中使用命令 `pip install sphinx` 安装 Sphinx 及运行 Sphinx 所需要的 [docutils](http://docutils.sourceforge.net/)、[jinja2](http://jinja.pocoo.org/) 等第三方库（前提是 Python 和 Pip 已添加在系统变量的 path 中）。
 >
-> 更加推荐同学们使用 Anaconda 来完成 Sphinx 开发环境配置，因为 conda 将几乎所有的工具、第三方库都当做 package 对待，甚至包括 python 和 conda 自身，它可以帮助我们方便地管理自己的 Python 开发环境，不仅能够将不同开发项目所依赖的开发环境完全独立开来，还可轻易地复制整个 Python 环境到其他机器上。
+> - 推荐同学们优先使用 Anaconda 来完成 Sphinx 开发环境配置，因为 conda 将几乎所有的工具、第三方库都当做 package 对待，甚至包括 python 和 conda 自身，它可以帮助我们方便地管理自己的 Python 开发环境，不仅能够将不同开发项目所依赖的开发环境完全独立开来，还可轻易地复制整个 Python 环境到其他机器上。
 
 #### Anaconda 安装与配置
 
-1. 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
+Ⅰ. 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
 
 ![anaconda-download](images/anaconda-download.png)
 
 > **提示：** 如果官网下载速度较慢，可到清华大学开源软件镜像站下载 [Anaconda 安装包](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)。
 
-2. 下载完成后，运行可执行文件进行安装：
+Ⅱ. 下载完成后，运行可执行文件进行安装：
 
 ![anaconda-setup](images/anaconda-setup.gif)
 
 > **注意：**
 >
-> 1. （可选）Anaconda 需要占用较大的存储空间，可考虑安装在非系统盘。
->
-> 2. 请在 “Advanced Options” 中将勾选两个可选选项：
+> ⑴ Anaconda 需要占用较大的存储空间，可考虑安装在非系统盘。
+> 
+> ⑵ 请在 “Advanced Options” 中将勾选两个可选选项：
 >
 > ![anaconda-setup-options](images/anaconda-setup-options.png)
 >
 > - **第一个选项** 会将 Anaconda 的安装目录添加至系统环境变量的 path 中，有利于我们之后在 VS Code 中快速激活 conda 环境，以及直接使用 base 环境中已安装的库和脚本，简化操作流程，若是在安装过程中没有勾选此选项，需要自行添加系统环境变量，即添加Anaconda的安装路径以及到path。
 >
->   - 如上图红字所示，Anaconda 官方不建议勾选此选项，而建议使用 Anaconda Prompt (或 Anaconda Powershell Prompt，以下将两者统称为 Anaconda Prompt) 。这是因为勾选此选项会将 Anaconda 的若干目录添加至 path 目录中的最前面；如果用户之前已经安装了其他 Python 解释器，勾选此选项会导致用户直接调用 Python 时优先调用 Anaconda 内置的 Python 解释器，而不是用户单独安装的 Python 解释器，如下图所示：
->
->     ![two-python-interpreter](images/two-python-interpreter.png)
->
->   - （可选）假如同学们依然希望系统默认调用先前单独安装的 Python 解释器，只需要在完成Anaconda 安装后，手动将 path 中单独安装的 Python 解释器的路径移动到 Anaconda 目录之前，操作方法如下：
->
->     ![windows-path-config](images/windows-path-config.gif)
->
->     此时，在命令行调用 Python 时会优先调用单独安装的 Python 解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别）
->
->     ![python-vs-conda-python](images/python-vs-conda-python.png)
+> > ① 如上图红字所示，Anaconda 官方不建议勾选此选项，而建议使用 Anaconda Prompt (或 Anaconda Powershell Prompt，以下将两者统称为 Anaconda Prompt) 。这是因为勾选此选项会将 Anaconda 的若干目录添加至 path 目录中的最前面；如果用户之前已经安装了其他 Python 解释器，勾选此选项会导致用户直接调用 Python 时优先调用 Anaconda 内置的 Python 解释器，而不是用户单独安装的 Python 解释器，如下图所示：
+> >
+> >   ![two-python-interpreter](images/two-python-interpreter.png)
+> >
+> > ②（可选） 假如同学们依然希望系统默认调用先前单独安装的 Python 解释器，只需要在完成Anaconda 安装后，手动将 path 中单独安装的 Python 解释器的路径移动到 Anaconda 目录之前，操作方法如下：
+> >
+> >   ![windows-path-config](images/windows-path-config.gif)
+> >
+> > ③ 此时，在命令行调用 Python 时会优先调用单独安装的 Python 解释器，只有在激活 conda 环境后才会调用 conda 里的 Python 解释器。（可以看到两个 Python 解释器的版本和版权说明有所区别）
+> >
+> >   ![python-vs-conda-python](images/python-vs-conda-python.png)
+> >
 >
 > - **第二个选项** 可使其他 Python 开发工具（如 VS Code）自动探测到 Anaconda。
 
 
-3. 完成 Anaconda 的安装后，检查 Sphinx 是否已安装。
-
-> **提示 ：** Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。
+Ⅲ. 完成 Anaconda 的安装后，检查 Sphinx 是否已安装。
 
 点击 ”开始“ 菜单 - “Anaconda3” -  “Anaconda Powershell Prompt”，输入 `conda list` ，回车；
 
@@ -77,7 +77,7 @@
 
 ![conda-list-sphinx](images/conda-list-sphinx.png)
 
-（可选）如图所示，目前 Anaconda 里的 Sphinx 的版本是 2.2.0，低于官网的最新版本。我们可在 Anaconda Prompt 中输入 `conda update sphinx` 单独对 Sphinx 进行更新，但考虑到我们是第一次使用 Anaconda，更加推荐使用 `conda update --all` 命令对该环境下所有包都进行一次更新：
+（可选） Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。在 Anaconda Prompt 中输入 `conda update sphinx` 单独对 Sphinx 进行更新，但考虑到我们是第一次使用 Anaconda，更加推荐使用 `conda update --all` 命令对该环境下所有包都进行一次更新：
 
 ![anaconda-update](images/anaconda-update.gif)
 
@@ -88,11 +88,11 @@
 >
 > 具体操作步骤如下：
 >
-> 1. 打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Prompt”，输入 `conda config --set show_channel_urls yes` 回车，该命令会在用户文件夹下创建 `.condarc` 文件；
+> ​	① 打开 ”开始“菜单 - “Anaconda3” -  “Anaconda Prompt”，输入 `conda config --set show_channel_urls yes` 回车，该命令会在用户文件夹下创建 `.condarc` 文件；
 >
 > ![conda-config-channel](images/conda-config-channel.png)
 >
-> 2. 进入用户文件夹，使用记事本打开`.condarc` 文件，将其中内容替换为如下内容：
+> ​	② 进入用户文件夹，使用记事本打开`.condarc` 文件，将其中内容替换为如下内容：
 >
 > ```
 > ssl_verify: true
@@ -112,22 +112,22 @@
 >   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 > ```
 >
-> 3. 保存并退出`.condarc` 文件。
+> ​	③ 保存并退出`.condarc` 文件。
 
 ---
 
 #### Visual Studio Code 安装与配置
 
-1. 打开 [Visual Studio Code 官网](https://code.visualstudio.com/)，下载适合的安装包：
+Ⅰ. 打开 [Visual Studio Code 官网](https://code.visualstudio.com/)，下载适合的安装包：
 
 ![vscode-download](images/vscode-download.png)
 
-2. 下载完成后，运行可执行文件进行安装，其安装过程与 Anaconda 安装过程相似：
+Ⅱ. 下载完成后，运行可执行文件进行安装，其安装过程与 Anaconda 安装过程相似：
 
 > **注意：** 请在安装程序的 “选择其他任务” 页中将所有复选框勾选上。
 > ![vscode-setup-options](images/vscode-setup-options.png)
 
-3. 完成安装后打开 VS Code，在  ***Extentions*** 中安装 ***Python*** 和 ***reStructuredText*** 拓展。
+Ⅲ. 完成安装后打开 VS Code，在  ***Extentions*** 中安装 ***Python*** 和 ***reStructuredText*** 拓展。
 
 ![vscode-extentions](images/vscode-extentions.gif)
 
@@ -137,11 +137,11 @@
 
 完成以上步骤后，已经基本搭建好了一个基于 Anaconda 和 VS Code 的一体化 Sphinx 工作台。在这一环节中，同学们可以检测自己的 Sphinx 开发环境， 为下一节 “第一个 Sphinx 项目” 做好准备。
 
-1. 在计算机任意位置新建一个文件夹，命名为 “learn-sphinx”，右击文件夹单击 “通过 Code 打开”。文件夹会显示在左侧边栏，下一小节创建项目的文件将会储存在这个文件夹。
+Ⅰ. 在计算机任意位置新建一个文件夹，命名为 **learn-sphinx**，右击文件夹单击 “通过 Code 打开”。文件夹会显示在左侧边栏，下一小节创建项目的文件将会储存在这个文件夹。
 
 ![open-with-vscode](images/open-with-vscode.png)
 
-2. 打开 VS Code 窗口的集成 Terminal（默认为 Windows Powershell，可自行修改；可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出/隐藏），输入 `sphinx-build --version` 回车。如下所示：
+Ⅱ. 打开 VS Code 窗口的集成 Terminal，输入 `sphinx-build --version` 回车。如下所示：
 
 ![sphinx-version](images/sphinx-version.gif)
 
@@ -164,13 +164,13 @@
 > + 如果同学们先前已经安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可查看下一小节 - 使用 Pip 安装 Sphinx；
 > + 更加推荐使用 Anaconda 来完成 Sphinx 开发环境配置，因为 conda 将几乎所有的工具、第三方库都当做 Package 对待，甚至包括 Python 和 conda 自身，它可以帮助我们方便地管理自己的 Python 开发环境，不仅能够将不同开发项目所依赖的开发环境完全独立开来，还可轻易地复制整个 Python 环境到其他机器上。
 
-1. 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
+Ⅰ. 打开 [Anaconda 官方下载页](https://www.anaconda.com/distribution/)，下载适合的安装包：
 
 ![anaconda-download-mac](images/anaconda-download-mac.jpg)
 
 > **提示：** 如果官网下载速度较慢，可到清华大学开源软件镜像站下载 [Anaconda 安装包](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/)。
 
-2. 下载完成后，运行可执行文件进行安装。
+Ⅱ. 下载完成后，运行可执行文件进行安装。
 
 > **注意：** 请在 “Advanced Options” 中将勾选 `Add Anaconda to my PATH environment variable` 和 `Register Anaconda as my defaylt Python 3.7` 两个可选选项：
 >
@@ -181,7 +181,7 @@
 >     ![check-anaconda-mac](images/check-anaconda-mac.jpg)
 > - **第二个选项** 可使其他 Python 开发工具（如 VS Code）自动探测到 Anaconda。
 
-3. Anaconda 预装了 Sphinx。完成1-2步 Anaconda 安装后，检查 Sphinx 是否已安装：
+Ⅲ. Anaconda 预装了 Sphinx。完成 Anaconda 安装后，可检查一下 Sphinx 的安装情况：
 
 点击启动台-其他-终端，输入`conda list`，回车：
 
@@ -191,7 +191,7 @@
 
 ![conda-list-sphinx-mac](images/conda-list-sphinx-mac.png)
 
-4. （可选）Sphinx 预装在 Anaconda 的默认环境下，同学们可以进一步通过 Anaconda Navigator 中检查 Sphinx 包配置情况，安装更多的包。
+Ⅳ. （可选） Sphinx 预装在 Anaconda 的默认环境下，同学们可以进一步通过 Anaconda Navigator 中检查 Sphinx 包配置情况，安装更多的包。
 
 > 提示 ：Anaconda 通常数月才更新一次，但其内部包含的包通常具有更快的更新频次，可使用 Anaconda 的包管理器对包进行单独更新。这里可通过 Anaconda Prompt 输入命令行操作，也可以通过 Anaconda Navigator 进行可视化操作，相对上手更快。
 
@@ -205,21 +205,23 @@
 
 #### Pip 安装与配置
 
-1. 使用 Pip 配置 Sphinx 也是方便快捷的方式。如果同学们先前安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接使用第4步中的命令行安装 Sphinx。
+Ⅰ. 使用 Pip 配置 Sphinx 也是方便快捷的方式。如果同学们先前安装过单独的 Python 解释器（运行 Sphinx 必须预先安装 Python 3.5 及以上版本），可直接使用第4步中的命令行安装 Sphinx。
 
    > 提示：如果不确定自己是安装过，可以在终端输入`pip`进行检测。如果出现`-bash: /usr/local/bin/pip: No such file or directory` 提示说明，则尚未安装 Pip，需要进行第2-3步。
 
-2. 终端输入`sudo easy_install pip`，输入 mac 密码，进入安装：
+Ⅱ. 终端输入`sudo easy_install pip`，输入 mac 密码，进入安装：
 
 ![pip-install-mac](images/pip-install-mac.jpg)
 
-3. 最终显示`Finished processing dependencies for pip`，Pip 配置完成。可以通过`pip --version` 查看 Pip 版本。
+Ⅲ. 最终显示`Finished processing dependencies for pip`，Pip 配置完成。可以通过`pip --version` 查看 Pip 版本。
 
-![pip-complete-mac](images/pip-complete-mac.jpg)4. 终端运行`pip install sphinx`，完成安装。
+![pip-complete-mac](images/pip-complete-mac.jpg)
+
+Ⅳ. 终端运行`pip install sphinx`，完成安装。
 
 ![pip-sphinx-mac](images/pip-sphinx-mac.jpg)
 
-5. 完成安装后，可以检查 Sphinx 配置情况：
+Ⅴ. 完成安装后，可以检查 Sphinx 配置情况：
 
 终端输入`pip list`，回车，正常情况下可以看到若干以 Sphinx 开头的包：
 
@@ -233,11 +235,11 @@
 
 Homebrew 可以视为套件管理器。它是一款 Mac OS 平台下的软件包管理工具，拥有安装、卸载、更新、查看、搜索等很多实用的功能，不需要关注各种依赖和文件路径的情况。配置好 Homebrew 后，安装包、补充缺失的包比较比较便捷。
 
-1. Homebrew 依赖于 Xcode Command Line Tools，所以会自动先安装 Xcode Command Line Tools；如果有报错，也可以用命令手动安装：`xcode-select --install`。
+Ⅰ. Homebrew 依赖于 Xcode Command Line Tools，所以会自动先安装 Xcode Command Line Tools；如果有报错，也可以用命令手动安装：`xcode-select --install`。
 
 ![homebrew-xcode-mac](images/homebrew-xcode-mac.jpg)
 
-2. 前往 [homebrew 官网](https://brew.sh)，复制首页代码行到终端执行。
+Ⅱ. 前往 [homebrew 官网](https://brew.sh)，复制首页代码行到终端执行。
 
 ![homebrew-website-mac](images/homebrew-website-mac.jpg)
 
@@ -253,15 +255,15 @@ Homebrew 可以视为套件管理器。它是一款 Mac OS 平台下的软件包
 
 > 提示：`-bash: brew: command not found` 是一种常见报错，解决办法是在终端输入 `sudo vim .bash_profile`，添加 `export PATH="/usr/local/bin:$PATH"`；最后输入 `source .bash_profile` 使配置生效。
 
-3. 出现`Installation successful!`的提示即为 Homebrew 配置完成。
+Ⅲ. 出现`Installation successful!`的提示即为 Homebrew 配置完成。
 
 ![homebrew-complete-mac](images/homebrew-complete-mac.jpg)
 
-4. 完成 Homebrew 配置后，终端输入`brew install sphinx-doc`，安装 Sphinx 。
+Ⅳ. 完成 Homebrew 配置后，终端输入`brew install sphinx-doc`，安装 Sphinx 。
 
 ![homebrew-sphinx-mac](images/homebrew-sphinx-mac.jpg)
 
-5. 完成安装后，可以检查 Sphinx 配置情况：
+Ⅴ. 完成安装后，可以检查 Sphinx 配置情况：
 
 终端输入`brew list`，回车，正常情况下可以看到 Sphinx 的包：
 
@@ -271,11 +273,11 @@ Homebrew 可以视为套件管理器。它是一款 Mac OS 平台下的软件包
 
 #### Visual Studio Code 安装与配置
 
-1. 打开 [Visual Studio Code 官网](https://code.visualstudio.com/Download)，下载适合的安装包，可以勾选全部复选框完成安装任务。
+Ⅰ. 打开 [Visual Studio Code 官网](https://code.visualstudio.com/Download)，下载适合的安装包，可以勾选全部复选框完成安装任务。
 
-<img src="images/vscode-download-mac.jpg" alt="vscode-download-mac" style="zoom:50%;" />
+![vscode-extension2-mac](images/images/vscode-download-mac.jpg)
 
-2. 完成安装后打开 VS Code，在  ***Extentions*** 中安装 ***Python*** 和 ***reStructuredText*** 拓展。
+Ⅱ. 完成安装后打开 VS Code，在  ***Extentions*** 中安装 ***Python*** 和 ***reStructuredText*** 拓展。
 
 ![vscode-extension2-mac](images/vscode-extension2-mac.jpg)
 
@@ -285,7 +287,7 @@ Homebrew 可以视为套件管理器。它是一款 Mac OS 平台下的软件包
 
 完成以上步骤后，已经基本搭建好了一个基于 Anaconda 和 VS Code 的一体化 Sphinx 工作台。在这一环节中，同学们可以检测自己的 Sphinx 开发环境， 为下一节 “第一个 Sphinx 项目” 做好准备。
 
-1. 在计算机任意位置新建一个文件夹，命名为 “learn-sphinx”，拖至 VS Code 打开。
+Ⅰ. 在计算机任意位置新建一个文件夹，命名为 “learn-sphinx”，拖至 VS Code 打开。
 
 ![create-folder-mac](images/create-folder-mac.jpg)
 
@@ -293,7 +295,7 @@ Homebrew 可以视为套件管理器。它是一款 Mac OS 平台下的软件包
 
 ![show-folder-mac](images/show-folder-mac.jpg)
 
-2. 打开 VS Code 窗口的集成 Terminal（可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出/隐藏），输入 `sphinx-build --version` 回车:
+Ⅱ. 打开 VS Code 窗口的集成 Terminal（可使用 <kbd>Ctrl</kbd> + <kbd>\`</kbd>  快捷键唤出/隐藏），输入 `sphinx-build --version` 回车:
 
    ![check-version-mac](images/check-version-mac.jpg)
 
@@ -441,7 +443,10 @@ Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sph
 一般配置项 (General configuration) 的内容十分丰富，我们这里只介绍最常用的几个：
 
 + **extensions:** 配置 Sphinx 的扩展，内容是 extensions 模块下的字符串列表。
+
 + **source_suffix:** 定义源文件的文件扩展名，该值可以是字典映射文件扩展名到文件类型，默认为 `source_suffix = {'.rst': 'restructuredtext'}`。
+
++ **language:** 文档编写的语言代码，Sphinx自动生成的任何文本都将使用该语言。目前 Sphinx 支持的语言及其代码可在 [Sphinx 官方文档](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)上查询到，我们平时比较常用的有英文和简体中文两种，其语言代码分别是`en` 与`zh_CN`。
 
 ---
 
@@ -458,7 +463,7 @@ Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sph
 
 > **步骤：**
 >
-> 1. 首先，使用 conda 工具安装 recommonmark 扩展，在 Anaconda Prompt 中执行命令:
+> ⑴ 首先，使用 conda 工具安装 recommonmark 扩展，在 Anaconda Prompt 中执行命令:
 >
 > ```
 > conda install recommonmark
@@ -468,7 +473,7 @@ Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sph
 >
 > > **提示：**非 Anaconda 环境下可使用 `pip install recommonmark` 安装 recommonmark 扩展。
 >
-> 2. 然后，对 ***learn-sphinx*** 项目 ***conf.py*** 做如下修改：
+> ⑵ 然后，对 ***learn-sphinx*** 项目 ***conf.py*** 做如下修改：
 >
 > ```python
 > extensions = ['recommonmark']
@@ -484,17 +489,13 @@ Sphinx 项目的配置由 *conf.py* 文件所控制，如果项目是通过 `sph
 >
 > 这里我们通过添加 `recommonmark`扩展为 Sphinx 开启了 Markdown 支持，并将 `.rst` 和 `.txt` 映射到 `'restructuredtext'` 文件类型，将 `.md`映射到 Markdown 文件类型。
 >
-> 3. 接着，请同学们从本教程的 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source) 获取 ***chapter3.md*** 文件，并将其存放在我们的 ../learn-sphinx/source 目录下。 
-> 4. 最后，修改 ***index.rst*** 文件，将 ***chapter3.md*** 添加到文件目录下：
+> ⑶ 接着，请同学们从本教程的 [GitHub 仓库](https://github.com/DAC-Tutorial/DAC-Tutorial/tree/master/learn-sphinx/source) 获取 ***chapter3.md*** 文件，并将其存放在我们的 ../learn-sphinx/source 目录下。
+>  
+> ⑷ 最后，修改 ***index.rst*** 文件，将 ***chapter3.md*** 添加到文件目录下：
 >
 > ![reorganize-contents](images/reorganize-contents.png)
 >
 > **特别注意：** 在 *index.rst* 种引用 reStructuredText 文件时可省略`.rst` 扩展名，但引用 Markdown 文件时不可省略 `.md` 扩展名。为确保引用格式正确，建议在一个文档内引用不同格式文本时不省略`.rst` 扩展名。
-
----
-
-+ **language:** 文档编写的语言代码，Sphinx自动生成的任何文本都将使用该语言。目前 Sphinx 支持的语言及其代码可在 [Sphinx 官方文档](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language)上查询到，我们平时比较常用的有英文和简体中文两种，其语言代码分别是`en` 与`zh_CN`。
-
 
 
 #### HTML 输出选项 (Options for HTML output)
@@ -526,6 +527,7 @@ Sphinx 默认的 HTML 主题为 alabaster，alabaster 是 Sphinx 的内置主题
 ---
 
 本小节只介绍了一些比较常用的 Sphinx 项目配置属性，更多内容请参考 [Sphinx 官方文档](https://www.sphinx-doc.org/en/master/usage/configuration.html)。
+
 
 
 
