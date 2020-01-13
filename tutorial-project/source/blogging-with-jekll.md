@@ -1,10 +1,11 @@
 # 拓展：Jekyll 博客搭建
 
-> **提示：** 在学习此部分内容之前，希望同学们已经了解如何管理 GitHub 远程仓库，并且能够熟练使用 VS Code 代码编辑器与 Markdown 标记语言（本教程的博客上有一个 [Markdown 简明教程](https://dac-tutorial.github.io/Markdown-%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/)，欢迎同学们学习！），对这些内容还不太熟悉的同学请先复习一下教程前面章节的相应内容，然后再学习开始此专题。
+**提示：** 在学习此部分内容之前，希望同学们已经了解如何管理 GitHub 远程仓库，并且能够熟练使用 VS Code 代码编辑器与 Markdown 标记语言（本教程的博客上有一个 [Markdown 简明教程](https://dac-tutorial.github.io/Markdown-%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/)，欢迎同学们学习！），对这些内容还不太熟悉的同学请先复习一下教程前面章节的相应内容，然后再学习开始此专题。
 
 欢迎同学们继续学习本教程！这是本教程的最后一个学习专题，也是整个教程的最后一章！
 
 本专题将会向大家介绍如何使用 Jekyll 搭建免费的个人博客，经过这一段时间的学习，相信同学们一定有了不少学习心得与感悟，何不将他们记录下来，与大家一同分享、一同进步呢！
+
 
 ## Jekyll 简介
 
@@ -13,10 +14,10 @@ Jekyll 是一个基于简单、可扩展的静态网站生成器，提供了模�
 Jekyll 可以运行在 [GitHub Pages](http://pages.github.com/) 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。下面我们将从 Jekyll 开发环境的配置开始，逐步完成基于 GitHub Pages 的个人博客搭建！
 
 > **参考资料：**
->
 > + [Jekyll | Docs](https://jekyllrb.com/docs/)
 > + [GitHub Help | About GitHub Pages and Jekyll](https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll)
 > + [Microsoft Docs | Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/windows/wsl/about)
+
 
 ## 配置 Jekyll 开发环境
 
@@ -335,7 +336,7 @@ jekyll -v
 
 ## 使用 Jekyll 搭建个人博客
 
-> **注意：** 本节部分内容参考了知乎用户[柠檬橙](https://www.zhihu.com/people/ll-chen-2)的文章[《可能是最全面的github pages搭建个人博客教程》](https://zhuanlan.zhihu.com/p/94121927)，感谢他的热心分享！
+**声明：** 本节部分内容参考了知乎用户[柠檬橙](https://www.zhihu.com/people/ll-chen-2)的文章[《可能是最全面的github pages搭建个人博客教程》](https://zhuanlan.zhihu.com/p/94121927)，感谢他的热心分享！
 
 传统上，使用 Jekyll 搭建博客站点的一般流程大致如下：
 

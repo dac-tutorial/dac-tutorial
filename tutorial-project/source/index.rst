@@ -18,4 +18,3 @@
    set-theme.rst
    collaborative-github.rst
    blogging-with-jekll.md
-
