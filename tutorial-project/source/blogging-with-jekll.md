@@ -360,7 +360,7 @@ jekyll -v
 
 之后，我们可以将此仓库 clone 到本地然后，使用我们先前搭建的 Jekyll 开发环境将其逐步完善后发布博客站点。
 
-不过，一个更加简单、高效的方式是直接在 GitHub 上 fork 其他人公开的博客站点仓库，然后在其基础上进行修改和补充。知乎用户[柠檬橙](https://www.zhihu.com/people/ll-chen-2)在其文章[《可能是最全面的github pages搭建个人博客教程》](https://zhuanlan.zhihu.com/p/94121927)里向大家分享了他使用 Jekyll 搭建的 [GitHub 博客仓库](https://github.com/lemonchann/lemonchann.github.io)，在他的仓库页面点击 **fork**，将他的仓库 **fork** 到我们的账号下（同学们也可以 **fork** [本教程的博客站点仓库](https://github.com/dac-tutorial/dac-tutorial.github.io)）：
+不过，一个更加简单、高效的方式是直接在 GitHub 上 fork 其他人公开的博客站点仓库（也可以先 clone 至本地然后上传到远程仓库），然后在其基础上进行修改和补充。知乎用户[柠檬橙](https://www.zhihu.com/people/ll-chen-2)在其文章[《可能是最全面的github pages搭建个人博客教程》](https://zhuanlan.zhihu.com/p/94121927)里向大家分享了他使用 Jekyll 搭建的 [GitHub 博客仓库](https://github.com/lemonchann/lemonchann.github.io)，在他的仓库页面点击 fork，将他的仓库 fork 到我们的账号下（同学们也可以 fork 或 clone [本教程的博客站点仓库](https://github.com/dac-tutorial/dac-tutorial.github.io)）：
 
 ![github-fork-a-repo](images/github-fork-a-repo.png)
 
