@@ -88,10 +88,6 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 .. image:: images/rtd-extra-info.png
 
-此外，我们还可以自定义域名：
-- 在域名管理中添加 DNS 的 CNAME 记录到 readthedocs.io。
-- 在项目的 ``Admin`` -> ``Domains`` 中设置上一步添加的域名，开启 HTTPS，保存。
-
 接下来，返回 Github，在项目仓库的首页右侧寻找 ``Settings`` ，进行以下操作：
 
 - 在 ``Settings`` -> ``Options`` 的 ``Danger Zone`` 中将仓库设为公开（ ``Make Public`` ）。
@@ -99,9 +95,14 @@ ReadTheDocs 是一个提供了托管服务的平台。我们可以把生成的 S
 
 .. image:: images/add-webhook.png
 
-- 将 ``index.rst`` 改名为 ``contents.rst`` 或在根目录下创建文件 ``readthedocs.yml`` 和 ``requirements.txt``，参考官网 `` <https://docs.readthedocs.io/en/stable/config-file/v2.html>``_ 的介绍进行更多配置。
+- 将 ``index.rst`` 改名为 ``contents.rst`` （ReadTheDocs 默认识别的索引文件名是 contents）或在根目录下创建文件 ``readthedocs.yml`` 和 ``requirements.txt``，参考官网 `` <https://docs.readthedocs.io/en/stable/config-file/v2.html>``_ 的介绍进行更多自定义配置。
 
 返回 ReadTheDocs，点击 ``Build version`` 进行在线网页的发布。
+
+此外，我们还可以自定义域名：
+
+- 在域名管理中添加 DNS 的 CNAME 记录到 readthedocs.io。
+- 在项目的 ``Admin`` -> ``Domains`` 中设置上一步添加的域名，开启 HTTPS，保存。
 
 现在，每当我们推送新的内容到 Github 仓库， ReadTheDocs 都会自动识别并更新文档。
 
