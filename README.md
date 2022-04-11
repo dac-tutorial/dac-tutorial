@@ -1,11 +1,7 @@
-# 项目仓库：文档代码化教程
+# 文档代码化教程
 
+- 项目仓库：<https://github.com/dac-tutorial/dac-tutorial>
 
-+ **项目博客：**<https://dac-tutorial.github.io/>
-
-+ **教程网址：**<https://dac-tutorial.github.io/tutorial-by-sphinx/>
-
-+ **教程架构：**
-![tutorial-outline](tutorial-project/source/images/tutorial-outline.png)
-
-
+- 教程网址：
+  - Read the Docs（推荐）: <https://dac-tut.readthedocs.io/>
+  - GitHub Pages（备用）: <https://dac-tutorial.github.io/dac-tut/>
